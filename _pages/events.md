@@ -3,7 +3,7 @@ layout: splash
 title: "Events"
 permalink: /events/
 header:
-  overlay_image: "/assets/images/events_banner.jpg" # Path to your banner image
+  overlay_image: "/assets/images/banner_events.png" # Path to your banner image
   overlay_filter: 0.5 # Adjust the opacity of the overlay (0.0 to 1.0)
   caption: "Stay updated with the latest events organized by the PISE Network"
 ---
