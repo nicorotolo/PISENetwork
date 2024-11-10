@@ -30,7 +30,7 @@ header:
   </div>
 
   <div class="board-member">
-    <img src="assets/images/nicola_rotolo.jpg" alt="Giorgio Sanders" width="200">
+    <img src="assets/images/giorgio_sanders.jpg" alt="Giorgio Sanders" width="200">
     <h3>Giorgio Sanders</h3>
     <p class="board-description">MSc student at the London School of Economics</p>
     <div class="social-links">
