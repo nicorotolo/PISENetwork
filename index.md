@@ -92,6 +92,25 @@ header:
     border-radius: 50%;
     font-size: 1.5em;
   }
+
+  /* Countdown timer styles */
+  .countdown-container {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #fff;
+    margin: 40px auto;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .countdown-container h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  .countdown {
+    font-size: 2em;
+    color: #9b1c31;
+  }
 </style>
 
 # PISE Network
@@ -103,14 +122,20 @@ Our goal is to bridge the gap between alumni and current students by providing n
 Stay tuned for upcoming events and exciting news about our community!
 
 <div class="carousel">
-  <img src="/assets/images/dolfin1.jpg" alt="Dolfin 1" class="active">
-  <img src="/assets/images/dolfin2.jpg" alt="Dolfin 2">
-  <img src="/assets/images/dolfin3.jpg" alt="Dolfin 3">
-  <img src="/assets/images/dolfin4.jpg" alt="Dolfin 4">
+  <img src="{{ site.baseurl }}/assets/images/dolfin1.jpg" alt="Dolfin 1" class="active">
+  <img src="{{ site.baseurl }}/assets/images/dolfin2.jpg" alt="Dolfin 2">
+  <img src="{{ site.baseurl }}/assets/images/dolfin3.jpg" alt="Dolfin 3">
+  <img src="{{ site.baseurl }}/assets/images/dolfin4.jpg" alt="Dolfin 4">
   <div class="carousel-controls">
     <button class="prev">&#10094;</button>
     <button class="next">&#10095;</button>
   </div>
+</div>
+</div>
+
+<div class="countdown-container">
+  <h2>Next Event Countdown</h2>
+  <div class="countdown" id="countdown"></div>
 </div>
 
 <script>
@@ -144,5 +169,28 @@ Stay tuned for upcoming events and exciting news about our community!
 
     // Show the initial slide
     showSlides(slideIndex);
+
+    // Countdown Timer
+    const countdownElement = document.getElementById("countdown");
+    const eventDate = new Date("February 6, 2025 17:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      if (distance < 0) {
+        countdownElement.innerHTML = "Event has started!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    setInterval(updateCountdown, 1000);
   });
 </script>
