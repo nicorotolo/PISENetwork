@@ -23,14 +23,14 @@ header:
 
 Stay informed about our latest events, including workshops, networking sessions, and seminars. Below, you'll find our upcoming and past events organized by the PISE Network.
 
+
+
+
+
 <div class="countdown-buttons">
   <button onclick="scrollToEvent('event-1')" class="countdown-button">1st PISE Network Online Workshop: How to Write Your CV</button>
   <button onclick="scrollToEvent('event-2')" class="countdown-button">2nd PISE Network Online Workshop: How to Set Up Your LinkedIn Profile</button>
   <button onclick="scrollToEvent('event-3')" class="countdown-button">3rd PISE Network Online Workshop: Erasmus Tips and Tricks</button>
-</div>
-
-<div class="calendar-container">
-  <iframe src="https://calendar.google.com/calendar/embed?src=5bafd044d7d4022a0eb80ea3694717d3eff047c74b0a39783caaa43efdd20597@group.calendar.google.com&ctz=Europe/Rome" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
 </div>
 
 <div class="event-list">
