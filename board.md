@@ -4,24 +4,29 @@ title: "PISE Network Board"
 permalink: /board/
 ---
 
-# PISE Network Board
-
 Meet the dedicated members of the PISE Network Board, who are working together to bridge the gap between alumni and current students.
 
-<div class="board-member">
-  <img src="/assets/images/nicola_rotolo.jpg" alt="Nicola Rotolo" width="200">
-  <h3>Nicola Rotolo</h3>
-  <ul>
-    <li><a href="https://linkedin.com/in/nicola-rotolo">LinkedIn</a></li>
-    <li><a href="https://instagram.com/nicola_rotolo">Instagram</a></li>
-  </ul>
+<div class="board-member-container">
+  <div class="board-member">
+    <img src="/assets/images/nicola_rotolo.jpg" alt="Nicola Rotolo" width="200">
+    <h3>Nicola Rotolo</h3>
+    <ul>
+      <li><a href="https://linkedin.com/in/nicola-rotolo">LinkedIn</a></li>
+      <li><a href="https://instagram.com/nicola_rotolo">Instagram</a></li>
+    </ul>
+  </div>
+
+  <!-- Repeat similar blocks for other members -->
+
+  > **Note:** More board members will be added soon as the team grows.
 </div>
 
-<!-- Repeat similar blocks for other members -->
-
-> **Note:** More board members will be added soon as the team grows.
-
 <style>
+.board-member-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .board-member {
   text-align: center;
   margin-bottom: 40px;
