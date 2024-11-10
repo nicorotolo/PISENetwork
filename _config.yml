@@ -327,3 +327,21 @@ defaults:
       comments: # true
       share: true
       related: true
+
+
+#navigation inputs
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "Board"
+    url: "/board/"
+  - title: "Events"
+    url: "/events"
+  - title: "Editorial"
+    url: "/editorial"
+  - title: "Resources"
+    url: "/resources"
+  - title: "Contact"
+    url: "/contact"
+
+      
