@@ -1,125 +1,218 @@
 ---
 layout: splash
-title: "Events"
-permalink: /events/
+title: "Welcome to the PISE Network"
+permalink: /
 header:
-  overlay_image: "/assets/images/banner_events.png" # Path to your banner image
+  overlay_image: "/assets/images/banner_san marco.jpeg" # Path to your banner image
   overlay_filter: 0.5 # Adjust the opacity of the overlay (0.0 to 1.0)
-  caption: "Stay updated with the latest events organized by the PISE Network"
+  caption: "Connecting students and alumni of PISE at Ca' Foscari University"
 ---
-
 <nav class="custom-nav">
   <ul>
-    <li><a href="/minimal-mistakes/">Home</a></li>
-    <li><a href="/minimal-mistakes/board/">Board</a></li>
-    <li><a href="/minimal-mistakes/events/">Events</a></li>
-        <li><a href="/minimal-mistakes/resources/">Resources</a></li>
-    <li><a href="/minimal-mistakes/collaborate/">Collaborate with Us</a></li>
+    <li><a href="{{ site.baseurl }}/">Home</a></li>
+    <li><a href="{{ site.baseurl }}/board/">Board</a></li>
+    <li><a href="{{ site.baseurl }}/events/">Events</a></li>
+    <li><a href="{{ site.baseurl }}/editorial/">Editorial</a></li>
+    <li><a href="{{ site.baseurl }}/collaborate/">Collaborate with Us</a></li>
   </ul>
 </nav>
-
-
-<hr style="border: none; border-top: 1px solid #e3c8c1; margin: 20px 0;">
-# Upcoming Events
-
-Stay informed about our latest events, including workshops, networking sessions, and seminars. Below, you'll find our upcoming and past events organized by the PISE Network.
-
-
-<div class="calendar-container">
-  <iframe src="https://calendar.google.com/calendar/embed?src=5bafd044d7d4022a0eb80ea3694717d3eff047c74b0a39783caaa43efdd20597@group.calendar.google.com&ctz=Europe/Rome" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
-</div>
-
-<div class="event-list">
-  <div class="event">
-    <h3>📅 1st PISE Network Online Workshop: How to Write Your CV</h3>
-    <p><strong>Date:</strong> November 7, 2024</p>
-    <p><strong>Time:</strong> 17:00 - 17:45</p>
-    <p><strong>Location:</strong> Online (Google Meet)</p>
-    <p>Discover key strategies to build a professional CV that highlights your strengths, showcases your experience, and catches the attention of recruiters.</p>
-    <p><a href="https://meet.google.com/kvw-udxm-wib" target="_blank">Join with Google Meet</a></p>
-  </div>
-
-  <div class="event">
-    <h3>📅 2nd PISE Network Online Workshop: How to Set Up Your LinkedIn Profile</h3>
-    <p><strong>Date:</strong> December 12, 2024</p>
-    <p><strong>Time:</strong> 17:00 - 17:45</p>
-    <p><strong>Location:</strong> Online (Google Meet)</p>
-    <p>Learn how to create a compelling LinkedIn profile that showcases your skills and experience, helping you connect with professionals and boost your career prospects.</p>
-    <p><a href="https://meet.google.com/kvw-udxm-wib" target="_blank">Join with Google Meet</a></p>
-  </div>
-
-  <div class="event">
-    <h3>📅 3rd PISE Network Online Workshop: Erasmus Tips and Tricks</h3>
-    <p><strong>Date:</strong> February 6, 2025</p>
-    <p><strong>Time:</strong> 17:00 - 17:45</p>
-    <p><strong>Location:</strong> Online (Google Meet)</p>
-    <p>Prepare for your Erasmus journey with tips on adapting to a new culture, managing your studies abroad, and making the most of this unique experience.</p>
-    <p><a href="https://meet.google.com/kvw-udxm-wib" target="_blank">Join with Google Meet</a></p>
-  </div>
-</div>
-
-> **Note:** More events will be added soon, so keep an eye on this page!
+<div style="margin-top: 20px;"></div>
 
 <style>
-.custom-nav {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  position: sticky;
-  top: 0;
-  background-color: rgba(240, 240, 240, 0.9);
-  padding: 15px 0;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 10;
-}
-.custom-nav ul {
-  display: flex;
-  width: 100%;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.custom-nav li {
-  flex: 1;
-  text-align: center;
-}
-.custom-nav a {
-  display: block;
-  color: #9b1c31;
-  background-color: rgba(240, 240, 240, 0.9);
-  text-decoration: none;
-  padding: 10px 20px;
-  margin: 0;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background-color 0.3s, transform 0.2s;
-}
-.custom-nav a:hover {
-  background-color: #e3c8c1;
-  transform: scale(1.05);
-}
+  .custom-nav {
+    display: flex;               /* Use Flexbox to manage spacing */
+    justify-content: space-evenly; /* Space links evenly across the bar */
+    align-items: center;
+    width: 100%;                 /* Make the navigation bar take full width */
+    position: sticky;            /* Stick to the top of the viewport when scrolling */
+    top: 0;
+    background-color: rgba(240, 240, 240, 0.9); /* Light grey background */
+    padding: 15px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;                 /* Keep on top of other content */
+  }
+  .custom-nav ul {
+    display: flex;               /* Flexbox to manage buttons alignment */
+    width: 100%;
+    list-style: none;            /* Remove bullet points */
+    margin: 0;
+    padding: 0;
+  }
+  .custom-nav li {
+    flex: 1;                     /* Make each list item take up equal space */
+    text-align: center;          /* Center the content of each list item */
+  }
+  .custom-nav a {
+    display: block;              /* Allow padding on links to work like a button */
+    color: #9b1c31;              /* Ca' Foscari red color */
+    background-color: rgba(240, 240, 240, 0.9); /* Light grey button background */
+    text-decoration: none;       /* Remove underline from links */
+    padding: 10px 20px;          /* Space inside each button */
+    margin: 0;                   /* Remove margin to avoid spacing between buttons */
+    border-radius: 5px;          /* Rounded corners for button effect */
+    font-weight: bold;           /* Bold text */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+  }
+  .custom-nav a:hover {
+    background-color: #e3c8c1;   /* Slightly darker beige on hover */
+    transform: scale(1.05);      /* Slightly increase size on hover for emphasis */
+  }
 
-.event-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px;
-}
-.event {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.event h3 {
-  margin-top: 0;
-}
+  /* Carousel styles */
+  .carousel {
+    position: relative;
+    max-width: 80%; /* Reduce the size of the carousel to make it blend better */
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .carousel img {
+    width: 100%;
+    display: none;
+  }
+  .carousel img.active {
+    display: block;
+  }
+  .carousel .carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+  }
+  .carousel .prev, .carousel .next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.5em;
+  }
 
-.calendar-container {
-  margin: 20px 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  overflow: hidden;
-}
+  /* Countdown timer styles */
+  .countdown-container {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #fff;
+    margin: 40px auto;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .countdown-container h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  .countdown {
+    font-size: 2em;
+    color: #9b1c31;
+  }
 </style>
+
+
+  <div class="social-links">
+    <a href="https://www.linkedin.com/groups/9804209/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="30" style="border-radius: 10%;"></a>
+    <a href="https://instagram.com/pise_network_and_alumni/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" width="30" style="border-radius: 10%;"></a>
+  </div>
+  
+  <div class="footer-content">
+    <p>&copy; 2024 PISE Network. All rights reserved.</p>
+    <p>Connect with us on:
+      <a href="https://www.linkedin.com/groups/9804209/" target="_blank">LinkedIn</a> |
+      <a href="https://instagram.com/pise_network_and_alumni/" target="_blank">Instagram</a>
+    </p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/groups/9804209/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="30" style="border-radius: 10%;"></a>
+      <a href="https://instagram.com/pise_network_and_alumni/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" width="30" style="border-radius: 10%;"></a>
+    </div>
+  </div>
+</footer>
+
+# PISE Network
+Welcome to the official website of the PISE Network! We connect over 300 graduates and students from the Bachelor's program in Philosophy, International Studies, and Economics (PISE) at Ca' Foscari University.
+Our goal is to bridge the gap between alumni and current students by providing networking opportunities, professional growth, and activities that enrich the academic experience.
+**Follow us on social media:**
+- [LinkedIn](https://www.linkedin.com/groups/9804209/)
+- [Instagram](https://instagram.com/pise_network_and_alumni/)
+Stay tuned for upcoming events and exciting news about our community!
+
+<div class="carousel">
+  <img src="{{ site.baseurl }}/assets/images/dolfin1.jpg" alt="Dolfin 1" class="active">
+  <img src="{{ site.baseurl }}/assets/images/dolfin2.jpg" alt="Dolfin 2">
+  <img src="{{ site.baseurl }}/assets/images/dolfin3.jpg" alt="Dolfin 3">
+  <img src="{{ site.baseurl }}/assets/images/dolfin4.jpg" alt="Dolfin 4">
+  <div class="carousel-controls">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+</div>
+</div>
+
+
+<div class="cta-container">
+  <a href="{{ site.baseurl }}/collaborate/" class="cta-button">Get Involved</a>
+  <a href="{{ site.baseurl }}/events/" class="cta-button">Upcoming Events</a>
+</div>
+
+<style>
+  .cta-container {
+    text-align: center;
+    margin: 40px 0;
+  }
+  .cta-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 25px;
+    background-color: #9b1c31;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  .cta-button:hover {
+    background-color: #e3c8c1;
+    transform: scale(1.1);
+  }
+</style>
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".carousel img");
+    const prevButton = document.querySelector(".carousel .prev");
+    const nextButton = document.querySelector(".carousel .next");
+
+    function showSlides(index) {
+      slides.forEach((slide, i) => {
+        slide.style.display = (i === index) ? "block" : "none";
+      });
+    }
+
+    function nextSlide() {
+      slideIndex = (slideIndex + 1) % slides.length;
+      showSlides(slideIndex);
+    }
+
+    function prevSlide() {
+      slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+      showSlides(slideIndex);
+    }
+
+    nextButton.addEventListener("click", nextSlide);
+    prevButton.addEventListener("click", prevSlide);
+
+    // Auto-slide every 5 seconds
+    setInterval(nextSlide, 5000);
+    setInterval(nextSlide, 5000);
+
+    // Show the initial slide
+    showSlides(slideIndex);
+
+    
+  });
+</script>
