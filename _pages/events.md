@@ -11,9 +11,9 @@ header:
 <nav class="custom-nav">
   <ul>
     <li><a href="/minimal-mistakes/">Home</a></li>
-    <li><a href="/minimal-mistakes/board/">Board</a></li>
     <li><a href="/minimal-mistakes/events/">Events</a></li>
     <li><a href="/minimal-mistakes/resources/">Resources</a></li>
+    <li><a href="/minimal-mistakes/board/">Board</a></li>
     <li><a href="/minimal-mistakes/collaborate/">Collaborate with Us</a></li>
   </ul>
 </nav>
