@@ -10,17 +10,17 @@ header:
 
 <nav class="custom-nav">
   <ul>
-    <li><a href="/minimal-mistakes/">Home</a></li>
-    <li><a href="/minimal-mistakes/board/">Board</a></li>
-    <li><a href="/minimal-mistakes/events/">Events</a></li>
-    <li><a href="/minimal-mistakes/resources/">Resources</a></li>
-    <li><a href="/minimal-mistakes/collaborate/">Collaborate with Us</a></li>
+    <li><a href="{{ site.baseurl }}/">Home</a></li>
+    <li><a href="{{ site.baseurl }}/board/">Board</a></li>
+    <li><a href="{{ site.baseurl }}/events/">Events</a></li>
+    <li><a href="{{ site.baseurl }}/resources/">Resources</a></li>
+    <li><a href="{{ site.baseurl }}/collaborate/">Collaborate with Us</a></li>
   </ul>
 </nav>
 
 <div class="board-member-container">
   <div class="board-member">
-    <img src="/assets/images/nicola_rotolo.jpg" alt="Nicola Rotolo" width="200">
+    <img src="{{ site.baseurl }}/assets/images/nicola_rotolo.jpg" alt="Nicola Rotolo" width="200">
     <h3>Nicola Rotolo</h3>
     <p class="board-description">MSc in Philosophy and Public Policy at the London School of Economics | MSc in Political Economy at Sapienza</p>
     <div class="social-links">
@@ -30,7 +30,7 @@ header:
   </div>
 
   <div class="board-member">
-    <img src="/assets/images/giorgio_sanders.jpg" alt="Giorgio Sanders" width="200">
+    <img src="{{ site.baseurl }}/assets/images/giorgio_sanders.jpg" alt="Giorgio Sanders" width="200">
     <h3>Giorgio Sanders</h3>
     <p class="board-description">MSc student at the London School of Economics</p>
     <div class="social-links">
@@ -108,7 +108,7 @@ header:
   font-size: 1.5em;
 }
 .board-description {
-  font-size: 0.8em; /* Further shrink the font size for descriptions */ */
+  font-size: 0.8em; /* Further shrink the font size for descriptions */
   margin: 10px 0;
 }
 .social-links {
