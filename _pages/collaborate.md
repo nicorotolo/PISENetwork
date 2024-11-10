@@ -6,6 +6,7 @@ header:
   overlay_image: "/assets/images/collaborate_banner.jpg"
   overlay_filter: 0.5
   caption: "Join the PISE Network and help shape the future"
+  overlay_position: bottom
   actions:
     - label: "Get Involved"
       url: "#ways-to-get-involved"
@@ -22,7 +23,7 @@ header:
 </nav>
 
 <div class="content-container">
-  <h1>Collaborate with Us</h1>
+  
 
   <p>The PISE Network thrives on collaboration! We welcome alumni, students, and professionals to join our mission in creating enriching experiences for our community.</p>
   <p>Whether you're interested in giving a workshop, mentoring students, or sharing your expertise through talks and articles, we would love to work with you.</p>
