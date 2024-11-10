@@ -23,12 +23,18 @@ header:
 
 Stay informed about our latest events, including workshops, networking sessions, and seminars. Below, you'll find our upcoming and past events organized by the PISE Network.
 
+<div class="countdown-buttons">
+  <button onclick="scrollToEvent('event-1')" class="countdown-button">1st PISE Network Online Workshop: How to Write Your CV</button>
+  <button onclick="scrollToEvent('event-2')" class="countdown-button">2nd PISE Network Online Workshop: How to Set Up Your LinkedIn Profile</button>
+  <button onclick="scrollToEvent('event-3')" class="countdown-button">3rd PISE Network Online Workshop: Erasmus Tips and Tricks</button>
+</div>
+
 <div class="calendar-container">
   <iframe src="https://calendar.google.com/calendar/embed?src=5bafd044d7d4022a0eb80ea3694717d3eff047c74b0a39783caaa43efdd20597@group.calendar.google.com&ctz=Europe/Rome" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
 </div>
 
 <div class="event-list">
-  <div class="event">
+  <div class="event" id="event-1">
     <h3>📅 1st PISE Network Online Workshop: How to Write Your CV</h3>
     <p><strong>Date:</strong> November 7, 2024</p>
     <p><strong>Time:</strong> 17:00 - 17:45</p>
@@ -37,7 +43,7 @@ Stay informed about our latest events, including workshops, networking sessions,
     <p><a href="https://meet.google.com/kvw-udxm-wib" target="_blank">Join with Google Meet</a></p>
   </div>
 
-  <div class="event">
+  <div class="event" id="event-2">
     <h3>📅 2nd PISE Network Online Workshop: How to Set Up Your LinkedIn Profile</h3>
     <p><strong>Date:</strong> December 12, 2024</p>
     <p><strong>Time:</strong> 17:00 - 17:45</p>
@@ -46,7 +52,7 @@ Stay informed about our latest events, including workshops, networking sessions,
     <p><a href="https://meet.google.com/kvw-udxm-wib" target="_blank">Join with Google Meet</a></p>
   </div>
 
-  <div class="event">
+  <div class="event" id="event-3">
     <h3>📅 3rd PISE Network Online Workshop: Erasmus Tips and Tricks</h3>
     <p><strong>Date:</strong> February 6, 2025</p>
     <p><strong>Time:</strong> 17:00 - 17:45</p>
@@ -98,6 +104,26 @@ Stay informed about our latest events, including workshops, networking sessions,
   transform: scale(1.05);
 }
 
+.countdown-buttons {
+  text-align: center;
+  margin: 20px;
+}
+.countdown-button {
+  background-color: #9b1c31;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  margin: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.countdown-button:hover {
+  background-color: #e3c8c1;
+  transform: scale(1.1);
+}
+
 .event-list {
   display: flex;
   flex-direction: column;
@@ -121,3 +147,12 @@ Stay informed about our latest events, including workshops, networking sessions,
   overflow: hidden;
 }
 </style>
+
+<script>
+  function scrollToEvent(eventId) {
+    const element = document.getElementById(eventId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+</script>
