@@ -28,7 +28,7 @@ Stay informed about our latest events, including workshops, networking sessions,
 </div>
 
 <div class="add-to-calendar">
-  <button onclick="addToCalendar()" class="add-calendar-button">Add PISE Network Events to Your Calendar</button>
+  <button onclick="addToCalendar()" class="add-calendar-button">Add the Events to Your Calendar</button>
 </div>
 
 <div class="event-list">
