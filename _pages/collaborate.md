@@ -9,7 +9,7 @@ header:
   overlay_position: bottom
   actions:
     - label: "Get Involved"
-      url: "#ways-to-get-involved"
+      url: "https://docs.google.com/forms/d/e/1FAIpQLSdzQVSNPTn8wuEiG0l9d5EHgJJOHP3K9QMJPSb_B9uWILes3Q/viewform?usp=sf_link"
 ---
 
 <nav class="custom-nav">
