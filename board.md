@@ -23,21 +23,21 @@ header:
   <div class="board-member">
     <img src="/assets/images/nicola_rotolo.jpg" alt="Nicola Rotolo" width="200">
     <h3>Nicola Rotolo</h3>
-    <p>MSc in Philosophy and Public Policy at the London School of Economics | MSc in Political Economy at Sapienza</p>
-    <ul>
-      <li><a href="https://linkedin.com/in/nicola-rotolo">LinkedIn</a></li>
-      <li><a href="https://instagram.com/nicola_rotolo">Instagram</a></li>
-    </ul>
+    <p class="board-description">MSc in Philosophy and Public Policy at the London School of Economics | MSc in Political Economy at Sapienza</p>
+    <div class="social-links">
+      <a href="https://linkedin.com/in/nicola-rotolo">LinkedIn</a>
+      <a href="https://instagram.com/nicola_rotolo">Instagram</a>
+    </div>
   </div>
 
   <div class="board-member">
     <img src="/assets/images/nicola_rotolo.jpg" alt="Giorgio Sanders" width="200">
     <h3>Giorgio Sanders</h3>
-    <p>MSc student at the London School of Economics</p>
-    <ul>
-      <li><a href="https://www.linkedin.com/in/giorgio-sanders-/">LinkedIn</a></li>
-      <li><a href="https://www.instagram.com/giorgio_sanders?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a></li>
-    </ul>
+    <p class="board-description">MSc student at the London School of Economics</p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/giorgio-sanders-/">LinkedIn</a>
+      <a href="https://www.instagram.com/giorgio_sanders?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>
+    </div>
   </div>
 </div>
 
@@ -108,20 +108,21 @@ header:
   margin-top: 10px;
   font-size: 1.5em;
 }
-.board-member p {
-  font-size: 1em;
+.board-description {
+  font-size: 0.9em; /* Shrink the font size for descriptions */
   margin: 10px 0;
 }
-.board-member ul {
-  list-style-type: none;
-  padding: 0;
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Space between social links */
 }
-.board-member ul li a {
+.social-links a {
   text-decoration: none;
   color: #0073e6;
   font-weight: bold;
 }
-.board-member ul li a:hover {
+.social-links a:hover {
   text-decoration: underline;
 }
 </style>
