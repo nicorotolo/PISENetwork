@@ -73,7 +73,8 @@ header:
 }
 .custom-nav a {
   display: block;
-  color: #9b1c31; font-size: 1.2em;
+  color: #9b1c31; 
+  font-size: 1em; /* Adjusted to match the other pages */
   background-color: rgba(240, 240, 240, 0.9);
   text-decoration: none;
   padding: 10px 20px;
