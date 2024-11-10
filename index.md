@@ -30,6 +30,15 @@ Stay tuned for upcoming events and exciting news about our community!
   <a href="{{ site.baseurl }}/events/" class="cta-button">Upcoming Events</a>
 </div>
 
+<div class="social-links">
+  <a href="https://www.linkedin.com/groups/9804209/" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="30" style="border-radius: 10%;">
+  </a>
+  <a href="https://instagram.com/pise_network_and_alumni/" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" width="30" style="border-radius: 10%;">
+  </a>
+</div>
+
 <style>
   .custom-nav {
     display: flex;               /* Use Flexbox to manage spacing */
@@ -78,7 +87,7 @@ Stay tuned for upcoming events and exciting news about our community!
     margin: 10px;
     padding: 15px 25px;
     background-color: #9b1c31;
-    color: #fff;
+    color: #fff !important;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
@@ -87,5 +96,12 @@ Stay tuned for upcoming events and exciting news about our community!
   .cta-button:hover {
     background-color: #e3c8c1;
     transform: scale(1.1);
+  }
+  .social-links {
+    text-align: center;
+    margin: 40px 0;
+  }
+  .social-links a {
+    margin: 0 10px;
   }
 </style>
