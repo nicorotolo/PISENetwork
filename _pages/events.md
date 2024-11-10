@@ -19,9 +19,18 @@ header:
 </nav>
 
 <hr style="border: none; border-top: 1px solid #e3c8c1; margin: 20px 0;">
-# Upcoming Events
+<h2>Upcoming Events</h2>
+<div class="event-list upcoming-events">
+  <!-- All future events will be here -->
+</div>
 
-Stay informed about our latest events, including workshops, networking sessions, and seminars. Below, you'll find our upcoming and past events organized by the PISE Network.
+<h2>Past Events</h2>
+<div class="past-events-container">
+  <button class="toggle-past-events" onclick="togglePastEvents()">Show Past Events</button>
+  <div class="event-list past-events" style="display: none;">
+    <!-- All past events will be here -->
+  </div>
+</div>
 
 
 
@@ -33,7 +42,7 @@ Stay informed about our latest events, including workshops, networking sessions,
   <button onclick="scrollToEvent('event-3')" class="countdown-button">3rd PISE Network Online Workshop: Erasmus Tips and Tricks</button>
 </div>
 
-<div class="event-list">
+<div class="event-list upcoming-events">
   <div class="event" id="event-1">
     <h3>📅 1st PISE Network Online Workshop: How to Write Your CV</h3>
     <p><strong>Date:</strong> November 7, 2024</p>
@@ -42,6 +51,27 @@ Stay informed about our latest events, including workshops, networking sessions,
     <p>Discover key strategies to build a professional CV that highlights your strengths, showcases your experience, and catches the attention of recruiters.</p>
     <p><a href="https://meet.google.com/kvw-udxm-wib" target="_blank">Join with Google Meet</a></p>
   </div>
+
+  <div class="event" id="event-2">
+    <h3>📅 2nd PISE Network Online Workshop: How to Set Up Your LinkedIn Profile</h3>
+    <p><strong>Date:</strong> December 12, 2024</p>
+    <p><strong>Time:</strong> 17:00 - 17:45</p>
+    <p><strong>Location:</strong> Online (Google Meet)</p>
+    <p>Learn how to create a compelling LinkedIn profile that showcases your skills and experience, helping you connect with professionals and boost your career prospects.</p>
+    <p><a href="https://meet.google.com/kvw-udxm-wib" target="_blank">Join with Google Meet</a></p>
+  </div>
+</div>
+
+<div class="event-list past-events">
+  <div class="event" id="event-3">
+    <h3>📅 3rd PISE Network Online Workshop: Erasmus Tips and Tricks</h3>
+    <p><strong>Date:</strong> February 6, 2025</p>
+    <p><strong>Time:</strong> 17:00 - 17:45</p>
+    <p><strong>Location:</strong> Online (Google Meet)</p>
+    <p>Prepare for your Erasmus journey with tips on adapting to a new culture, managing your studies abroad, and making the most of this unique experience.</p>
+    <p><a href="https://meet.google.com/kvw-udxm-wib" target="_blank">Join with Google Meet</a></p>
+  </div>
+</div>
 
   <div class="event" id="event-2">
     <h3>📅 2nd PISE Network Online Workshop: How to Set Up Your LinkedIn Profile</h3>
@@ -146,6 +176,25 @@ Stay informed about our latest events, including workshops, networking sessions,
   border-radius: 10px;
   overflow: hidden;
 }
+
+  .past-events-container {
+    text-align: center;
+    margin: 20px 0;
+  }
+  .toggle-past-events {
+    background-color: #9b1c31;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  .toggle-past-events:hover {
+    background-color: #e3c8c1;
+    transform: scale(1.05);
+  }
 </style>
 
 <script>
@@ -153,6 +202,18 @@ Stay informed about our latest events, including workshops, networking sessions,
     const element = document.getElementById(eventId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
+  function togglePastEvents() {
+    const pastEvents = document.querySelector('.past-events');
+    const button = document.querySelector('.toggle-past-events');
+    if (pastEvents.style.display === 'none') {
+      pastEvents.style.display = 'block';
+      button.textContent = 'Hide Past Events';
+    } else {
+      pastEvents.style.display = 'none';
+      button.textContent = 'Show Past Events';
     }
   }
 </script>
