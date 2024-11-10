@@ -152,12 +152,35 @@ Stay tuned for upcoming events and exciting news about our community!
 </div>
 </div>
 
-<div class="countdown-container">
-  <h2>Next Event Countdown</h2>
-  <div class="countdown" id="countdown"></div>
+
+<div class="cta-container">
+  <a href="{{ site.baseurl }}/collaborate/" class="cta-button">Get Involved</a>
+  <a href="{{ site.baseurl }}/events/" class="cta-button">Upcoming Events</a>
 </div>
 
-<script>
+<style>
+  .cta-container {
+    text-align: center;
+    margin: 40px 0;
+  }
+  .cta-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 25px;
+    background-color: #9b1c31;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  .cta-button:hover {
+    background-color: #e3c8c1;
+    transform: scale(1.1);
+  }
+</style>
+
+
   document.addEventListener("DOMContentLoaded", function() {
     let slideIndex = 0;
     const slides = document.querySelectorAll(".carousel img");
@@ -190,27 +213,6 @@ Stay tuned for upcoming events and exciting news about our community!
     // Show the initial slide
     showSlides(slideIndex);
 
-    // Countdown Timer
-    const countdownElement = document.getElementById("countdown");
-    const eventDate = new Date("February 6, 2025 17:00:00").getTime();
-
-    function updateCountdown() {
-      const now = new Date().getTime();
-      const distance = eventDate - now;
-
-      if (distance < 0) {
-        countdownElement.innerHTML = "Event has started!";
-        return;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-    }
-
-    setInterval(updateCountdown, 1000);
+    
   });
 </script>
