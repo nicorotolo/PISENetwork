@@ -61,25 +61,15 @@ header:
   /* Carousel styles */
   .carousel {
     position: relative;
-    max-width: 60%; /* Reduce the size of the carousel further to blend better */
+    max-width: 80%; /* Reduce the size of the carousel to make it blend better */
     margin: 20px auto;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
-  
-  .carousel img.blur-left, .carousel img.blur-right {
-    position: absolute;
-    top: 0;
-    width: 50%;
-    filter: blur(5px);
-    opacity: 0.6;
-  }
-  .carousel img.blur-left {
-    left: -25%;
-  }
-  .carousel img.blur-right {
-    right: -25%;
+  .carousel img {
+    width: 100%;
+    display: none;
   }
   .carousel img.active {
     display: block;
@@ -150,9 +140,7 @@ Our goal is to bridge the gap between alumni and current students by providing n
 - [Instagram](https://instagram.com/pise_network_and_alumni/)
 Stay tuned for upcoming events and exciting news about our community!
 
-
-  <img src="{{ site.baseurl }}/assets/images/dolfin4.jpg" alt="Dolfin 4" class="blur-left">
-  <img src="{{ site.baseurl }}/assets/images/dolfin2.jpg" alt="Dolfin 2" class="blur-right">
+<div class="carousel">
   <img src="{{ site.baseurl }}/assets/images/dolfin1.jpg" alt="Dolfin 1" class="active">
   <img src="{{ site.baseurl }}/assets/images/dolfin2.jpg" alt="Dolfin 2">
   <img src="{{ site.baseurl }}/assets/images/dolfin3.jpg" alt="Dolfin 3">
@@ -179,15 +167,6 @@ Stay tuned for upcoming events and exciting news about our community!
     function showSlides(index) {
       slides.forEach((slide, i) => {
         slide.style.display = (i === index) ? "block" : "none";
-        if (i === (index - 1 + slides.length) % slides.length) {
-          slides[i].classList.add("blur-left");
-          slides[i].classList.remove("active");
-        } else if (i === (index + 1) % slides.length) {
-          slides[i].classList.add("blur-right");
-          slides[i].classList.remove("active");
-        } else {
-          slides[i].classList.remove("blur-left", "blur-right");
-        }
       });
     }
 
