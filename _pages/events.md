@@ -24,11 +24,11 @@ header:
 Stay informed about our latest events, including workshops, networking sessions, and seminars. Below, you'll find our upcoming and past events organized by the PISE Network.
 
 <div class="calendar-container">
-  <iframe src="https://calendar.google.com/calendar/embed?src=5bafd044d7d4022a0eb80ea3694717d3eff047c74b0a39783caaa43efdd20597@group.calendar.google.com&ctz=Europe/Rome" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+  <iframe src="https://calendar.google.com/calendar/embed?src=5bafd044d7d4022a0eb80ea3694717d3eff047c74b0a39783caaa43efdd20597@group.calendar.google.com&ctz=Europe/Rome" style="border: 0; width: 100%; height: 600px;" frameborder="0" scrolling="no"></iframe>
 </div>
 
 <div class="add-to-calendar">
-  <button onclick="addToCalendar()" class="add-calendar-button">Add the Events to Your Calendar</button>
+  <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=PISE+Network+Events&dates=20241107T160000Z/20241107T164500Z&details=Join+the+PISE+Network+for+our+upcoming+events!&sf=true&output=xml" target="_blank" class="add-calendar-button">Add PISE Network Events to Your Calendar</a>
 </div>
 
 <div class="event-list">
