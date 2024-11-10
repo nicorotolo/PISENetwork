@@ -29,24 +29,30 @@ header:
 
 <div class="event-list">
   <div class="event">
-    <h3>Networking Event for Current Students and Alumni</h3>
-    <p><strong>Date:</strong> November 20, 2024</p>
-    <p><strong>Location:</strong> Ca' Foscari University, Venice</p>
-    <p>Join us for an exciting opportunity to network with PISE alumni, share experiences, and grow your professional connections.</p>
+    <h3>1st PISE Network Online Workshop: How to Write Your CV</h3>
+    <p><strong>Date:</strong> November 7, 2024</p>
+    <p><strong>Time:</strong> 17:00 - 17:45</p>
+    <p><strong>Location:</strong> Online (Google Meet)</p>
+    <p>Discover key strategies to build a professional CV that highlights your strengths, showcases your experience, and catches the attention of recruiters.</p>
+    <p><a href="https://meet.google.com/kvw-udxm-wib" target="_blank">Join with Google Meet</a></p>
   </div>
 
   <div class="event">
-    <h3>Workshop: Public Policy in the Modern World</h3>
-    <p><strong>Date:</strong> December 5, 2024</p>
-    <p><strong>Location:</strong> Online (Zoom)</p>
-    <p>Gain insights into the latest trends in public policy with leading experts. This workshop is designed to broaden your understanding of policy issues that affect the modern world.</p>
+    <h3>2nd PISE Network Online Workshop: How to Set Up Your LinkedIn Profile</h3>
+    <p><strong>Date:</strong> December 12, 2024</p>
+    <p><strong>Time:</strong> 17:00 - 17:45</p>
+    <p><strong>Location:</strong> Online (Google Meet)</p>
+    <p>Learn how to create a compelling LinkedIn profile that showcases your skills and experience, helping you connect with professionals and boost your career prospects.</p>
+    <p><a href="https://meet.google.com/kvw-udxm-wib" target="_blank">Join with Google Meet</a></p>
   </div>
 
   <div class="event">
-    <h3>Alumni Success Stories: Insights and Q&A</h3>
-    <p><strong>Date:</strong> January 15, 2025</p>
-    <p><strong>Location:</strong> Ca' Foscari University, Venice</p>
-    <p>Hear from PISE alumni about their career journeys, experiences, and advice for current students. This interactive event will include a Q&A session.</p>
+    <h3>3rd PISE Network Online Workshop: Erasmus Tips and Tricks</h3>
+    <p><strong>Date:</strong> February 6, 2025</p>
+    <p><strong>Time:</strong> 17:00 - 17:45</p>
+    <p><strong>Location:</strong> Online (Google Meet)</p>
+    <p>Prepare for your Erasmus journey with tips on adapting to a new culture, managing your studies abroad, and making the most of this unique experience.</p>
+    <p><a href="https://meet.google.com/kvw-udxm-wib" target="_blank">Join with Google Meet</a></p>
   </div>
 </div>
 
