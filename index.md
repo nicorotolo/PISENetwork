@@ -14,7 +14,7 @@ header:
     <li><a href="{{ site.baseurl }}/board/">Board</a></li>
     <li><a href="{{ site.baseurl }}/events/">Events</a></li>
     <li><a href="{{ site.baseurl }}/editorial/">Editorial</a></li>
-    <li><a href="{{ site.baseurl }}/contact/">Collaborate with Us</a></li>
+    <li><a href="{{ site.baseurl }}/collaborate/">Collaborate with Us</a></li>
   </ul>
 </nav>
 
