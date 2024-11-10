@@ -8,6 +8,8 @@ header:
   caption: "Connecting students and alumni of PISE at Ca' Foscari University"
 ---
 
+<div class="banner-spacer"></div>
+
 <nav class="custom-nav">
   <ul>
     <li><a href="/">Home</a></li>
@@ -20,14 +22,17 @@ header:
 </nav>
 
 <style>
+  .banner-spacer {
+    height: 400px; /* Adjust based on the height of your banner image */
+  }
   .custom-nav {
     display: flex;               /* Use Flexbox to manage spacing */
     justify-content: space-evenly; /* Space links evenly across the bar */
     align-items: center;
     width: 100%;                 /* Make the navigation bar take full width */
-    position: fixed;             /* Fix at the top of the page */
+    position: sticky;            /* Stick to the top of the viewport when scrolling */
     top: 0;
-    background-color: #004080;   /* Dark blue background */
+    background-color: rgba(255, 255, 240, 0.9); /* Light-white/beige background */
     padding: 15px 0;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 10;                 /* Keep on top of other content */
@@ -45,8 +50,8 @@ header:
   }
   .custom-nav a {
     display: block;              /* Allow padding on links to work like a button */
-    color: #ffffff;              /* White text color */
-    background-color: #0073e6;   /* Button blue background */
+    color: #9b1c31;              /* Ca' Foscari red color */
+    background-color: rgba(255, 255, 240, 0.9); /* Light-white/beige button background */
     text-decoration: none;       /* Remove underline from links */
     padding: 10px 20px;          /* Space inside each button */
     margin: 5px;                 /* Spacing between buttons */
@@ -55,7 +60,7 @@ header:
     transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
   }
   .custom-nav a:hover {
-    background-color: #005bb5;   /* Darker blue on hover */
+    background-color: #e3c8c1;   /* Slightly darker beige on hover */
     transform: scale(1.05);      /* Slightly increase size on hover for emphasis */
   }
 </style>
@@ -71,3 +76,4 @@ Our goal is to bridge the gap between alumni and current students by providing n
 - [Instagram](https://instagram.com/pise_network_and_alumni/)
 
 Stay tuned for upcoming events and exciting news about our community!
+
