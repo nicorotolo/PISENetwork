@@ -1,4 +1,43 @@
 ---
+<nav class="custom-nav">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/board/">Board</a></li>
+    <li><a href="/events/">Events</a></li>
+    <li><a href="/editorial/">Editorial</a></li>
+    <li><a href="/resources/">Resources</a></li>
+    <li><a href="/contact/">Contact</a></li>
+  </ul>
+</nav>
+
+<style>
+  .custom-nav {
+    text-align: center;
+    margin-top: 20px;
+    background-color: #f8f9fa;
+    padding: 10px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  .custom-nav ul {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+  }
+  .custom-nav li {
+    display: inline;
+    margin: 0 15px;
+  }
+  .custom-nav a {
+    text-decoration: none;
+    color: #0073e6;
+    font-weight: bold;
+  }
+  .custom-nav a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+
 layout: splash
 title: "Welcome to the PISE Network"
 permalink: /
