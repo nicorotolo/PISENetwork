@@ -25,8 +25,8 @@ header:
     <h3>Nicola Rotolo</h3>
     <p class="board-description">MSc in Philosophy and Public Policy at the London School of Economics | MSc in Political Economy at Sapienza</p>
     <div class="social-links">
-      <a href="https://linkedin.com/in/nicola-rotolo">LinkedIn</a>
-      <a href="https://instagram.com/nicola_rotolo">Instagram</a>
+      <a href="https://www.linkedin.com/in/nicolarotolo/">LinkedIn</a>
+      <a href="https://www.instagram.com/nicola.rotolo/profilecard/?igsh=MTJ2MDhjZXhmOTBu">Instagram</a>
     </div>
   </div>
 
@@ -126,4 +126,3 @@ header:
   text-decoration: underline;
 }
 </style>
-
