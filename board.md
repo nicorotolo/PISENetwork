@@ -18,22 +18,12 @@ Meet the dedicated members of the PISE Network Board, who are working together t
   </div>
 
   <div class="board-member">
-    <img src="/assets/images/giorgio_sanders.jpg" alt="Giorgio Sanders" width="200">
+    <img src="/assets/images/nicola_rotolo.jpg" alt="Giorgio Sanders" width="200">
     <h3>Giorgio Sanders</h3>
     <p>MSc student at the London School of Economics</p>
     <ul>
       <li><a href="https://www.linkedin.com/in/giorgio-sanders-/">LinkedIn</a></li>
       <li><a href="https://www.instagram.com/giorgio_sanders?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a></li>
-    </ul>
-  </div>
-
-  <div class="board-member">
-    <img src="/assets/images/nicola_rotolo.jpg" alt="Nicola Rotolo" width="200">
-    <h3>Nicola Rotolo</h3>
-    <p>MSc in Philosophy and Public Policy at the London School of Economics | MSc in Political Economy at Sapienza</p>
-    <ul>
-      <li><a href="https://linkedin.com/in/nicola-rotolo">LinkedIn</a></li>
-      <li><a href="https://instagram.com/nicola_rotolo">Instagram</a></li>
     </ul>
   </div>
 
@@ -43,12 +33,14 @@ Meet the dedicated members of the PISE Network Board, who are working together t
 <style>
 .board-member-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
 }
 .board-member {
   text-align: center;
   margin-bottom: 40px;
+  flex: 1 1 300px;
 }
 .board-member img {
   border-radius: 50%;
@@ -65,6 +57,7 @@ Meet the dedicated members of the PISE Network Board, who are working together t
 .board-member ul li a {
   text-decoration: none;
   color: #0073e6;
+  font-weight: bold;
 }
 .board-member ul li a:hover {
   text-decoration: underline;
