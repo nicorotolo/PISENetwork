@@ -19,13 +19,15 @@ header:
   </ul>
 </nav>
 
+
+<hr style="border: none; border-top: 1px solid #e3c8c1; margin: 20px 0;">
 # Upcoming Events
 
 Stay informed about our latest events, including workshops, networking sessions, and seminars. Below, you'll find our upcoming and past events organized by the PISE Network.
 
 
 <div class="calendar-container">
-  <iframe src="https://calendar.google.com/calendar/embed?src=5bafd044d7d4022a0eb80ea3694717d3eff047c74b0a39783caaa43efdd20597@group.calendar.google.com&ctz=Europe/Rome" style="border: 0" width="80%" height="500" frameborder="0" scrolling="no"></iframe>
+  <iframe src="https://calendar.google.com/calendar/embed?src=5bafd044d7d4022a0eb80ea3694717d3eff047c74b0a39783caaa43efdd20597@group.calendar.google.com&ctz=Europe/Rome" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
 </div>
 
 <div class="event-list">
