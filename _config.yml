@@ -17,11 +17,11 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 # Site Settings
 locale                   : "en-US"
 rtl                      : # true, false (default) # turns direction of the page into right to left for RTL languages
-title                    : "Site Title"
+title                    : "PISE Network"
 title_separator          : "-"
-subtitle                 : # site tagline that appears below site title in masthead
+subtitle                 : "Learning, Growing, and Succeeding Together"# site tagline that appears below site title in masthead
 name                     : "Your Name"
-description              : "An amazing website."
+description              : "The official community for PISE students and alumni at Ca' Foscari University. Our mission is to provide networking opportunities, promote professional development, and create a space where extra-academic growth flourishes."
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -102,7 +102,11 @@ social:
   type                   : # Person or Organization (defaults to Person)
   name                   : # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
-
+    - label: "LinkedIn"
+      url: "https://www.linkedin.com/groups/9804209/"
+    - label: "Instagram"
+      url: "https://www.instagram.com/pise_network_and_alumni/"
+    
 # Analytics
 analytics:
   provider               : # false (default), "google", "google-universal", "google-gtag", "custom"
