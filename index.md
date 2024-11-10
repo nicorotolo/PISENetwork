@@ -3,7 +3,7 @@ layout: splash
 title: "Welcome to the PISE Network"
 permalink: /
 header:
-  overlay_image: "/assets/images/banner_san_marco.jpg" # Path to your banner image
+  overlay_image: "/assets/images/banner_san marco.jpg" # Path to your banner image
   overlay_filter: 0.5 # Adjust the opacity of the overlay (0.0 to 1.0)
   caption: "Connecting students and alumni of PISE at Ca' Foscari University"
 ---
