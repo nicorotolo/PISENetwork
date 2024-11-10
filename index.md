@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PISE Network - Learning, Growing, and Succeeding Together</title>
+    <title>PISE Network Board</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="/assets/css/main.css">
     <style>
@@ -15,6 +15,7 @@
             color: #333;
             margin: 0;
             padding: 0;
+            width: 100%;
         }
 
         .hero {
@@ -53,10 +54,52 @@
             transform: scale(1.05);
         }
 
+        .custom-nav {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 100%;
+            position: sticky;
+            top: 0;
+            background-color: rgba(240, 240, 240, 0.9);
+            padding: 15px 0;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        .custom-nav ul {
+            display: flex;
+            width: 100%;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .custom-nav li {
+            flex: 1;
+            text-align: center;
+        }
+
+        .custom-nav a {
+            display: block;
+            color: #9b1c31;
+            background-color: rgba(240, 240, 240, 0.9);
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .custom-nav a:hover {
+            background-color: #e3c8c1;
+            transform: scale(1.05);
+        }
+
         .slideshow {
             position: relative;
             width: 100%;
-            max-width: 1200px;
             margin: 40px auto;
             overflow: hidden;
             border-radius: 10px;
@@ -96,7 +139,7 @@
         }
 
         .feature {
-            max-width: 30%;
+            width: 30%;
             text-align: center;
         }
 
@@ -139,7 +182,7 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: calc(33% - 40px);
+            width: 30%;
             text-align: left;
             transition: transform 0.3s;
         }
@@ -273,6 +316,16 @@
 </head>
 
 <body>
+    <nav class="custom-nav">
+        <ul>
+            <li><a href="/minimal-mistakes/">Home</a></li>
+            <li><a href="/minimal-mistakes/board/">Board</a></li>
+            <li><a href="/minimal-mistakes/events/">Events</a></li>
+            <li><a href="/minimal-mistakes/resources/">Resources</a></li>
+            <li><a href="/minimal-mistakes/collaborate/">Collaborate with Us</a></li>
+        </ul>
+    </nav>
+
     <div class="hero">
         <h1>Welcome to the PISE Network</h1>
         <p>Connecting and Empowering Students and Graduates of Philosophy, International Studies, and Economics</p>
