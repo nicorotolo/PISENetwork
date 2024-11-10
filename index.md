@@ -10,12 +10,12 @@ header:
 
 <nav class="custom-nav">
   <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/board/">Board</a></li>
-    <li><a href="/events/">Events</a></li>
-    <li><a href="/editorial/">Editorial</a></li>
-    <li><a href="/resources/">Resources</a></li>
-    <li><a href="/contact/">Contact</a></li>
+    <li><a href="{{ site.baseurl }}/">Home</a></li>
+    <li><a href="{{ site.baseurl }}/board/">Board</a></li>
+    <li><a href="{{ site.baseurl }}/events/">Events</a></li>
+    <li><a href="{{ site.baseurl }}/editorial/">Editorial</a></li>
+    <li><a href="{{ site.baseurl }}/resources/">Resources</a></li>
+    <li><a href="{{ site.baseurl }}/contact/">Contact</a></li>
   </ul>
 </nav>
 
