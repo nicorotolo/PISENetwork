@@ -13,9 +13,8 @@ header:
     <li><a href="/minimal-mistakes/">Home</a></li>
     <li><a href="/minimal-mistakes/board/">Board</a></li>
     <li><a href="/minimal-mistakes/events/">Events</a></li>
-    <li><a href="/minimal-mistakes/editorial/">Editorial</a></li>
-    <li><a href="/minimal-mistakes/resources/">Resources</a></li>
-    <li><a href="/minimal-mistakes/contact/">Contact</a></li>
+        <li><a href="/minimal-mistakes/resources/">Resources</a></li>
+    <li><a href="/minimal-mistakes/collaborate/">Collaborate with Us</a></li>
   </ul>
 </nav>
 
@@ -32,7 +31,7 @@ Stay informed about our latest events, including workshops, networking sessions,
 
 <div class="event-list">
   <div class="event">
-    <h3>1st PISE Network Online Workshop: How to Write Your CV</h3>
+    <h3>📅 </h3>
     <p><strong>Date:</strong> November 7, 2024</p>
     <p><strong>Time:</strong> 17:00 - 17:45</p>
     <p><strong>Location:</strong> Online (Google Meet)</p>
@@ -41,7 +40,7 @@ Stay informed about our latest events, including workshops, networking sessions,
   </div>
 
   <div class="event">
-    <h3>2nd PISE Network Online Workshop: How to Set Up Your LinkedIn Profile</h3>
+    <h3>📅 </h3>
     <p><strong>Date:</strong> December 12, 2024</p>
     <p><strong>Time:</strong> 17:00 - 17:45</p>
     <p><strong>Location:</strong> Online (Google Meet)</p>
@@ -50,7 +49,7 @@ Stay informed about our latest events, including workshops, networking sessions,
   </div>
 
   <div class="event">
-    <h3>3rd PISE Network Online Workshop: Erasmus Tips and Tricks</h3>
+    <h3>📅 </h3>
     <p><strong>Date:</strong> February 6, 2025</p>
     <p><strong>Time:</strong> 17:00 - 17:45</p>
     <p><strong>Location:</strong> Online (Google Meet)</p>
