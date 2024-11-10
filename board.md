@@ -10,7 +10,7 @@ header:
 
 <nav class="custom-nav">
   <ul>
-    <li><a href="/">Home</a></li>
+    <li><a href="/minimal-mistakes/">Home</a></li>
     <li><a href="/board/">Board</a></li>
     <li><a href="/events/">Events</a></li>
     <li><a href="/editorial/">Editorial</a></li>
@@ -126,3 +126,4 @@ header:
   text-decoration: underline;
 }
 </style>
+
