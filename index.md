@@ -17,8 +17,9 @@ header:
     <li><a href="/resources/">Resources</a></li>
     <li><a href="/contact/">Contact</a></li>
   </ul>
-
-<div class="nav-text-spacer"></div>
+</nav>
+
+<div style="margin-top: 20px;"></div>
 
 <style>
   .custom-nav {
@@ -59,16 +60,20 @@ header:
     background-color: #e3c8c1;   /* Slightly darker beige on hover */
     transform: scale(1.05);      /* Slightly increase size on hover for emphasis */
   }
-
-  .nav-text-spacer {
-    margin-top: 20px; /* Adds space between the buttons and the text */
-  }
+</style>
 
 # PISE Network
 
 Welcome to the official website of the PISE Network! We connect over 300 graduates and students from the Bachelor's program in Philosophy, International Studies, and Economics (PISE) at Ca' Foscari University.
 
 Our goal is to bridge the gap between alumni and current students by providing networking opportunities, professional growth, and activities that enrich the academic experience.
+
+**Follow us on social media:**
+- [LinkedIn](https://www.linkedin.com/groups/9804209/)
+- [Instagram](https://instagram.com/pise_network_and_alumni/)
+
+Stay tuned for upcoming events and exciting news about our community!
+
 
 **Follow us on social media:**
 - [LinkedIn](https://www.linkedin.com/groups/9804209/)
