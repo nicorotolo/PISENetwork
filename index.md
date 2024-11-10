@@ -73,10 +73,3 @@ Our goal is to bridge the gap between alumni and current students by providing n
 - [Instagram](https://instagram.com/pise_network_and_alumni/)
 
 Stay tuned for upcoming events and exciting news about our community!
-
-
-**Follow us on social media:**
-- [LinkedIn](https://www.linkedin.com/groups/9804209/)
-- [Instagram](https://instagram.com/pise_network_and_alumni/)
-
-Stay tuned for upcoming events and exciting news about our community!
