@@ -11,8 +11,8 @@ Meet the dedicated members of the PISE Network Board, who are working together t
     <img src="/assets/images/nicola_rotolo.jpg" alt="Nicola Rotolo" width="200">
     <h3>Nicola Rotolo</h3>
     <ul>
-      <li><a href="https://linkedin.com/in/nicola-rotolo">LinkedIn</a></li>
-      <li><a href="https://instagram.com/nicola_rotolo">Instagram</a></li>
+      <li><a href="https://www.linkedin.com/in/nicolarotolo/">LinkedIn</a></li>
+      <li><a href="https://www.instagram.com/nicola.rotolo/profilecard/?igsh=MTJ2MDhjZXhmOTBu">Instagram</a></li>
     </ul>
   </div>
 
