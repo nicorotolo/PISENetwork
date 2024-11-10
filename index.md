@@ -17,7 +17,8 @@ header:
     <li><a href="/resources/">Resources</a></li>
     <li><a href="/contact/">Contact</a></li>
   </ul>
-</nav>
+
+<div class="nav-text-spacer"></div>
 
 <style>
   .custom-nav {
@@ -58,7 +59,10 @@ header:
     background-color: #e3c8c1;   /* Slightly darker beige on hover */
     transform: scale(1.05);      /* Slightly increase size on hover for emphasis */
   }
-</style>
+
+  .nav-text-spacer {
+    margin-top: 20px; /* Adds space between the buttons and the text */
+  }
 
 # PISE Network
 
@@ -71,5 +75,3 @@ Our goal is to bridge the gap between alumni and current students by providing n
 - [Instagram](https://instagram.com/pise_network_and_alumni/)
 
 Stay tuned for upcoming events and exciting news about our community!
-
-
