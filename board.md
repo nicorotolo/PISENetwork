@@ -109,7 +109,7 @@ header:
   font-size: 1.5em;
 }
 .board-description {
-  font-size: 0.9em; /* Shrink the font size for descriptions */
+  font-size: 0.8em; /* Further shrink the font size for descriptions */ */
   margin: 10px 0;
 }
 .social-links {
