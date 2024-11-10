@@ -113,18 +113,12 @@ header:
   }
 </style>
 
-<footer>
-  <div class="footer-content">
-    <p>&copy; 2024 PISE Network. All rights reserved.</p>
-    <p>Connect with us on:
-      <a href="https://www.linkedin.com/groups/9804209/" target="_blank">LinkedIn</a> |
-      <a href="https://instagram.com/pise_network_and_alumni/" target="_blank">Instagram</a>
-    </p>
-  </div>
+
   <div class="social-links">
     <a href="https://www.linkedin.com/groups/9804209/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="30" style="border-radius: 10%;"></a>
     <a href="https://instagram.com/pise_network_and_alumni/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" width="30" style="border-radius: 10%;"></a>
   </div>
+  
 </footer>
 
 # PISE Network
