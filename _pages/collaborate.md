@@ -37,7 +37,7 @@ header:
   </div>
 
   <h3>Contact Us</h3>
-  <p>If you're interested in collaborating, please fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSdzQVSNPTn8wuEiG0l9d5EHgJJOHP3K9QMJPSb_B9uWILes3Q/viewform?usp=sf_link" target="_blank">this form</a> or contact us via email at <a href="mailto:collaborate@pisenetwork.com">collaborate@pisenetwork.com</a>.</p>
+  <p>If you're interested in collaborating, please fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLSdzQVSNPTn8wuEiG0l9d5EHgJJOHP3K9QMJPSb_B9uWILes3Q/viewform?usp=sf_link" target="_blank">this form</a>.</p>
 
   <blockquote><strong>Note:</strong> We are always open to new ideas! If you have any unique contributions in mind, please feel free to reach out.</blockquote>
 
