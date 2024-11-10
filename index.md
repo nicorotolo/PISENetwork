@@ -61,8 +61,8 @@ header:
   /* Carousel styles */
   .carousel {
     position: relative;
-    max-width: 100%;
-    margin: 40px auto;
+    max-width: 80%; /* Reduce the size of the carousel to make it blend better */
+    margin: 20px auto;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -175,6 +175,7 @@ Stay tuned for upcoming events and exciting news about our community!
     prevButton.addEventListener("click", prevSlide);
 
     // Auto-slide every 5 seconds
+    setInterval(nextSlide, 5000);
     setInterval(nextSlide, 5000);
 
     // Show the initial slide
