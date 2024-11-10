@@ -37,7 +37,6 @@
   }
 </style>
 
-
 layout: splash
 title: "Welcome to the PISE Network"
 permalink: /
