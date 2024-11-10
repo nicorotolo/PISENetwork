@@ -25,8 +25,8 @@ header:
     <h3>Nicola Rotolo</h3>
     <p class="board-description">MSc in Philosophy and Public Policy at the London School of Economics | MSc in Political Economy at Sapienza</p>
     <div class="social-links">
-      <a href="https://www.linkedin.com/in/nicolarotolo/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="30"></a>
-      <a href="https://www.instagram.com/nicola.rotolo/profilecard/?igsh=MTJ2MDhjZXhmOTBu" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" width="30"></a>
+      <a href="https://www.linkedin.com/in/nicolarotolo/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="30" style="border-radius: 10%;"></a>
+      <a href="https://www.instagram.com/nicola.rotolo/profilecard/?igsh=MTJ2MDhjZXhmOTBu" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" width="30" style="border-radius: 10%;"></a>
     </div>
   </div>
 
