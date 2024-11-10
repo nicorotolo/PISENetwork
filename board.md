@@ -10,6 +10,7 @@ Meet the dedicated members of the PISE Network Board, who are working together t
   <div class="board-member">
     <img src="/assets/images/nicola_rotolo.jpg" alt="Nicola Rotolo" width="200">
     <h3>Nicola Rotolo</h3>
+    <p>MSc in Philosophy and Public Policy at the London School of Economics | MSc in Political Economy at Sapienza</p>
     <ul>
       <li><a href="https://linkedin.com/in/nicola-rotolo">LinkedIn</a></li>
       <li><a href="https://instagram.com/nicola_rotolo">Instagram</a></li>
