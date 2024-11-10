@@ -23,8 +23,10 @@ header:
 
 Stay informed about our latest events, including workshops, networking sessions, and seminars. Below, you'll find our upcoming and past events organized by the PISE Network.
 
-<div class="calendar-container">
-  <iframe src="https://calendar.google.com/calendar/embed?src=5bafd044d7d4022a0eb80ea3694717d3eff047c74b0a39783caaa43efdd20597@group.calendar.google.com&ctz=Europe/Rome" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+
+
+<div class="add-to-calendar">
+  <button onclick="addToCalendar()" class="add-calendar-button">Add PISE Network Events to Your Calendar</button>
 </div>
 
 <div class="event-list">
@@ -119,5 +121,24 @@ Stay informed about our latest events, including workshops, networking sessions,
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   overflow: hidden;
+}
+
+.add-to-calendar {
+  text-align: center;
+  margin: 20px 0;
+}
+.add-calendar-button {
+  background-color: #9b1c31;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.add-calendar-button:hover {
+  background-color: #e3c8c1;
+  transform: scale(1.1);
 }
 </style>
