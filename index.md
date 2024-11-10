@@ -6,6 +6,7 @@ header:
   overlay_image: "/assets/images/banner_san marco.jpeg" # Path to your banner image
   overlay_filter: 0.5 # Adjust the opacity of the overlay (0.0 to 1.0)
   caption: "Connecting students and alumni of PISE at Ca' Foscari University"
+  animate: true # Add animation to the header for a dynamic effect
 ---
 <nav class="custom-nav">
   <ul>
@@ -103,5 +104,16 @@ Stay tuned for upcoming events and exciting news about our community!
   }
   .social-links a {
     margin: 0 10px;
+  }
+  header.splash {
+    animation: parallax 10s infinite alternate ease-in-out; /* Add parallax effect */
+  }
+  @keyframes parallax {
+    0% {
+      background-position: center top;
+    }
+    100% {
+      background-position: center bottom;
+    }
   }
 </style>
