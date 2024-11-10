@@ -21,7 +21,7 @@ header:
 
 <div class="board-member-container">
   <div class="board-member">
-    <img src="https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPOSITORY_NAME/assets/images/nicola_rotolo.jpg" alt="Nicola Rotolo" width="200">
+    <img src="assets/images/nicola_rotolo.jpg" alt="Nicola Rotolo" width="200">
     <h3>Nicola Rotolo</h3>
     <p class="board-description">MSc in Philosophy and Public Policy at the London School of Economics | MSc in Political Economy at Sapienza</p>
     <div class="social-links">
@@ -31,7 +31,7 @@ header:
   </div>
 
   <div class="board-member">
-    <img src="https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPOSITORY_NAME/assets/images/nicola_rotolo.jpg" alt="Giorgio Sanders" width="200">
+    <img src="assets/images/nicola_rotolo.jpg" alt="Giorgio Sanders" width="200">
     <h3>Giorgio Sanders</h3>
     <p class="board-description">MSc student at the London School of Economics</p>
     <div class="social-links">
