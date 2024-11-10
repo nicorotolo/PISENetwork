@@ -103,10 +103,10 @@ Our goal is to bridge the gap between alumni and current students by providing n
 Stay tuned for upcoming events and exciting news about our community!
 
 <div class="carousel">
-  <img src="/assets/images/slide1.jpg" alt="assets/images/dolfin1.jpg" class="active">
-  <img src="/assets/images/slide2.jpg" alt="assets/images/dolfin2.jpg">
-  <img src="/assets/images/slide3.jpg" alt="assets/images/dolfin3.jpg">
-  <img src="/assets/images/slide3.jpg" alt="assets/images/dolfin4.jpg">
+  <img src="/assets/images/dolfin1.jpg" alt="Dolfin 1" class="active">
+  <img src="/assets/images/dolfin2.jpg" alt="Dolfin 2">
+  <img src="/assets/images/dolfin3.jpg" alt="Dolfin 3">
+  <img src="/assets/images/dolfin4.jpg" alt="Dolfin 4">
   <div class="carousel-controls">
     <button class="prev">&#10094;</button>
     <button class="next">&#10095;</button>
