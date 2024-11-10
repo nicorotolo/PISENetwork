@@ -34,15 +34,17 @@ Meet the dedicated members of the PISE Network Board, who are working together t
 .board-member-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
+  justify-content: space-between; /* Distribute items across the full width */
+  gap: 20px;
   padding: 20px; /* Adds padding around the entire container */
+  width: 100%;
 }
 .board-member {
   text-align: center;
   margin-bottom: 20px; /* Reduced bottom margin for better spacing */
-  flex: 0 1 calc(33.33% - 40px); /* Allows three cards per row with spacing */
+  flex: 1 1 calc(33.33% - 20px); /* Allows three cards per row with spacing */
   box-sizing: border-box;
+  max-width: 400px; /* Limit the maximum width for better visual balance */
 }
 .board-member img {
   border-radius: 50%;
