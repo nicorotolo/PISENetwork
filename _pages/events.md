@@ -3,9 +3,9 @@ layout: splash
 title: "Upcoming Events"
 permalink: /events/
 header:
-  overlay_image: "/assets/images/events_banner.jpg" # Replace with path to your events banner image
+  overlay_image: "/assets/images/events_banner.jpg" # Path to your banner image
   overlay_filter: 0.5 # Adjust the opacity of the overlay (0.0 to 1.0)
-  caption: "Explore upcoming events organized by the PISE Network"
+  caption: "Join us at our upcoming events and gatherings"
 ---
 
 <nav class="custom-nav">
@@ -18,25 +18,42 @@ header:
   </ul>
 </nav>
 
-<div class="events-container">
-  <div class="event-item">
-    <h3>Upcoming Event: PISE Network Annual Meetup</h3>
-    <p>Date: December 15, 2024</p>
-    <p>Location: Ca' Foscari University</p>
-    <p>Description: Join us for a day of networking, panel discussions, and more. Open to all PISE students and alumni.</p>
-  </div>
-
-  <div class="event-item">
-    <h3>Workshop: Career Pathways in Economics</h3>
-    <p>Date: January 10, 2025</p>
-    <p>Location: Online</p>
-    <p>Description: This online workshop will provide insights into different career paths for PISE graduates in economics.</p>
-  </div>
-
-  <!-- Add more events here as needed -->
+<!-- Calendar Section -->
+<div class="calendar-section">
+  <h2>Event Calendar</h2>
+  <!-- Embed or link your calendar here -->
+  <iframe src="YOUR_CALENDAR_LINK" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
 </div>
 
-> **Note:** Keep checking back for updates on more events!
+<!-- Button to Add Events to Calendar -->
+<div class="add-calendar-button">
+  <a href="YOUR_CALENDAR_ICS_LINK" class="button">Add the Events to Your Calendar</a>
+</div>
+
+<!-- Division Line -->
+<hr>
+
+<!-- Next Events Section -->
+<div class="next-events">
+  <h2>Next Events</h2>
+
+  <!-- Example of Next Event -->
+  <div class="event">
+    <h3>Event Title 1</h3>
+    <p>Date: November 20, 2024</p>
+    <p>Location: Online / Location Name</p>
+    <p>Description: Join us for an insightful discussion on [Topic]. Engage with experts and network with peers.</p>
+  </div>
+
+  <div class="event">
+    <h3>Event Title 2</h3>
+    <p>Date: December 10, 2024</p>
+    <p>Location: Conference Hall, University</p>
+    <p>Description: A workshop focused on career skills and networking for PISE students and alumni.</p>
+  </div>
+
+  <!-- Additional events can be added here in the same structure -->
+</div>
 
 <style>
 .custom-nav {
@@ -78,26 +95,51 @@ header:
   transform: scale(1.05);
 }
 
-.events-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px;
+.calendar-section {
+  text-align: center;
+  margin: 20px 0;
+}
+.add-calendar-button {
+  text-align: center;
+  margin: 20px 0;
+}
+.add-calendar-button .button {
+  background-color: #9b1c31;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.add-calendar-button .button:hover {
+  background-color: #e3c8c1;
+  transform: scale(1.05);
 }
 
-.event-item {
-  background-color: #f8f8f8;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+hr {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+  margin: 20px 0;
 }
 
-.event-item h3 {
-  margin-top: 0;
+.next-events {
+  margin: 20px;
+}
+.next-events h2 {
+  font-size: 1.8em;
   color: #9b1c31;
 }
-
-.event-item p {
-  margin: 5px 0;
+.event {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.event h3 {
+  font-size: 1.5em;
+  color: #333;
 }
 </style>
