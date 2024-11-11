@@ -1,59 +1,68 @@
 ---
 layout: splash
-title: "Upcoming Events"
+title: "Events"
 permalink: /events/
 header:
-  overlay_image: "/assets/images/events_banner.jpg" # Path to your banner image
+  overlay_image: "/assets/images/banner_events.png" # Path to your banner image
   overlay_filter: 0.5 # Adjust the opacity of the overlay (0.0 to 1.0)
-  caption: "Join us at our upcoming events and gatherings"
+  caption: "Stay updated with the latest events organized by the PISE Network"
 ---
 
 <nav class="custom-nav">
   <ul>
-    <li><a href="{{ site.baseurl }}/">Home</a></li>
-    <li><a href="{{ site.baseurl }}/events/">Events</a></li>
-    <li><a href="{{ site.baseurl }}/resources/">Resources</a></li>
-    <li><a href="{{ site.baseurl }}/board/">Board</a></li>
-    <li><a href="{{ site.baseurl }}/collaborate/">Collaborate with Us</a></li>
+    <li><a href="/minimal-mistakes/">Home</a></li>
+    <li><a href="/minimal-mistakes/events/">Events</a></li>
+    <li><a href="/minimal-mistakes/resources/">Resources</a></li>
+    <li><a href="/minimal-mistakes/board/">Board</a></li>
+    <li><a href="/minimal-mistakes/collaborate/">Collaborate with Us</a></li>
   </ul>
 </nav>
 
-<!-- Calendar Section -->
-<div class="calendar-section">
-  <h2>Event Calendar</h2>
-  <!-- Embed or link your calendar here -->
-  <iframe src="YOUR_CALENDAR_LINK" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+
+
+# Upcoming Events
+
+Stay informed about our latest events, including workshops, networking sessions, and seminars. Below, you'll find our upcoming and past events organized by the PISE Network.
+
+<div class="calendar-container">
+  <iframe src="https://calendar.google.com/calendar/embed?src=5bafd044d7d4022a0eb80ea3694717d3eff047c74b0a39783caaa43efdd20597@group.calendar.google.com&ctz=Europe/Rome" style="border: 0; width: 100%; height: 600px;" frameborder="0" scrolling="no"></iframe>
 </div>
 
-<!-- Button to Add Events to Calendar -->
-<div class="add-calendar-button">
-  <a href="YOUR_CALENDAR_ICS_LINK" class="button">Add the Events to Your Calendar</a>
-</div>
+
 
-<!-- Division Line -->
-<hr>
+<hr style="border: none; border-top: 2px solid #9b1c31; margin: 20px 0;">
+<h2 style="text-align: center; color: #9b1c31;">Next Events</h2>
 
-<!-- Next Events Section -->
-<div class="next-events">
-  <h2>Next Events</h2>
-
-  <!-- Example of Next Event -->
+<div class="event-list">
   <div class="event">
-    <h3>Event Title 1</h3>
-    <p>Date: November 20, 2024</p>
-    <p>Location: Online / Location Name</p>
-    <p>Description: Join us for an insightful discussion on [Topic]. Engage with experts and network with peers.</p>
+    <h3>📅 1st PISE Network Online Workshop: How to Write Your CV</h3>
+    <p><strong>Date:</strong> November 7, 2024</p>
+    <p><strong>Time:</strong> 17:00 - 17:45</p>
+    <p><strong>Location:</strong> Online (Google Meet)</p>
+    <p>Discover key strategies to build a professional CV that highlights your strengths, showcases your experience, and catches the attention of recruiters.</p>
+    <p><a href="https://meet.google.com/kvw-udxm-wib" target="_blank">Join with Google Meet</a></p>
   </div>
 
   <div class="event">
-    <h3>Event Title 2</h3>
-    <p>Date: December 10, 2024</p>
-    <p>Location: Conference Hall, University</p>
-    <p>Description: A workshop focused on career skills and networking for PISE students and alumni.</p>
+    <h3>📅 2nd PISE Network Online Workshop: How to Set Up Your LinkedIn Profile</h3>
+    <p><strong>Date:</strong> December 12, 2024</p>
+    <p><strong>Time:</strong> 17:00 - 17:45</p>
+    <p><strong>Location:</strong> Online (Google Meet)</p>
+    <p>Learn how to create a compelling LinkedIn profile that showcases your skills and experience, helping you connect with professionals and boost your career prospects.</p>
+    <p><a href="https://meet.google.com/kvw-udxm-wib" target="_blank">Join with Google Meet</a></p>
   </div>
 
-  <!-- Additional events can be added here in the same structure -->
+  <div class="event">
+    <h3>📅 3rd PISE Network Online Workshop: Erasmus Tips and Tricks</h3>
+    <p><strong>Date:</strong> February 6, 2025</p>
+    <p><strong>Time:</strong> 17:00 - 17:45</p>
+    <p><strong>Location:</strong> Online (Google Meet)</p>
+    <p>Prepare for your Erasmus journey with tips on adapting to a new culture, managing your studies abroad, and making the most of this unique experience.</p>
+    <p><a href="https://meet.google.com/kvw-udxm-wib" target="_blank">Join with Google Meet</a></p>
+  </div>
 </div>
+
+> **Note:** More events will be added soon, so keep an eye on this page!
 
 <style>
 .custom-nav {
@@ -95,51 +104,45 @@ header:
   transform: scale(1.05);
 }
 
-.calendar-section {
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+.event {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.event h3 {
+  margin-top: 0;
+}
+
+.calendar-container {
+  margin: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.add-to-calendar {
   text-align: center;
   margin: 20px 0;
 }
 .add-calendar-button {
-  text-align: center;
-  margin: 20px 0;
-}
-.add-calendar-button .button {
   background-color: #9b1c31;
-  color: #ffffff;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background-color 0.3s, transform 0.2s;
-}
-.add-calendar-button .button:hover {
-  background-color: #e3c8c1;
-  transform: scale(1.05);
-}
-
-hr {
-  border: 0;
-  height: 1px;
-  background: #ccc;
-  margin: 20px 0;
-}
-
-.next-events {
-  margin: 20px;
-}
-.next-events h2 {
-  font-size: 1.8em;
-  color: #9b1c31;
-}
-.event {
-  margin-bottom: 20px;
+  color: #fff;
+  border: none;
   padding: 15px;
-  border: 1px solid #ddd;
+  font-size: 1em;
+  cursor: pointer;
   border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, transform 0.3s;
 }
-.event h3 {
-  font-size: 1.5em;
-  color: #333;
+.add-calendar-button:hover {
+  background-color: #e3c8c1;
+  transform: scale(1.1);
 }
 </style>
