@@ -18,6 +18,12 @@ header:
   </ul>
 </nav>
 
+<!-- Add the section title and divider -->
+<div class="team-section">
+  <h2>Our Team</h2>
+  <hr>
+</div>
+
 <div class="board-member-container">
   <div class="board-member">
     <div class="board-card">
