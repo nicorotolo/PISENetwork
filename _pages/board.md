@@ -137,6 +137,26 @@ header:
   transform: scale(1.05);
 }
 
+.team-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.team-section h2 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.team-section hr {
+  width: 100px; /* Length of the dividing line */
+  height: 3px;
+  background-color: #9b1c31;
+  border: none;
+  margin: 0 auto; /* Center the line */
+}
+
 .content-container {
   padding: 20px;
   line-height: 1.6;
