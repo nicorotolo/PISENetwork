@@ -18,9 +18,31 @@ header:
   </ul>
 </nav>
 
+<!-- Our Mission Section -->
+<div class="mission-section">
+  <h2>Our Mission</h2>
+  <p>
+    Our mission is to foster a collaborative community among students and alumni of the PISE program,
+    promoting knowledge exchange, networking opportunities, and professional growth. Through events,
+    resources, and collaboration, we aim to support each member in achieving their academic and
+    career aspirations.
+  </p>
+</div>
+
+<!-- Our Story Section -->
+<div class="story-section">
+  <h2>Our Story</h2>
+  <p>
+    Founded by a group of passionate students, the PISE Network was born from a shared vision to
+    create a lasting support system for students and graduates. With roots in Ca' Foscari University,
+    we are committed to building a strong, inclusive, and active community that grows together.
+  </p>
+</div>
+
+
 <!-- Add the section title and divider -->
 <div class="team-section">
-  <h2>About Us</h2>
+  <h2>Our team</h2>
   <hr>
   <p style="text-align: center; font-size: 1.2em; color: #333; margin-top: 20px;">
     The PISE Network is a community of students and graduates from Ca' Foscari University's Philosophy, International Studies, and Economics program. Our mission is to foster collaboration, share resources, and create opportunities for personal and professional growth.
@@ -174,3 +196,31 @@ header:
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 </style>
+
+<!-- Our mission and our stroy style section -->
+<style>
+.mission-section, .story-section {
+  padding: 40px 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+.mission-section h2, .story-section h2 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.mission-section p, .story-section p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #555;
+}
+
+.mission-section h2, .story-section h2, .mission-section p, .story-section p {
+  margin: 0 auto;
+}
+</style>
+
