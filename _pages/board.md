@@ -19,8 +19,8 @@ header:
 </nav>
 
 <div class="board-member-container">
-  <div class="board-member-row">
-    <div class="board-member">
+  <div class="board-member-row" style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
+    <div class="board-member" style="flex: 1 1 45%; max-width: 45%; box-sizing: border-box;">
       <div class="board-card">
         <div class="board-card-front">
           <img src="{{ site.baseurl }}/assets/images/nicola_rotolo.jpg" alt="Nicola Rotolo">
@@ -36,7 +36,7 @@ header:
         </div>
       </div>
     </div>
-    <div class="board-member">
+    <div class="board-member" style="flex: 1 1 45%; max-width: 45%; box-sizing: border-box;">
       <div class="board-card">
         <div class="board-card-front">
           <img src="{{ site.baseurl }}/assets/images/giorgio_sanders.jpg" alt="Giorgio Sanders">
@@ -53,8 +53,8 @@ header:
       </div>
     </div>
   </div>
-  <div class="board-member-row">
-    <div class="board-member">
+  <div class="board-member-row" style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
+    <div class="board-member" style="flex: 1 1 45%; max-width: 45%; box-sizing: border-box;">
       <div class="board-card">
         <div class="board-card-front">
           <img src="{{ site.baseurl }}/assets/images/riccardo_gilioli.jpg" alt="Riccardo Gilioli">
@@ -69,7 +69,7 @@ header:
         </div>
       </div>
     </div>
-    <div class="board-member">
+    <div class="board-member" style="flex: 1 1 45%; max-width: 45%; box-sizing: border-box;">
       <div class="board-card">
         <div class="board-card-front">
           <img src="{{ site.baseurl }}/assets/images/simone_rizzo.jpg" alt="Simone Rizzo">
@@ -89,9 +89,8 @@ header:
 
 <div class="note" style="text-align: center; font-size: 1.2em; color: #333; margin-top: 30px;">
   <strong>Note:</strong> More board members will be added soon as the team grows.
-</div> style="text-align: center; font-size: 1.2em; color: #333; margin-top: 30px;">
-  <strong>Note:</strong> More board members will be added soon as the team grows.
 </div>
+
 
 
 <style>
