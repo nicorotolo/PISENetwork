@@ -18,8 +18,8 @@ header:
   </ul>
 </nav>
 
-<div class="board-member-container">
-  <div class="board-member-row" style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
+<div class="board-member-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+  <div class="board-member-row" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-bottom: 20px;">
     <div class="board-member" style="flex: 1 1 45%; max-width: 45%; box-sizing: border-box;">
       <div class="board-card">
         <div class="board-card-front">
