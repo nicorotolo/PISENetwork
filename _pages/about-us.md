@@ -236,4 +236,8 @@ header:
   line-height: 1.6;
   color: #555;
 }
+
+.mission-section h2, .story-section h2, .mission-section p, .story-section p {
+  margin: 0 auto;
+}
 </style>
