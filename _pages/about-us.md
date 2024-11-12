@@ -3,7 +3,7 @@ layout: splash
 title: "About Us"
 permalink: /about-us/
 header:
-  overlay_image: "/assets/images/about_us_banner.jpg" # Updated path to banner image
+  overlay_image: "/assets/images/board_banner.jpg" # Updated path to banner image
   overlay_filter: 0.5 # Adjust the opacity of the overlay (0.0 to 1.0)
   caption: "Learn more about the PISE Network and our mission"
 ---
