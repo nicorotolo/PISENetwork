@@ -1,11 +1,11 @@
 ---
 layout: splash
-title: "PISE Network About Us"
+title: "About Us"
 permalink: /about-us/
 header:
-  overlay_image: "/assets/images/board_banner.jpg" # Path to your banner image
+  overlay_image: "/assets/images/about_us_banner.jpg" # Updated path to banner image
   overlay_filter: 0.5 # Adjust the opacity of the overlay (0.0 to 1.0)
-  caption: "Meet the dedicated members of the PISE Network"
+  caption: "Learn more about the PISE Network and our mission"
 ---
 
 <nav class="custom-nav">
@@ -18,31 +18,13 @@ header:
   </ul>
 </nav>
 
-<!-- Our Mission Section -->
-<div class="mission-section">
-  <h2>Our Mission</h2>
-  <p>
-    Our mission is to foster a collaborative community among students and alumni of the PISE program,
-    promoting knowledge exchange, networking opportunities, and professional growth. Through events,
-    resources, and collaboration, we aim to support each member in achieving their academic and
-    career aspirations.
-  </p>
-</div>
-
-<!-- Our Story Section -->
-<div class="story-section">
-  <h2>Our Story</h2>
-  <p>
-    Founded by a group of passionate students, the PISE Network was born from a shared vision to
-    create a lasting support system for students and graduates. With roots in Ca' Foscari University,
-    we are committed to building a strong, inclusive, and active community that grows together.
-  </p>
-</div>
-
 <!-- Add the section title and divider -->
 <div class="team-section">
-  <h2>Our Team</h2>
+  <h2>About Us</h2>
   <hr>
+  <p style="text-align: center; font-size: 1.2em; color: #333; margin-top: 20px;">
+    The PISE Network is a community of students and graduates from Ca' Foscari University's Philosophy, International Studies, and Economics program. Our mission is to foster collaboration, share resources, and create opportunities for personal and professional growth.
+  </p>
 </div>
 
 <div class="board-member-container">
@@ -114,7 +96,7 @@ header:
 </div>
 
 <div class="note" style="text-align: center; font-size: 1.2em; color: #333; margin-top: 30px;">
-  <strong>Note:</strong> More team members will be added soon as the team grows.
+  <strong>Note:</strong> More team members will be added soon as the network grows.
 </div>
 
 <style>
@@ -144,7 +126,7 @@ header:
 .custom-nav a {
   display: block;
   color: #9b1c31; 
-  font-size: 1em;
+  font-size: 1em; /* Adjusted to match the other pages */
   background-color: rgba(240, 240, 240, 0.9);
   text-decoration: none;
   padding: 10px 20px;
@@ -171,73 +153,24 @@ header:
 }
 
 .team-section hr {
-  width: 100px;
+  width: 100px; /* Length of the dividing line */
   height: 3px;
   background-color: #9b1c31;
   border: none;
-  margin: 0 auto;
+  margin: 0 auto; /* Center the line */
 }
 
-.board-member-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.board-member {
-  width: 250px;
-  margin: 20px;
-}
-
-.board-card {
-  perspective: 1000px;
-}
-
-.board-card-front, .board-card-back {
-  width: 100%;
-  height: 100%;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.board-card-front {
-  background-color: #fff;
-  text-align: center;
-}
-
-.board-card-back {
-  background-color: #f9f9f9;
-  text-align: center;
-  transform: rotateY(180deg);
-}
-
-.board-position {
-  color: #9b1c31;
-  font-weight: bold;
-}
-
-.mission-section, .story-section {
-  padding: 40px 20px;
-  margin: 20px auto;
-  max-width: 800px;
-  text-align: center;
-}
-
-.mission-section h2, .story-section h2 {
-  font-size: 2em;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.mission-section p, .story-section p {
-  font-size: 1.1em;
+.content-container {
+  padding: 20px;
   line-height: 1.6;
-  color: #555;
+  font-size: 1.1em;
 }
 
-.mission-section h2, .story-section h2, .mission-section p, .story-section p {
-  margin: 0 auto;
+.involvement-option {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-left: 4px solid #9b1c31;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 </style>
