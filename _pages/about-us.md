@@ -24,15 +24,15 @@ header:
   <hr>
 </div>
 
-<div class="about-us-member-container">
-  <div class="about-us-member">
-    <div class="about-us-card">
-      <div class="about-us-card-front">
+<div class="board-member-container">
+  <div class="board-member">
+    <div class="board-card">
+      <div class="board-card-front">
         <img src="{{ site.baseurl }}/assets/images/nicola_rotolo.jpg" alt="Nicola Rotolo">
         <h3>Nicola Rotolo</h3>
-        <p class="about-us-position">Co-founder of the PISE Network</p>
+        <p class="board-position">Co-founder of the PISE Network</p>
       </div>
-      <div class="about-us-card-back">
+      <div class="board-card-back">
         <p>MSc in Philosophy and Public Policy at the London School of Economics | MSc in Political Economy at Sapienza</p>
         <div class="social-links">
           <a href="https://www.linkedin.com/in/nicolarotolo/" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -42,14 +42,14 @@ header:
     </div>
   </div>
 
-  <div class="about-us-member">
-    <div class="about-us-card">
-      <div class="about-us-card-front">
+  <div class="board-member">
+    <div class="board-card">
+      <div class="board-card-front">
         <img src="{{ site.baseurl }}/assets/images/giorgio_sanders.jpg" alt="Giorgio Sanders">
         <h3>Giorgio Sanders</h3>
-        <p class="about-us-position">Co-founder of the PISE Network</p>
+        <p class="board-position">Co-founder of the PISE Network</p>
       </div>
-      <div class="about-us-card-back">
+      <div class="board-card-back">
         <p>MSc student at the London School of Economics</p>
         <div class="social-links">
           <a href="https://www.linkedin.com/in/giorgio-sanders-/" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -59,38 +59,15 @@ header:
     </div>
   </div>
 
-  <div class="about-us-member">
-    <div class="about-us-card">
-      <div class="about-us-card-front">
+  <div class="board-member">
+    <div class="board-card">
+      <div class="board-card-front">
         <img src="{{ site.baseurl }}/assets/images/riccardo_gilioli.jpg" alt="Riccardo Gilioli">
         <h3>Riccardo Gilioli</h3>
-        <p class="about-us-position">To be defined</p>
+        <p class="board-position">To be defined</p>
       </div>
-      <div class="about-us-card-back">
-        <p>To be defined</p>
-        <div class="social-links">
-          <!-- Social links can be added here -->
-        </div>
-      </div>
-    </div>
-  </div>
+      <div
 
-  <div class="about-us-member">
-    <div class="about-us-card">
-      <div class="about-us-card-front">
-        <img src="{{ site.baseurl }}/assets/images/simone_rizzo.jpg" alt="Simone Rizzo">
-        <h3>Simone Rizzo</h3>
-        <p class="about-us-position">To be defined</p>
-      </div>
-      <div class="about-us-card-back">
-        <p>To be defined</p>
-        <div class="social-links">
-          <!-- Social links can be added here -->
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <div class="note" style="text-align: center; font-size: 1.2em; color: #333; margin-top: 30px;">
   <strong>Note:</strong> More team members will be added soon as the team grows.
