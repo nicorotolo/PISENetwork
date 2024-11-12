@@ -16,7 +16,7 @@
 .board-card {
   position: relative; /* Relative to contain the front and back faces */
   width: 100%;
-  height: 100%;
+  height: 350px; /* Explicit height for the card */
   transform-style: preserve-3d;
   transition: transform 0.6s ease-in-out; /* Smooth flipping effect */
 }
@@ -29,7 +29,7 @@
 .board-card-back {
   position: absolute; /* Stack both faces on top of each other */
   width: 100%;
-  height: 100%;
+  height: 350px; /* Set this to match .board-card's height */
   top: 0;
   left: 0;
   backface-visibility: hidden; /* Hide the reverse side when not flipped */
