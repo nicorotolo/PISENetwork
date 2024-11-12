@@ -19,6 +19,7 @@ header:
 </nav>
 
 <div class="board-member-container">
+  <div class="board-member-row">
   <div class="board-member">
     <div class="board-card">
       <div class="board-card-front">
@@ -35,6 +36,8 @@ header:
       </div>
     </div>
   </div>
+  </div>
+  <div class="board-member-row">
   <div class="board-member">
     <div class="board-card">
       <div class="board-card-front">
@@ -51,6 +54,8 @@ header:
       </div>
     </div>
   </div>
+  </div>
+  <div class="board-member-row">
   <div class="board-member">
     <div class="board-card">
       <div class="board-card-front">
@@ -66,6 +71,8 @@ header:
       </div>
     </div>
   </div>
+  </div>
+  <div class="board-member-row">
   <div class="board-member">
     <div class="board-card">
       <div class="board-card-front">
@@ -81,9 +88,13 @@ header:
       </div>
     </div>
   </div>
+  </div>
 </div>
 
-> **Note:** More board members will be added soon as the team grows.
+<div class="note" style="text-align: center; font-size: 1.2em; color: #333; margin-top: 30px;">
+  <strong>Note:</strong> More board members will be added soon as the team grows.
+</div>
+
 
 <style>
 .custom-nav {
