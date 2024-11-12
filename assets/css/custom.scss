@@ -29,7 +29,7 @@
 .board-card-back {
   position: absolute; /* Stack both faces on top of each other */
   width: 100%;
-  height: 350px; /* Set this to match .board-card's height */
+  height: 100%; /* Set to match the height of the container to avoid inconsistencies */
   top: 0;
   left: 0;
   backface-visibility: hidden; /* Hide the reverse side when not flipped */
