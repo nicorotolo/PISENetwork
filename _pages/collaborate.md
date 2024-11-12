@@ -15,9 +15,9 @@ header:
 <nav class="custom-nav">
   <ul>
     <li><a href="{{ site.baseurl }}/">Home</a></li>
+    <li><a href="{{ site.baseurl }}/about-us/">About Us</a></li>
     <li><a href="{{ site.baseurl }}/events/">Events</a></li>
-    <li><a href="{{ site.baseurl }}/editorial/">Resources</a></li>
-    <li><a href="{{ site.baseurl }}/board/">Board</a></li>
+    <li><a href="{{ site.baseurl }}/resources/">Resources</a></li>
     <li><a href="{{ site.baseurl }}/collaborate/">Collaborate with Us</a></li>
   </ul>
 </nav>
