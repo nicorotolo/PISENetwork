@@ -18,6 +18,27 @@ header:
   </ul>
 </nav>
 
+<!-- Our Mission Section -->
+<div class="mission-section">
+  <h2>Our Mission</h2>
+  <p>
+    Our mission is to foster a collaborative community among students and alumni of the PISE program,
+    promoting knowledge exchange, networking opportunities, and professional growth. Through events,
+    resources, and collaboration, we aim to support each member in achieving their academic and
+    career aspirations.
+  </p>
+</div>
+
+<!-- Our Story Section -->
+<div class="story-section">
+  <h2>Our Story</h2>
+  <p>
+    Founded by a group of passionate students, the PISE Network was born from a shared vision to
+    create a lasting support system for students and graduates. With roots in Ca' Foscari University,
+    we are committed to building a strong, inclusive, and active community that grows together.
+  </p>
+</div>
+
 <!-- Add the section title and divider -->
 <div class="team-section">
   <h2>Our Team</h2>
@@ -94,27 +115,6 @@ header:
 
 <div class="note" style="text-align: center; font-size: 1.2em; color: #333; margin-top: 30px;">
   <strong>Note:</strong> More team members will be added soon as the team grows.
-</div>
-
-<!-- Our Mission Section -->
-<div class="mission-section">
-  <h2>Our Mission</h2>
-  <p>
-    Our mission is to foster a collaborative community among students and alumni of the PISE program,
-    promoting knowledge exchange, networking opportunities, and professional growth. Through events,
-    resources, and collaboration, we aim to support each member in achieving their academic and
-    career aspirations.
-  </p>
-</div>
-
-<!-- Our Story Section -->
-<div class="story-section">
-  <h2>Our Story</h2>
-  <p>
-    Founded by a group of passionate students, the PISE Network was born from a shared vision to
-    create a lasting support system for students and graduates. With roots in Ca' Foscari University,
-    we are committed to building a strong, inclusive, and active community that grows together.
-  </p>
 </div>
 
 <style>
