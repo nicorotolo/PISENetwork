@@ -3,7 +3,7 @@ layout: splash
 title: "Board"
 permalink: /board/
 header:
-  overlay_image: "/assets/images/banner_board.png"
+  overlay_image: "{{ '/assets/images/banner_board.png' | relative_url }}"
   overlay_filter: 0.5
   caption: "Meet the team behind the PISE Network"
 ---
@@ -25,7 +25,7 @@ header:
       <div class="card-face card-front">
         <div style="text-align: center;"><img src="{{ '/assets/images/nicola_rotolo.jpg' | relative_url }}" alt="Nicola Rotolo">
           <h3>Nicola Rotolo</h3>
-          <p>Co-founder of the PISE Network</p>
+          <p style="text-align: center;">Co-founder of the PISE Network</p>
         </div>
       </div>
       <div class="card-face card-back">
@@ -39,9 +39,8 @@ header:
 
   <div class="card-container">
     <div class="card">
-      <div class="card-face card-front">
-        <div>
-          <img src="{{ '/assets/images/giorgio_sanders.jpg' | relative_url }}" alt="Giorgio Sanders">
+      <div class="card-face card-front" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <img src="{{ '/assets/images/giorgio_sanders.jpg' | relative_url }}" alt="Giorgio Sanders">
           <h3>Giorgio Sanders</h3>
           <p>Co-founder of the PISE Network</p>
         </div>
