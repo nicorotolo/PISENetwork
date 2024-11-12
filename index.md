@@ -1,4 +1,3 @@
----
 layout: splash
 title: "Welcome to the PISE Network"
 permalink: /
@@ -29,6 +28,13 @@ Stay tuned for upcoming events and exciting news about our community!
   <a href="{{ site.baseurl }}/events/" class="cta-button">Upcoming Events</a>
 </div>
 
+<div class="agenda-events">
+  <h2>Upcoming Events</h2>
+  <ul id="events-list">
+    <!-- The list of events will be dynamically loaded here -->
+  </ul>
+</div>
+
 <div class="social-links">
   <a href="https://www.linkedin.com/groups/9804209/" target="_blank">
     <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="30" style="border-radius: 10%;">
@@ -37,6 +43,22 @@ Stay tuned for upcoming events and exciting news about our community!
     <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" width="30" style="border-radius: 10%;">
   </a>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    fetch("{{ site.baseurl }}/events/index.json")
+      .then(response => response.json())
+      .then(events => {
+        const eventsList = document.getElementById("events-list");
+        events.forEach(event => {
+          const listItem = document.createElement("li");
+          listItem.innerHTML = `<strong>${event.title}</strong><br>${event.date}<br><a href="${event.url}">More info</a>`;
+          eventsList.appendChild(listItem);
+        });
+      })
+      .catch(error => console.error("Error fetching events: ", error));
+  });
+</script>
 
 <style>
   .custom-nav {
@@ -113,5 +135,34 @@ Stay tuned for upcoming events and exciting news about our community!
     100% {
       background-position: center bottom;
     }
+  }
+  .agenda-events {
+    margin: 40px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  .agenda-events h2 {
+    text-align: center;
+    color: #9b1c31;
+  }
+  #events-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  #events-list li {
+    margin: 15px 0;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  #events-list a {
+    color: #9b1c31;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  #events-list a:hover {
+    text-decoration: underline;
   }
 </style>
