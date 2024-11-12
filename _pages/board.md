@@ -1,206 +1,132 @@
----
 layout: splash
-title: "PISE Network Board"
-permalink: /board/
+title: "Welcome to the PISE Network"
+permalink: /
 header:
-  overlay_image: "/assets/images/board_banner.jpg" # Path to your banner image
+  overlay_image: "/assets/images/banner_san marco.jpeg" # Path to your banner image
   overlay_filter: 0.5 # Adjust the opacity of the overlay (0.0 to 1.0)
-  caption: "Meet the dedicated members of the PISE Network Board"
+  caption: "Connecting students and alumni of PISE at Ca' Foscari University"
+  animate: true # Add animation to the header for a dynamic effect
 ---
-
 <nav class="custom-nav">
   <ul>
     <li><a href="{{ site.baseurl }}/">Home</a></li>
     <li><a href="{{ site.baseurl }}/events/">Events</a></li>
-    <li><a href="{{ site.baseurl }}/resources/">Resources</a></li>
+    <li><a href="{{ site.baseurl }}/editorial/">Resources</a></li>
     <li><a href="{{ site.baseurl }}/board/">Board</a></li>
     <li><a href="{{ site.baseurl }}/collaborate/">Collaborate with Us</a></li>
   </ul>
 </nav>
+<div style="margin-top: 20px;"></div>
 
-<div class="board-member-container">
-  <div class="board-member-row">
-  <div class="board-member">
-    <div class="board-card">
-      <div class="board-card-front">
-        <img src="{{ site.baseurl }}/assets/images/nicola_rotolo.jpg" alt="Nicola Rotolo">
-        <h3>Nicola Rotolo</h3>
-        <p class="board-position">Co-founder of the PISE Network</p>
-      </div>
-      <div class="board-card-back">
-        <p>MSc in Philosophy and Public Policy at the London School of Economics | MSc in Political Economy at Sapienza</p>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/nicolarotolo/" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.instagram.com/nicola.rotolo/profilecard/?igsh=MTJ2MDhjZXhmOTBu" target="_blank"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-  <div class="board-member-row">
-  <div class="board-member">
-    <div class="board-card">
-      <div class="board-card-front">
-        <img src="{{ site.baseurl }}/assets/images/giorgio_sanders.jpg" alt="Giorgio Sanders">
-        <h3>Giorgio Sanders</h3>
-        <p class="board-position">Co-founder of the PISE Network</p>
-      </div>
-      <div class="board-card-back">
-        <p>MSc student at the London School of Economics</p>
-        <div class="social-links">
-          <a href="https://www.linkedin.com/in/giorgio-sanders-/" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.instagram.com/giorgio_sanders?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-  <div class="board-member-row">
-  <div class="board-member">
-    <div class="board-card">
-      <div class="board-card-front">
-        <img src="{{ site.baseurl }}/assets/images/riccardo_gilioli.jpg" alt="Riccardo Gilioli">
-        <h3>Riccardo Gilioli</h3>
-        <p class="board-position">To be defined</p>
-      </div>
-      <div class="board-card-back">
-        <p>To be defined</p>
-        <div class="social-links">
-          <!-- Social links can be added here -->
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-  <div class="board-member-row">
-  <div class="board-member">
-    <div class="board-card">
-      <div class="board-card-front">
-        <img src="{{ site.baseurl }}/assets/images/simone_rizzo.jpg" alt="Simone Rizzo">
-        <h3>Simone Rizzo</h3>
-        <p class="board-position">To be defined</p>
-      </div>
-      <div class="board-card-back">
-        <p>To be defined</p>
-        <div class="social-links">
-          <!-- Social links can be added here -->
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
+# PISE Network
+Welcome to the official website of the PISE Network! We connect over 300 graduates and students from the Bachelor’s program in Philosophy, International Studies, and Economics (PISE) at Ca’ Foscari University. Our goal is to bridge the gap between alumni and current students by providing networking opportunities, professional growth, and activities that enrich the academic experience. 
+
+Stay tuned for upcoming events and exciting news about our community!
+
+<div class="cta-container">
+  <a href="{{ site.baseurl }}/collaborate/" class="cta-button">Get Involved</a>
+  <a href="{{ site.baseurl }}/events/" class="cta-button">Upcoming Events</a>
 </div>
 
-<div class="note" style="text-align: center; font-size: 1.2em; color: #333; margin-top: 30px;">
-  <strong>Note:</strong> More board members will be added soon as the team grows.
+<div class="social-links">
+  <a href="https://www.linkedin.com/groups/9804209/" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="30" style="border-radius: 10%;">
+  </a>
+  <a href="https://instagram.com/pise_network_and_alumni/" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" width="30" style="border-radius: 10%;">
+  </a>
 </div>
-
 
 <style>
-.custom-nav {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  position: sticky;
-  top: 0;
-  background-color: rgba(240, 240, 240, 0.9);
-  padding: 15px 0;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 10;
-}
-.custom-nav ul {
-  display: flex;
-  width: 100%;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.custom-nav li {
-  flex: 1;
-  text-align: center;
-}
-.custom-nav a {
-  display: block;
-  color: #9b1c31;
-  background-color: rgba(240, 240, 240, 0.9);
-  text-decoration: none;
-  padding: 10px 20px;
-  margin: 0;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: background-color 0.3s, transform 0.2s;
-}
-.custom-nav a:hover {
-  background-color: #e3c8c1;
-  transform: scale(1.05);
-}
-
-.board-member-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  padding: 40px;
-  width: 100%;
-}
-.board-member {
-  box-sizing: border-box;
-  perspective: 1000px;
-}
-.board-card {
-  position: relative;
-  width: 100%;
-  transform-style: preserve-3d;
-  transition: transform 0.6s;
-}
-.board-card:hover {
-  transform: rotateY(180deg);
-}
-.board-card-front, .board-card-back {
-  position: absolute;
-  width: 100%;
-  backface-visibility: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-.board-card-front {
-  background: #fff;
-  padding: 20px;
-  text-align: center;
-}
-.board-card-back {
-  background: #9b1c31;
-  color: #fff;
-  padding: 20px;
-  transform: rotateY(180deg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.board-card img {
-  border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  width: 150px;
-  height: 150px;
-}
-.board-card h3 {
-  margin-top: 10px;
-  font-size: 1.5em;
-}
-.board-position {
-  font-size: 1em;
-  margin: 10px 0;
-}
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-.social-links a {
-  color: #fff;
-  font-size: 1.5em;
-}
+  .custom-nav {
+    display: flex;               /* Use Flexbox to manage spacing */
+    justify-content: space-evenly; /* Space links evenly across the bar */
+    align-items: center;
+    width: 100%;                 /* Make the navigation bar take full width */
+    position: sticky;            /* Stick to the top of the viewport when scrolling */
+    top: 0;
+    background-color: rgba(240, 240, 240, 0.9); /* Light grey background */
+    padding: 15px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;                 /* Keep on top of other content */
+  }
+  .custom-nav ul {
+    display: flex;               /* Flexbox to manage buttons alignment */
+    width: 100%;
+    list-style: none;            /* Remove bullet points */
+    margin: 0;
+    padding: 0;
+  }
+  .custom-nav li {
+    flex: 1;                     /* Make each list item take up equal space */
+    text-align: center;          /* Center the content of each list item */
+  }
+  .custom-nav a {
+    display: block;              /* Allow padding on links to work like a button */
+    color: #9b1c31;              /* Ca' Foscari red color */
+    background-color: rgba(240, 240, 240, 0.9); /* Light grey button background */
+    text-decoration: none;       /* Remove underline from links */
+    padding: 10px 20px;          /* Space inside each button */
+    margin: 0;                   /* Remove margin to avoid spacing between buttons */
+    border-radius: 5px;          /* Rounded corners for button effect */
+    font-weight: bold;           /* Bold text */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+  }
+  .custom-nav a:hover {
+    background-color: #e3c8c1;   /* Slightly darker beige on hover */
+    transform: scale(1.05);      /* Slightly increase size on hover for emphasis */
+  }
+  .cta-container {
+    text-align: center;
+    margin: 40px 0;
+  }
+  .cta-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 25px;
+    background-color: #9b1c31;
+    color: #fff !important;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  .cta-button:hover {
+    background-color: #e3c8c1;
+    transform: scale(1.1);
+  }
+  .social-links {
+    text-align: center;
+    margin: 40px 0;
+  }
+  .social-links a {
+    margin: 0 10px;
+  }
+  header.splash {
+    animation: parallax 10s infinite alternate ease-in-out; /* Add parallax effect */
+  }
+  @keyframes parallax {
+    0% {
+      background-position: center top;
+    }
+    100% {
+      background-position: center bottom;
+    }
+  }
+  footer {
+    position: relative;
+    z-index: 1;
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  footer a {
+    color: #9b1c31;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  footer a:hover {
+    text-decoration: underline;
+  }
 </style>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
