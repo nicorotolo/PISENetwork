@@ -24,7 +24,7 @@ header:
     <div class="card">
       <div class="card-face card-front">
         <div>
-          <img src="/assets/images/nicola_rotolo.jpg" alt="Nicola Rotolo">
+          <img src="{{ '/assets/images/nicola_rotolo.jpg' | relative_url }}" alt="Nicola Rotolo">
           <h3>Nicola Rotolo</h3>
           <p>Co-Founder</p>
         </div>
@@ -42,7 +42,7 @@ header:
     <div class="card">
       <div class="card-face card-front">
         <div>
-          <img src="/assets/images/giorgio_sanders.jpg" alt="Giorgio Sanders">
+          <img src="{{ '/assets/images/giorgio_sanders.jpg' | relative_url }}" alt="Giorgio Sanders">
           <h3>Giorgio Sanders</h3>
           <p>Co-Founder</p>
         </div>
@@ -60,7 +60,7 @@ header:
     <div class="card">
       <div class="card-face card-front">
         <div>
-          <img src="/assets/images/member3.jpg" alt="Persona 3">
+          <img src="{{ '/assets/images/member3.jpg' | relative_url }}" alt="Riccardo Gilioli">
           <h3>Riccardo Gilioli</h3>
           <p>To be defined</p>
         </div>
@@ -78,7 +78,7 @@ header:
     <div class="card">
       <div class="card-face card-front">
         <div>
-          <img src="/assets/images/member4.jpg" alt="Persona 4">
+          <img src="{{ '/assets/images/member4.jpg' | relative_url }}" alt="Simone Rizzo">
           <h3>Simone Rizzo</h3>
           <p>To be defined</p>
         </div>
