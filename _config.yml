@@ -22,6 +22,7 @@ title_separator          : "-"
 subtitle                 : "Learning, Growing, and Succeeding Together"# site tagline that appears below site title in masthead
 name                     : "Your Name"
 description              : "The official community for PISE students and alumni at Ca' Foscari University. Our mission is to provide networking opportunities, promote professional development, and create a space where extra-academic growth flourishes."
+favicon                  : /assets/images/favicon.png
 url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
