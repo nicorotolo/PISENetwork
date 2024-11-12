@@ -19,109 +19,140 @@ header:
 </nav>
 
 <div class="board-member-container">
+  {% for member in site.data.board_members %}
   <div class="board-member">
-    <img src="{{ site.baseurl }}/assets/images/nicola_rotolo.jpg" alt="Nicola Rotolo" width="200">
-    <h3>Nicola Rotolo</h3>
-    <p class="board-description">MSc in Philosophy and Public Policy at the London School of Economics | MSc in Political Economy at Sapienza</p>
-    <div class="social-links">
-      <a href="https://www.linkedin.com/in/nicolarotolo/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="30" style="border-radius: 10%;"></a>
-      <a href="https://www.instagram.com/nicola.rotolo/profilecard/?igsh=MTJ2MDhjZXhmOTBu" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" width="30" style="border-radius: 10%;"></a>
+    <div class="board-card">
+      <div class="board-card-front">
+        <img src="{{ site.baseurl }}{{ member.image }}" alt="{{ member.name }}">
+        <h3>{{ member.name }}</h3>
+        <p class="board-position">{{ member.position }}</p>
+      </div>
+      <div class="board-card-back">
+        <p>{{ member.description }}</p>
+        <div class="social-links">
+          {% if member.linkedin %}
+          <a href="{{ member.linkedin }}" target="_blank"><i class="fab fa-linkedin"></i></a>
+          {% endif %}
+          {% if member.instagram %}
+          <a href="{{ member.instagram }}" target="_blank"><i class="fab fa-instagram"></i></a>
+          {% endif %}
+        </div>
+      </div>
     </div>
   </div>
-
-  <div class="board-member">
-    <img src="{{ site.baseurl }}/assets/images/giorgio_sanders.jpg" alt="Giorgio Sanders" width="200">
-    <h3>Giorgio Sanders</h3>
-    <p class="board-description">MSc student at the London School of Economics</p>
-    <div class="social-links">
-      <a href="https://www.linkedin.com/in/giorgio-sanders-/" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="30" style="border-radius: 10%;"></a>
-      <a href="https://www.instagram.com/giorgio_sanders?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" width="30" style="border-radius: 10%;"></a>
-    </div>
-  </div>
+  {% endfor %}
 </div>
 
 > **Note:** More board members will be added soon as the team grows.
 
 <style>
 .custom-nav {
-  display: flex;               /* Use Flexbox to manage spacing */
-  justify-content: space-evenly; /* Space links evenly across the bar */
+  display: flex;
+  justify-content: space-evenly;
   align-items: center;
-  width: 100%;                 /* Make the navigation bar take full width */
-  position: sticky;            /* Stick to the top of the viewport when scrolling */
+  width: 100%;
+  position: sticky;
   top: 0;
-  background-color: rgba(240, 240, 240, 0.9); /* Light grey background */
+  background-color: rgba(240, 240, 240, 0.9);
   padding: 15px 0;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 10;                 /* Keep on top of other content */
+  z-index: 10;
 }
 .custom-nav ul {
-  display: flex;               /* Flexbox to manage buttons alignment */
+  display: flex;
   width: 100%;
-  list-style: none;            /* Remove bullet points */
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 .custom-nav li {
-  flex: 1;                     /* Make each list item take up equal space */
-  text-align: center;          /* Center the content of each list item */
+  flex: 1;
+  text-align: center;
 }
 .custom-nav a {
-  display: block;              /* Allow padding on links to work like a button */
-  color: #9b1c31;              /* Ca' Foscari red color */
-  background-color: rgba(240, 240, 240, 0.9); /* Light grey button background */
-  text-decoration: none;       /* Remove underline from links */
-  padding: 10px 20px;          /* Space inside each button */
-  margin: 0;                   /* Remove margin to avoid spacing between buttons */
-  border-radius: 5px;          /* Rounded corners for button effect */
-  font-weight: bold;           /* Bold text */
-  transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+  display: block;
+  color: #9b1c31;
+  background-color: rgba(240, 240, 240, 0.9);
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
 }
 .custom-nav a:hover {
-  background-color: #e3c8c1;   /* Slightly darker beige on hover */
-  transform: scale(1.05);      /* Slightly increase size on hover for emphasis */
+  background-color: #e3c8c1;
+  transform: scale(1.05);
 }
 
 .board-member-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; /* Distribute items across the full width */
+  justify-content: space-between;
   gap: 20px;
-  padding: 20px; /* Adds padding around the entire container */
+  padding: 20px;
   width: 100%;
 }
 .board-member {
-  text-align: center;
-  margin-bottom: 20px; /* Reduced bottom margin for better spacing */
-  flex: 1 1 calc(33.33% - 20px); /* Allows three cards per row with spacing */
+  flex: 1 1 calc(50% - 20px);
   box-sizing: border-box;
-  max-width: 400px; /* Limit the maximum width for better visual balance */
+  max-width: 400px;
+  perspective: 1000px;
 }
-.board-member img {
+.board-card {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+.board-card:hover {
+  transform: rotateY(180deg);
+}
+.board-card-front, .board-card-back {
+  position: absolute;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.board-card-front {
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+}
+.board-card-back {
+  background: #9b1c31;
+  color: #fff;
+  padding: 20px;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.board-card img {
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  max-width: 100%;
-  height: auto;
+  width: 150px;
+  height: 150px;
 }
-.board-member h3 {
+.board-card h3 {
   margin-top: 10px;
   font-size: 1.5em;
 }
-.board-description {
-  font-size: 0.8em; /* Further shrink the font size for descriptions */
+.board-position {
+  font-size: 1em;
   margin: 10px 0;
 }
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 15px; /* Space between social links */
+  gap: 15px;
 }
 .social-links a {
-  text-decoration: none;
-  color: #0073e6;
-  font-weight: bold;
-}
-.social-links a:hover {
-  text-decoration: underline;
+  color: #fff;
+  font-size: 1.5em;
 }
 </style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
