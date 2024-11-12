@@ -89,3 +89,59 @@ header:
 <div class="note" style="text-align: center; font-size: 1.2em; color: #333; margin-top: 30px;">
   <strong>Note:</strong> More board members will be added soon as the team grows.
 </div>
+
+<style>
+.custom-nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: rgba(240, 240, 240, 0.9);
+  padding: 15px 0;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+.custom-nav ul {
+  display: flex;
+  width: 100%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.custom-nav li {
+  flex: 1;
+  text-align: center;
+}
+.custom-nav a {
+  display: block;
+  color: #9b1c31; 
+  font-size: 1em; /* Adjusted to match the other pages */
+  background-color: rgba(240, 240, 240, 0.9);
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.custom-nav a:hover {
+  background-color: #e3c8c1;
+  transform: scale(1.05);
+}
+
+.content-container {
+  padding: 20px;
+  line-height: 1.6;
+  font-size: 1.1em;
+}
+
+.involvement-option {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-left: 4px solid #9b1c31;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+</style>
