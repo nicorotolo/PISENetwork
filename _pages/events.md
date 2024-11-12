@@ -9,7 +9,6 @@ header:
 ---
 
 <nav class="custom-nav">
- </ul>
 </nav>
 
 
