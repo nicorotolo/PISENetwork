@@ -1,0 +1,80 @@
+/* Custom Board Member Styles for Flip Effect */
+.board-member-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+  gap: 30px; /* Space between cards */
+  padding: 40px;
+  width: 100%;
+}
+
+.board-member {
+  box-sizing: border-box;
+  perspective: 1000px; /* Allows for the 3D flipping effect */
+  margin-bottom: 30px; /* Space between rows */
+}
+
+.board-card {
+  position: relative; /* Relative to contain the front and back faces */
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out; /* Smooth flipping effect */
+}
+
+.board-card:hover {
+  transform: rotateY(180deg); /* Flips the card to show the back */
+}
+
+.board-card-front,
+.board-card-back {
+  position: absolute; /* Stack both faces on top of each other */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden; /* Hide the reverse side when not flipped */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.board-card-front {
+  transform: rotateY(0deg);
+  z-index: 2; /* The front side is initially visible */
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.board-card-back {
+  transform: rotateY(180deg);
+  z-index: 1; /* The back face is behind the front face */
+  background: #9b1c31; /* Set color for the back */
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.board-card img {
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.board-card h3 {
+  margin-top: 15px;
+  font-size: 1.5em;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+  font-size: 1.5em;
+  color: #fff;
+}
