@@ -126,17 +126,14 @@ header:
 }
 
 .board-member-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 40px;
   width: 100%;
 }
 .board-member {
-  flex: 1 1 calc(50% - 20px);
   box-sizing: border-box;
-  max-width: 400px;
   perspective: 1000px;
 }
 .board-card {
