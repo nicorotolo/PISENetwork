@@ -18,21 +18,21 @@ header:
   </ul>
 </nav>
 
-<h2 style="text-align: center; color: #9b1c31;">Meet the Board Members</h2>
+<h2 style="text-align: center; color: #9b1c31;">Our Team</h2>
 <div class="board-container">
   <div class="card-container">
     <div class="card">
       <div class="card-face card-front">
         <div>
           <img src="/assets/images/member1.jpg" alt="Persona 1">
-          <h3>Giulia Rossi</h3>
-          <p>President</p>
+          <h3>Nicola Rotolo</h3>
+          <p>Co-Founder</p>
         </div>
       </div>
       <div class="card-face card-back">
         <div>
-          <h3>Giulia Rossi</h3>
-          <p>Giulia is the President of the PISE Network. She has a background in international relations and extensive experience in student advocacy.</p>
+          <h3>Nicola Rotolo</h3>
+          <p>MSc in Philosophy and Public Policy at the London School of Economics | MSc in Political Economy at Sapienza</p>
         </div>
       </div>
     </div>
@@ -43,14 +43,14 @@ header:
       <div class="card-face card-front">
         <div>
           <img src="/assets/images/member2.jpg" alt="Persona 2">
-          <h3>Marco Bianchi</h3>
-          <p>Vice President</p>
+          <h3>Giorgio Sanders</h3>
+          <p>Co-Founder</p>
         </div>
       </div>
       <div class="card-face card-back">
         <div>
-          <h3>Marco Bianchi</h3>
-          <p>Marco is the Vice President, focusing on partnerships and external relations. He has a passion for economics and enjoys connecting students with opportunities.</p>
+          <h3>Giorgio Sanders</h3>
+          <p>MSc student at the London School of Economics</p>
         </div>
       </div>
     </div>
@@ -61,14 +61,14 @@ header:
       <div class="card-face card-front">
         <div>
           <img src="/assets/images/member3.jpg" alt="Persona 3">
-          <h3>Laura Verdi</h3>
-          <p>Secretary</p>
+          <h3>Riccardo Gilioli</h3>
+          <p>To be defined</p>
         </div>
       </div>
       <div class="card-face card-back">
         <div>
-          <h3>Laura Verdi</h3>
-          <p>Laura is the Secretary of the PISE Network. She ensures smooth communication and coordination within the board and among members.</p>
+          <h3>Riccardo Gilioli</h3>
+          <p>To be defined</p>
         </div>
       </div>
     </div>
@@ -79,14 +79,14 @@ header:
       <div class="card-face card-front">
         <div>
           <img src="/assets/images/member4.jpg" alt="Persona 4">
-          <h3>Luca Neri</h3>
-          <p>Treasurer</p>
+          <h3>Simone Rizzo</h3>
+          <p>To be defined</p>
         </div>
       </div>
       <div class="card-face card-back">
         <div>
-          <h3>Luca Neri</h3>
-          <p>Luca is the Treasurer, managing the financial aspects of the network. He has a strong background in finance and accounting.</p>
+          <h3>Simone Rizzo</h3>
+          <p>To be defined</p>
         </div>
       </div>
     </div>
