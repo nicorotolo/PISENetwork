@@ -1,11 +1,11 @@
 ---
 layout: splash
-title: "Events"
-permalink: /events/
+title: "Board"
+permalink: /board/
 header:
-  overlay_image: "/assets/images/banner_events.png" # Path to your banner image
-  overlay_filter: 0.5 # Adjust the opacity of the overlay (0.0 to 1.0)
-  caption: "Stay updated with the latest events organized by the PISE Network"
+  overlay_image: "/assets/images/banner_board.png"
+  overlay_filter: 0.5
+  caption: "Meet the team behind the PISE Network"
 ---
 
 <nav class="custom-nav">
@@ -18,51 +18,80 @@ header:
   </ul>
 </nav>
 
-
+<h2 style="text-align: center; color: #9b1c31;">Meet the Board Members</h2>
+<div class="board-container">
+  <div class="card-container">
+    <div class="card">
+      <div class="card-face card-front">
+        <div>
+          <img src="/assets/images/member1.jpg" alt="Persona 1">
+          <h3>Giulia Rossi</h3>
+          <p>President</p>
+        </div>
+      </div>
+      <div class="card-face card-back">
+        <div>
+          <h3>Giulia Rossi</h3>
+          <p>Giulia is the President of the PISE Network. She has a background in international relations and extensive experience in student advocacy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-# Upcoming Events
+  <div class="card-container">
+    <div class="card">
+      <div class="card-face card-front">
+        <div>
+          <img src="/assets/images/member2.jpg" alt="Persona 2">
+          <h3>Marco Bianchi</h3>
+          <p>Vice President</p>
+        </div>
+      </div>
+      <div class="card-face card-back">
+        <div>
+          <h3>Marco Bianchi</h3>
+          <p>Marco is the Vice President, focusing on partnerships and external relations. He has a passion for economics and enjoys connecting students with opportunities.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-Stay informed about our latest events, including workshops, networking sessions, and seminars. Below, you'll find our upcoming and past events organized by the PISE Network.
+  <div class="card-container">
+    <div class="card">
+      <div class="card-face card-front">
+        <div>
+          <img src="/assets/images/member3.jpg" alt="Persona 3">
+          <h3>Laura Verdi</h3>
+          <p>Secretary</p>
+        </div>
+      </div>
+      <div class="card-face card-back">
+        <div>
+          <h3>Laura Verdi</h3>
+          <p>Laura is the Secretary of the PISE Network. She ensures smooth communication and coordination within the board and among members.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<div class="calendar-container">
-  <iframe src="https://calendar.google.com/calendar/embed?src=5bafd044d7d4022a0eb80ea3694717d3eff047c74b0a39783caaa43efdd20597@group.calendar.google.com&ctz=Europe/Rome" style="border: 0; width: 100%; height: 600px;" frameborder="0" scrolling="no"></iframe>
+  <div class="card-container">
+    <div class="card">
+      <div class="card-face card-front">
+        <div>
+          <img src="/assets/images/member4.jpg" alt="Persona 4">
+          <h3>Luca Neri</h3>
+          <p>Treasurer</p>
+        </div>
+      </div>
+      <div class="card-face card-back">
+        <div>
+          <h3>Luca Neri</h3>
+          <p>Luca is the Treasurer, managing the financial aspects of the network. He has a strong background in finance and accounting.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-
-
-<hr style="border: none; border-top: 2px solid #9b1c31; margin: 20px 0;">
-<h2 style="text-align: center; color: #9b1c31;">Next Events</h2>
-
-<div class="event-list">
-  <div class="event">
-    <h3>📅 1st PISE Network Online Workshop: How to Write Your CV</h3>
-    <p><strong>Date:</strong> November 7, 2024</p>
-    <p><strong>Time:</strong> 17:00 - 17:45</p>
-    <p><strong>Location:</strong> Online (Google Meet)</p>
-    <p>Discover key strategies to build a professional CV that highlights your strengths, showcases your experience, and catches the attention of recruiters.</p>
-    <p><a href="https://meet.google.com/kvw-udxm-wib" target="_blank">Join with Google Meet</a></p>
-  </div>
-
-  <div class="event">
-    <h3>📅 2nd PISE Network Online Workshop: How to Set Up Your LinkedIn Profile</h3>
-    <p><strong>Date:</strong> December 12, 2024</p>
-    <p><strong>Time:</strong> 17:00 - 17:45</p>
-    <p><strong>Location:</strong> Online (Google Meet)</p>
-    <p>Learn how to create a compelling LinkedIn profile that showcases your skills and experience, helping you connect with professionals and boost your career prospects.</p>
-    <p><a href="https://meet.google.com/kvw-udxm-wib" target="_blank">Join with Google Meet</a></p>
-  </div>
-
-  <div class="event">
-    <h3>📅 3rd PISE Network Online Workshop: Erasmus Tips and Tricks</h3>
-    <p><strong>Date:</strong> February 6, 2025</p>
-    <p><strong>Time:</strong> 17:00 - 17:45</p>
-    <p><strong>Location:</strong> Online (Google Meet)</p>
-    <p>Prepare for your Erasmus journey with tips on adapting to a new culture, managing your studies abroad, and making the most of this unique experience.</p>
-    <p><a href="https://meet.google.com/kvw-udxm-wib" target="_blank">Join with Google Meet</a></p>
-  </div>
-</div>
-
-> **Note:** More events will be added soon, so keep an eye on this page!
 
 <style>
 .custom-nav {
@@ -104,45 +133,54 @@ Stay informed about our latest events, including workshops, networking sessions,
   transform: scale(1.05);
 }
 
-.event-list {
+.board-container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
   padding: 20px;
 }
-.event {
-  background-color: #f9f9f9;
+.card-container {
+  perspective: 1000px;
+  margin: 20px;
+}
+.card {
+  width: 300px;
+  height: 400px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+.card:hover {
+  transform: rotateY(180deg);
+}
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+.card-front {
+  background-color: #fff;
+}
+.card-back {
+  background-color: #f8f8f8;
+  transform: rotateY(180deg);
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.event h3 {
-  margin-top: 0;
-}
-
-.calendar-container {
-  margin: 20px 0;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.add-to-calendar {
   text-align: center;
-  margin: 20px 0;
 }
-.add-calendar-button {
-  background-color: #9b1c31;
-  color: #fff;
-  border: none;
-  padding: 15px;
-  font-size: 1em;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s, transform 0.3s;
+img {
+  width: 80%;
+  height: auto;
+  border-radius: 50%;
 }
-.add-calendar-button:hover {
-  background-color: #e3c8c1;
-  transform: scale(1.1);
+.card-front h3, .card-front p {
+  margin: 10px 0;
 }
 </style>
