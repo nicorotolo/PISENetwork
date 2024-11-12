@@ -54,10 +54,9 @@ header:
     </div>
   </div>
 
-  <div class="card-container">
-    <div class="card">
-      <div class="card-face card-front">
-        <div>
+  <div class="card-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <div class="card">
+          <div class="card-face card-front" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
           <img src="{{ '/assets/images/member3.jpg' | relative_url }}" alt="Riccardo Gilioli">
           <h3>Riccardo Gilioli</h3>
           <p>To be defined</p>
@@ -133,7 +132,7 @@ header:
 
 .board-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
   gap: 20px;
   justify-items: center;
   padding: 20px;
