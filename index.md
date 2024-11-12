@@ -1,3 +1,4 @@
+---
 layout: splash
 title: "Welcome to the PISE Network"
 permalink: /
@@ -18,24 +19,14 @@ header:
 </nav>
 <div style="margin-top: 20px;"></div>
 
-<div style="display: flex;">
-  <div style="flex: 2; padding-right: 20px;">
-    # PISE Network
-    Welcome to the official website of the PISE Network! We connect over 300 graduates and students from the Bachelor’s program in Philosophy, International Studies, and Economics (PISE) at Ca’ Foscari University. Our goal is to bridge the gap between alumni and current students by providing networking opportunities, professional growth, and activities that enrich the academic experience. 
+# PISE Network
+Welcome to the official website of the PISE Network! We connect over 300 graduates and students from the Bachelor’s program in Philosophy, International Studies, and Economics (PISE) at Ca’ Foscari University. Our goal is to bridge the gap between alumni and current students by providing networking opportunities, professional growth, and activities that enrich the academic experience. 
 
-    Stay tuned for upcoming events and exciting news about our community!
+Stay tuned for upcoming events and exciting news about our community!
 
-    <div class="cta-container">
-      <a href="{{ site.baseurl }}/collaborate/" class="cta-button">Get Involved</a>
-      <a href="{{ site.baseurl }}/events/" class="cta-button">Upcoming Events</a>
-    </div>
-  </div>
-  <div class="agenda-events" style="flex: 1;">
-    <h2>Upcoming Events</h2>
-    <ul id="events-list">
-      <!-- The list of events will be dynamically loaded here -->
-    </ul>
-  </div>
+<div class="cta-container">
+  <a href="{{ site.baseurl }}/collaborate/" class="cta-button">Get Involved</a>
+  <a href="{{ site.baseurl }}/events/" class="cta-button">Upcoming Events</a>
 </div>
 
 <div class="social-links">
@@ -46,22 +37,6 @@ header:
     <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" width="30" style="border-radius: 10%;">
   </a>
 </div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    fetch("{{ site.baseurl }}/events/index.json")
-      .then(response => response.json())
-      .then(events => {
-        const eventsList = document.getElementById("events-list");
-        events.forEach(event => {
-          const listItem = document.createElement("li");
-          listItem.innerHTML = `<strong>${event.title}</strong><br>${event.date}<br><a href="${event.url}">More info</a>`;
-          eventsList.appendChild(listItem);
-        });
-      })
-      .catch(error => console.error("Error fetching events: ", error));
-  });
-</script>
 
 <style>
   .custom-nav {
@@ -138,33 +113,5 @@ header:
     100% {
       background-position: center bottom;
     }
-  }
-  .agenda-events {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-  .agenda-events h2 {
-    text-align: center;
-    color: #9b1c31;
-  }
-  #events-list {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0;
-  }
-  #events-list li {
-    margin: 15px 0;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-  }
-  #events-list a {
-    color: #9b1c31;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  #events-list a:hover {
-    text-decoration: underline;
   }
 </style>
