@@ -24,7 +24,7 @@ header:
     <div class="card">
       <div class="card-face card-front">
         <div>
-          <img src="/assets/images/member1.jpg" alt="Persona 1">
+          <img src="/assets/images/nicola_rotolo.jpg" alt="Nicola Rotolo">
           <h3>Nicola Rotolo</h3>
           <p>Co-Founder</p>
         </div>
@@ -42,7 +42,7 @@ header:
     <div class="card">
       <div class="card-face card-front">
         <div>
-          <img src="/assets/images/member2.jpg" alt="Persona 2">
+          <img src="/assets/images/giorgio_sanders.jpg" alt="Giorgio Sanders">
           <h3>Giorgio Sanders</h3>
           <p>Co-Founder</p>
         </div>
@@ -134,10 +134,10 @@ header:
 }
 
 .board-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-  justify-content: center;
+  justify-items: center;
   padding: 20px;
 }
 .card-container {
