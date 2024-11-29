@@ -12,15 +12,8 @@ header:
       url: "https://docs.google.com/forms/d/e/1FAIpQLSdzQVSNPTn8wuEiG0l9d5EHgJJOHP3K9QMJPSb_B9uWILes3Q/viewform?usp=sf_link"
 ---
 
-<nav class="custom-nav">
-  <ul>
-    <li><a href="{{ site.baseurl }}/">Home</a></li>
-    <li><a href="{{ site.baseurl }}/about-us/">About Us</a></li>
-    <li><a href="{{ site.baseurl }}/events/">Events</a></li>
-    <li><a href="{{ site.baseurl }}/resources/">Resources</a></li>
-    <li><a href="{{ site.baseurl }}/collaborate/">Collaborate with Us</a></li>
-  </ul>
-</nav>
+{% include nav.html %}
+
 
 <div class="content-container">
   <h1>Collaborate with Us</h1>

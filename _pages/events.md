@@ -8,15 +8,7 @@ header:
   caption: "Stay updated with the latest events organized by the PISE Network"
 ---
 
-<nav class="custom-nav">
-  <ul>
-    <li><a href="{{ site.baseurl }}/">Home</a></li>
-    <li><a href="{{ site.baseurl }}/about-us/">About Us</a></li>
-    <li><a href="{{ site.baseurl }}/events/">Events</a></li>
-    <li><a href="{{ site.baseurl }}/resources/">Resources</a></li>
-    <li><a href="{{ site.baseurl }}/collaborate/">Collaborate with Us</a></li>
-  </ul>
-</nav>
+{% include nav.html %}
 
 <div style="margin-top: 20px;"></div>
 
