@@ -1,3 +1,56 @@
+/* Desktop Navigation */
+.custom-nav #menu-items {
+  display: flex;
+  list-style: none;
+}
+
+.custom-nav #menu-toggle {
+  display: none; /* Hide toggle button on desktops */
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .custom-nav {
+    position: relative; /* Allows positioning for the toggle */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    justify-content: space-between; /* Space between toggle and items */
+  }
+
+  .custom-nav #menu-items {
+    display: none; /* Hide menu by default */
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Full-width dropdown */
+    background-color: #fff; /* Add background for clarity */
+    position: absolute;
+    top: 50px; /* Dropdown below the toggle */
+    left: 0;
+    z-index: 1000; /* Ensure it appears above other content */
+    border: 1px solid #ccc; /* Optional: Add a border for dropdown */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  }
+
+  .custom-nav #menu-items.active {
+    display: flex; /* Show menu when active */
+  }
+
+  .custom-nav #menu-toggle {
+    display: inline-block; /* Show toggle button on mobile */
+    position: absolute;
+    top: 10px; /* Adjust to align properly */
+    right: 15px; /* Align to the right */
+    background: none;
+    border: none;
+    font-size: 2rem; /* Increase size for better visibility */
+    cursor: pointer;
+    z-index: 2000; /* Ensure it appears above the menu */
+  }
+}
+
+
 /* Custom Board Member Styles for Flip Effect */
 .board-member-container {
   display: grid;
@@ -83,3 +136,6 @@
   font-size: 1.5em;
   color: #fff;
 }
+
+
+

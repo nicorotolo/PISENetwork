@@ -2,6 +2,9 @@
    jQuery plugin settings and other scripts
    ========================================================================== */
 
+// Debug log to confirm script is running
+console.log('Main JavaScript loaded');
+
 $(document).ready(function () {
   // FitVids init
   $("#main").fitVids();
@@ -231,4 +234,20 @@ $(document).ready(function () {
         container.prepend(copyButton);
       });
   }
+
+  // Hamburger Menu Toggle
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuItems = document.getElementById('menu-items');
+
+  if (menuToggle && menuItems) {
+    console.log('Hamburger menu initialized'); // Debugging log
+    menuToggle.addEventListener('click', function () {
+      console.log('Hamburger menu clicked'); // Debugging log
+      menuItems.classList.toggle('active');
+    });
+  } else {
+    console.error('Hamburger menu elements not found'); // Debugging log
+  }
+
+
 });
