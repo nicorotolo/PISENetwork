@@ -8,6 +8,8 @@ header:
   caption: "Connecting students and alumni of PISE at Ca' Foscari University"
   animate: true # Add animation to the header for a dynamic effect
 ---
+
+<!-- navigation bar -->
 {% include nav.html %}
 
 

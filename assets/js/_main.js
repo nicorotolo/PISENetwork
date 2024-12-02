@@ -243,7 +243,7 @@ $(document).ready(function () {
     console.log('Hamburger menu initialized'); // Debugging log
     menuToggle.addEventListener('click', function () {
       console.log('Hamburger menu clicked'); // Debugging log
-      menuItems.classList.toggle('active');
+      menuItems.classList.toggle('visible');
     });
   } else {
     console.error('Hamburger menu elements not found'); // Debugging log

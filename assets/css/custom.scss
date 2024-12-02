@@ -1,6 +1,6 @@
-/* Desktop Navigation */
+//* Desktop Navigation */
 .custom-nav #menu-items {
-  display: flex;
+  display: flex; /* Show items in a row on desktop */
   list-style: none;
 }
 
@@ -18,37 +18,34 @@
   }
 
   .custom-nav #menu-items {
-    display: none; /* Hide menu by default */
+    display: none; /* Hide menu items by default */
     flex-direction: column;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    width: 100%; /* Full-width dropdown */
-    background-color: #fff; /* Add background for clarity */
     position: absolute;
-    top: 50px; /* Dropdown below the toggle */
-    left: 0;
-    z-index: 1000; /* Ensure it appears above other content */
-    border: 1px solid #ccc; /* Optional: Add a border for dropdown */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    top: 50px;
+    right: 0;
+    background: white; /* Background for dropdown */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1000;
   }
 
-  .custom-nav #menu-items.active {
-    display: flex; /* Show menu when active */
+  .custom-nav #menu-items.visible {
+    display: flex; /* Show menu when visible */
+  }
+
+  .custom-nav #menu-items li {
+    margin: 10px 0; /* Add spacing between items */
   }
 
   .custom-nav #menu-toggle {
-    display: inline-block; /* Show toggle button on mobile */
-    position: absolute;
-    top: 10px; /* Adjust to align properly */
-    right: 15px; /* Align to the right */
+    display: block; /* Show toggle button on mobile */
+    font-size: 24px;
     background: none;
     border: none;
-    font-size: 2rem; /* Increase size for better visibility */
     cursor: pointer;
-    z-index: 2000; /* Ensure it appears above the menu */
   }
 }
+
 
 
 /* Custom Board Member Styles for Flip Effect */
