@@ -8,8 +8,6 @@ header:
   caption: "Stay updated with the latest events organized by the PISE Network"
 ---
 
-{% include nav.html %}
-
 <div style="margin-top: 20px;"></div>
 
 <style>

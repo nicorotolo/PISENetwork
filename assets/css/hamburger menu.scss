@@ -1,0 +1,144 @@
+/* Desktop Navigation */
+.custom-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 20px;
+}
+
+.custom-nav #menu-items {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.custom-nav #menu-items li a {
+  text-decoration: none;
+  color: #9b1c31; /* Update with the red color */
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.custom-nav #menu-items li a:hover {
+  color: #7a1427; /* Slightly darker red for hover effect */
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+  display: none; /* Hidden by default (desktop) */
+  position: relative;
+  padding: 10px 20px;
+  background: white;
+  border-bottom: 1px solid #ccc;
+}
+
+.hamburger-menu {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.masthead {
+  position: relative;
+  padding: 20px;
+  background: white;
+  border-bottom: 1px solid #ccc;
+}
+
+.mobile-menu {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu li a {
+  text-decoration: none;
+  color: #9b1c31; /* Update with the red color */
+  font-size: 16px;
+  padding: 10px 0;
+}
+
+.mobile-menu li a:hover {
+  color: #7a1427; /* Slightly darker red for hover effect */
+}
+
+.mobile-menu.visible {
+  display: flex; /* Show menu when toggled */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  /* Hide desktop navigation */
+  .custom-nav {
+    display: none;
+  }
+
+  /* Show mobile navigation */
+  .mobile-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: white;
+    border-bottom: 1px solid #ccc;
+  }
+
+  /* Show hamburger menu */
+  .hamburger-menu {
+    display: block;
+  }
+
+  /* Hide desktop menu items */
+  .custom-nav #menu-items {
+    display: none;
+  }
+
+  /* Ensure dropdown menu appears when triggered */
+  .mobile-menu.visible {
+    display: flex;
+  }
+}
+
+
+// Hide elements on mobile screens
+@media (max-width: 768px) {
+
+  .custom-nav {
+    display: none; // Hides the navigation menu
+  }
+
+  div[style="margin-top: 20px;"] {
+    display: none; // Hides the margin-top div
+  }
+}
+
+
+@media (min-width: 769px) {
+  /* Hide hamburger menu on desktop */
+  .hamburger-menu {
+    display: none;
+  }
+
+  /* Show desktop navigation */
+  .custom-nav {
+    display: flex;
+  }
+
+  .mobile-nav {
+    display: none; /* Hide mobile navigation */
+  }
+}

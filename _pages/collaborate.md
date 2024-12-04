@@ -12,9 +12,6 @@ header:
       url: "https://docs.google.com/forms/d/e/1FAIpQLSdzQVSNPTn8wuEiG0l9d5EHgJJOHP3K9QMJPSb_B9uWILes3Q/viewform?usp=sf_link"
 ---
 
-{% include nav.html %}
-
-
 <div class="content-container">
   <h1>Collaborate with Us</h1>
 

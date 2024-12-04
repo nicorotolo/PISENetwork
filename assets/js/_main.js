@@ -235,19 +235,6 @@ $(document).ready(function () {
       });
   }
 
-  // Hamburger Menu Toggle
-  const menuToggle = document.getElementById('menu-toggle');
-  const menuItems = document.getElementById('menu-items');
-
-  if (menuToggle && menuItems) {
-    console.log('Hamburger menu initialized'); // Debugging log
-    menuToggle.addEventListener('click', function () {
-      console.log('Hamburger menu clicked'); // Debugging log
-      menuItems.classList.toggle('visible');
-    });
-  } else {
-    console.error('Hamburger menu elements not found'); // Debugging log
-  }
-
 
 });
+

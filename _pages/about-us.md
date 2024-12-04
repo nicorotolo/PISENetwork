@@ -8,10 +8,6 @@ header:
   caption: "Learn more about the PISE Network and our mission"
 ---
 
-<!-- navigation bar -->
-{% include nav.html %}
-
-
 <!-- Our Mission Section -->
 <div class="mission-section">
   <h2>Our Mission</h2>

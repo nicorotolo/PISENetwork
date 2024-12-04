@@ -1,0 +1,282 @@
+[1mdiff --git a/_includes/masthead.html b/_includes/masthead.html[m
+[1mindex f919fb77..d5100c67 100644[m
+[1m--- a/_includes/masthead.html[m
+[1m+++ b/_includes/masthead.html[m
+[36m@@ -5,12 +5,16 @@[m
+     <div class="masthead__menu">[m
+       <nav id="site-nav" class="greedy-nav">[m
+         {% unless logo_path == empty %}[m
+[31m-          <a class="site-logo" href="{{ '/' | relative_url }}"><img src="{{ logo_path | relative_url }}" alt="{{ site.masthead_title | default: site.title }}"></a>[m
+[32m+[m[32m          <a class="site-logo" href="{{ '/' | relative_url }}">[m
+[32m+[m[32m            <img src="{{ logo_path | relative_url }}" alt="{{ site.masthead_title | default: site.title }}">[m
+[32m+[m[32m          </a>[m
+         {% endunless %}[m
+[31m-        <a class="site-title" href="{{ '/' | relative_url }}">[m
+[31m-          {{ site.masthead_title | default: site.title }}[m
+[31m-          {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle }}</span>{% endif %}[m
+[31m-        </a>[m
+[32m+[m[32m        <div class="masthead-title-wrapper">[m
+[32m+[m[32m          <a class="site-title" href="{{ '/' | relative_url }}">[m
+[32m+[m[32m            {{ site.masthead_title | default: site.title }}[m
+[32m+[m[32m            {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle }}</span>{% endif %}[m
+[32m+[m[32m          </a>[m
+[32m+[m[32m        </div>[m
+         <ul class="visible-links">[m
+           {%- for link in site.data.navigation.main -%}[m
+             <li class="masthead__menu-item">[m
+[36m@@ -22,17 +26,6 @@[m
+             </li>[m
+           {%- endfor -%}[m
+         </ul>[m
+[31m-        {% if site.search == true %}[m
+[31m-        <button class="search__toggle" type="button">[m
+[31m-          <span class="visually-hidden">{{ site.data.ui-text[site.locale].search_label | default: "Toggle search" }}</span>[m
+[31m-          <i class="fas fa-search"></i>[m
+[31m-        </button>[m
+[31m-        {% endif %}[m
+[31m-        <button class="greedy-nav__toggle hidden" type="button">[m
+[31m-          <span class="visually-hidden">{{ site.data.ui-text[site.locale].menu_label | default: "Toggle menu" }}</span>[m
+[31m-          <div class="navicon"></div>[m
+[31m-        </button>[m
+[31m-        <ul class="hidden-links hidden"></ul>[m
+       </nav>[m
+     </div>[m
+   </div>[m
+[1mdiff --git a/_includes/nav.html b/_includes/nav.html[m
+[1mdeleted file mode 100644[m
+[1mindex 0dd3b1ae..00000000[m
+[1m--- a/_includes/nav.html[m
+[1m+++ /dev/null[m
+[36m@@ -1,15 +0,0 @@[m
+[31m-<nav class="custom-nav">[m
+[31m-  <!-- Hamburger Menu Button -->[m
+[31m-  <button id="menu-toggle" class="hamburger-menu" aria-label="Toggle navigation">[m
+[31m-    ☰[m
+[31m-  </button>[m
+[31m-[m
+[31m-  <!-- Navigation Items -->[m
+[31m-  <ul id="menu-items" class="nav-menu">[m
+[31m-    <li><a href="{{ site.baseurl }}/">Home</a></li>[m
+[31m-    <li><a href="{{ site.baseurl }}/about-us/">About Us</a></li>[m
+[31m-    <li><a href="{{ site.baseurl }}/events/">Events</a></li>[m
+[31m-    <li><a href="{{ site.baseurl }}/resources/">Resources</a></li>[m
+[31m-    <li><a href="{{ site.baseurl }}/collaborate/">Collaborate with Us</a></li>[m
+[31m-  </ul>[m
+[31m-</nav>[m
+[1mdiff --git a/_layouts/default.html b/_layouts/default.html[m
+[1mindex ecfc4662..69ce101e 100644[m
+[1m--- a/_layouts/default.html[m
+[1m+++ b/_layouts/default.html[m
+[36m@@ -9,10 +9,16 @@[m
+     {% include head/custom.html %}[m
+   </head>[m
+ [m
+[32m+[m[32m  <link rel="stylesheet" href="{{ '/assets/css/navbar.css' | relative_url }}">[m
+[32m+[m
+[32m+[m
+   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">[m
+     {% include_cached skip-links.html %}[m
+     {% include_cached masthead.html %}[m
+ [m
+[32m+[m[32m    <!-- Add the Navigation Bar Here -->[m
+[32m+[m[32m    {% include navbar.html %}[m
+[32m+[m
+     <div class="initial-content">[m
+       {{ content }}[m
+       {% include after-content.html %}[m
+[1mdiff --git a/_pages/about-us.md b/_pages/about-us.md[m
+[1mindex 7553757f..d655e2ea 100644[m
+[1m--- a/_pages/about-us.md[m
+[1m+++ b/_pages/about-us.md[m
+[36m@@ -8,10 +8,6 @@[m [mheader:[m
+   caption: "Learn more about the PISE Network and our mission"[m
+ ---[m
+ [m
+[31m-<!-- navigation bar -->[m
+[31m-{% include nav.html %}[m
+[31m-[m
+[31m-[m
+ <!-- Our Mission Section -->[m
+ <div class="mission-section">[m
+   <h2>Our Mission</h2>[m
+[1mdiff --git a/_pages/collaborate.md b/_pages/collaborate.md[m
+[1mindex 9c3744de..20e721fe 100644[m
+[1m--- a/_pages/collaborate.md[m
+[1m+++ b/_pages/collaborate.md[m
+[36m@@ -12,9 +12,6 @@[m [mheader:[m
+       url: "https://docs.google.com/forms/d/e/1FAIpQLSdzQVSNPTn8wuEiG0l9d5EHgJJOHP3K9QMJPSb_B9uWILes3Q/viewform?usp=sf_link"[m
+ ---[m
+ [m
+[31m-{% include nav.html %}[m
+[31m-[m
+[31m-[m
+ <div class="content-container">[m
+   <h1>Collaborate with Us</h1>[m
+ [m
+[1mdiff --git a/_pages/events.md b/_pages/events.md[m
+[1mindex 9f2f6e86..db458a5a 100644[m
+[1m--- a/_pages/events.md[m
+[1m+++ b/_pages/events.md[m
+[36m@@ -8,8 +8,6 @@[m [mheader:[m
+   caption: "Stay updated with the latest events organized by the PISE Network"[m
+ ---[m
+ [m
+[31m-{% include nav.html %}[m
+[31m-[m
+ <div style="margin-top: 20px;"></div>[m
+ [m
+ <style>[m
+[1mdiff --git a/assets/css/custom.scss b/assets/css/custom.scss[m
+[1mindex b121ffe3..2569c582 100644[m
+[1m--- a/assets/css/custom.scss[m
+[1m+++ b/assets/css/custom.scss[m
+[36m@@ -1,53 +1,3 @@[m
+[31m-//* Desktop Navigation */[m
+[31m-.custom-nav #menu-items {[m
+[31m-  display: flex; /* Show items in a row on desktop */[m
+[31m-  list-style: none;[m
+[31m-}[m
+[31m-[m
+[31m-.custom-nav #menu-toggle {[m
+[31m-  display: none; /* Hide toggle button on desktops */[m
+[31m-}[m
+[31m-[m
+[31m-/* Mobile Navigation */[m
+[31m-@media (max-width: 768px) {[m
+[31m-  .custom-nav {[m
+[31m-    position: relative; /* Allows positioning for the toggle */[m
+[31m-    display: flex;[m
+[31m-    align-items: center; /* Center content vertically */[m
+[31m-    justify-content: space-between; /* Space between toggle and items */[m
+[31m-  }[m
+[31m-[m
+[31m-  .custom-nav #menu-items {[m
+[31m-    display: none; /* Hide menu items by default */[m
+[31m-    flex-direction: column;[m
+[31m-    position: absolute;[m
+[31m-    top: 50px;[m
+[31m-    right: 0;[m
+[31m-    background: white; /* Background for dropdown */[m
+[31m-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);[m
+[31m-    padding: 10px;[m
+[31m-    z-index: 1000;[m
+[31m-  }[m
+[31m-[m
+[31m-  .custom-nav #menu-items.visible {[m
+[31m-    display: flex; /* Show menu when visible */[m
+[31m-  }[m
+[31m-[m
+[31m-  .custom-nav #menu-items li {[m
+[31m-    margin: 10px 0; /* Add spacing between items */[m
+[31m-  }[m
+[31m-[m
+[31m-  .custom-nav #menu-toggle {[m
+[31m-    display: block; /* Show toggle button on mobile */[m
+[31m-    font-size: 24px;[m
+[31m-    background: none;[m
+[31m-    border: none;[m
+[31m-    cursor: pointer;[m
+[31m-  }[m
+[31m-}[m
+[31m-[m
+[31m-[m
+[31m-[m
+ /* Custom Board Member Styles for Flip Effect */[m
+ .board-member-container {[m
+   display: grid;[m
+[36m@@ -132,7 +82,4 @@[m
+   margin-top: 10px;[m
+   font-size: 1.5em;[m
+   color: #fff;[m
+[31m-}[m
+[31m-[m
+[31m-[m
+[31m-[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/assets/js/_main.js b/assets/js/_main.js[m
+[1mindex ec36382f..ea34e802 100644[m
+[1m--- a/assets/js/_main.js[m
+[1m+++ b/assets/js/_main.js[m
+[36m@@ -235,19 +235,6 @@[m [m$(document).ready(function () {[m
+       });[m
+   }[m
+ [m
+[31m-  // Hamburger Menu Toggle[m
+[31m-  const menuToggle = document.getElementById('menu-toggle');[m
+[31m-  const menuItems = document.getElementById('menu-items');[m
+[31m-[m
+[31m-  if (menuToggle && menuItems) {[m
+[31m-    console.log('Hamburger menu initialized'); // Debugging log[m
+[31m-    menuToggle.addEventListener('click', function () {[m
+[31m-      console.log('Hamburger menu clicked'); // Debugging log[m
+[31m-      menuItems.classList.toggle('visible');[m
+[31m-    });[m
+[31m-  } else {[m
+[31m-    console.error('Hamburger menu elements not found'); // Debugging log[m
+[31m-  }[m
+[31m-[m
+ [m
+ });[m
+[41m+[m
+[1mdiff --git a/index.md b/index.md[m
+[1mindex e2bbf7f0..8e569c7d 100644[m
+[1m--- a/index.md[m
+[1m+++ b/index.md[m
+[36m@@ -9,9 +9,6 @@[m [mheader:[m
+   animate: true # Add animation to the header for a dynamic effect[m
+ ---[m
+ [m
+[31m-<!-- navigation bar -->[m
+[31m-{% include nav.html %}[m
+[31m-[m
+ [m
+ <div style="margin-top: 20px;"></div>[m
+ [m
+[36m@@ -35,45 +32,7 @@[m [mStay tuned for upcoming events and exciting news about our community![m
+ </div>[m
+ [m
+ <style>[m
+[31m-  .custom-nav {[m
+[31m-    display: flex;               /* Use Flexbox to manage spacing */[m
+[31m-    justify-content: space-evenly; /* Space links evenly across the bar */[m
+[31m-    align-items: center;[m
+[31m-    width: 100%;                 /* Make the navigation bar take full width */[m
+[31m-    position: sticky;            /* Stick to the top of the viewport when scrolling */[m
+[31m-    top: 0;[m
+[31m-    background-color: rgba(240, 240, 240, 0.9); /* Light grey background */[m
+[31m-    padding: 15px 0;[m
+[31m-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);[m
+[31m-    z-index: 10;                 /* Keep on top of other content */[m
+[31m-  }[m
+[31m-  .custom-nav ul {[m
+[31m-    display: flex;               /* Flexbox to manage buttons alignment */[m
+[31m-    width: 100%;[m
+[31m-    list-style: none;            /* Remove bullet points */[m
+[31m-    margin: 0;[m
+[31m-    padding: 0;[m
+[31m-  }[m
+[31m-  .custom-nav li {[m
+[31m-    flex: 1;                     /* Make each list item take up equal space */[m
+[31m-    text-align: center;          /* Center the content of each list item */[m
+[31m-  }[m
+[31m-  .custom-nav a {[m
+[31m-    display: block;              /* Allow padding on links to work like a button */[m
+[31m-    color: #9b1c31;              /* Ca' Foscari red color */[m
+[31m-    background-color: rgba(240, 240, 240, 0.9); /* Light grey button background */[m
+[31m-    text-decoration: none;       /* Remove underline from links */[m
+[31m-    padding: 10px 20px;          /* Space inside each button */[m
+[31m-    margin: 0;                   /* Remove margin to avoid spacing between buttons */[m
+[31m-    border-radius: 5px;          /* Rounded corners for button effect */[m
+[31m-    font-weight: bold;           /* Bold text */[m
+[31m-    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */[m
+[31m-  }[m
+[31m-  .custom-nav a:hover {[m
+[31m-    background-color: #e3c8c1;   /* Slightly darker beige on hover */[m
+[31m-    transform: scale(1.05);      /* Slightly increase size on hover for emphasis */[m
+[31m-  }[m
+[31m-  .cta-container {[m
+[32m+[m[32m    .cta-container {[m
+     text-align: center;[m
+     margin: 40px 0;[m
+   }[m
