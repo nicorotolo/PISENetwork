@@ -1,11 +1,30 @@
-<!-- Desktop Navigation -->
-<nav class="custom-nav">
-  <ul id="menu-items" class="desktop-menu">
-    <li><a href="{{ site.baseurl }}/">Home</a></li>
-    <li><a href="{{ site.baseurl }}/about-us/">About Us</a></li>
-    <li><a href="{{ site.baseurl }}/events/">Events</a></li>
-    <li><a href="{{ site.baseurl }}/resources/">Resources</a></li>
-    <li><a href="{{ site.baseurl }}/collaborate/">Collaborate with Us</a></li>
+<nav class="navigation">
+  <!-- Desktop Navigation -->
+  <ul class="desktop-menu">
+    {%- for link in site.data.navigation.main -%}
+      <li><a href="{{ link.url | relative_url }}" title="{{ link.description }}">{{ link.title }}</a></li>
+    {%- endfor -%}
   </ul>
-</nav>
 
+  <!-- Mobile Hamburger Menu -->
+  <div id="menu-container">
+    <!-- Hidden Checkbox for Toggling -->
+    <input type="checkbox" id="checkbox" style="display: none;">
+
+    <!-- Hamburger Icon -->
+    <label for="checkbox" class="toggle">
+      <div class="bars"></div>
+      <div class="bars"></div>
+      <div class="bars"></div>
+    </label>
+
+    <!-- Slide-in Mobile Navigation -->
+    <div id="mobile-nav">
+      <ul>
+        {%- for link in site.data.navigation.main -%}
+          <li><a href="{{ link.url | relative_url }}" title="{{ link.description }}">{{ link.title }}</a></li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+</nav>

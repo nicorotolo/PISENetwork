@@ -1,4 +1,7 @@
-/* Custom Board Member Styles for Flip Effect */
+---
+---
+
+/* === Board Member Styles for Flip Effect === */
 .board-member-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* First row will always have two cards */
@@ -9,7 +12,7 @@
 
 .board-member-container > .board-member:nth-child(n+3) {
   grid-column: span 1; /* Allow remaining cards to span a single column */
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust to fit available space for remaining rows */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust for remaining rows */
 }
 
 .board-member {
@@ -19,11 +22,11 @@
 }
 
 .board-card {
-  position: relative; /* Relative to contain the front and back faces */
-  width: 250px; /* Set a fixed width for the card */
-  height: 450px; /* Make height longer to achieve inverted rectangle shape */
+  position: relative;
+  width: 250px; /* Fixed width for uniformity */
+  height: 450px; /* Inverted rectangle shape */
   transform-style: preserve-3d;
-  transition: transform 0.6s ease-in-out; /* Smooth flipping effect */
+  transition: transform 0.6s ease-in-out; /* Smooth flip animation */
 }
 
 .board-card:hover {
@@ -32,19 +35,19 @@
 
 .board-card-front,
 .board-card-back {
-  position: absolute; /* Stack both faces on top of each other */
+  position: absolute;
   width: 100%;
-  height: 100%; /* Set to match the height of the container to avoid inconsistencies */
+  height: 100%; /* Match container height to avoid inconsistencies */
   top: 0;
   left: 0;
   backface-visibility: hidden; /* Hide the reverse side when not flipped */
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Depth effect */
 }
 
 .board-card-front {
   transform: rotateY(0deg);
-  z-index: 2; /* The front side is initially visible */
+  z-index: 2; /* The front side is visible by default */
   background: #fff;
   padding: 20px;
   text-align: center;
@@ -52,9 +55,9 @@
 
 .board-card-back {
   transform: rotateY(180deg);
-  z-index: 1; /* The back face is behind the front face */
-  background: #9b1c31; /* Set color for the back */
-  color: #fff;
+  z-index: 1; /* Back side is hidden initially */
+  background: #9b1c31; /* Back face color */
+  color: #fff; /* Text color */
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -65,7 +68,7 @@
 .board-card img {
   border-radius: 50%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  width: 120px; /* Adjusted to maintain proportion */
+  width: 120px;
   height: 120px;
   object-fit: cover;
 }
@@ -82,4 +85,139 @@
   margin-top: 10px;
   font-size: 1.5em;
   color: #fff;
+}
+
+
+/* === Hamburger Menu Styles === */
+
+/* Hamburger Button */
+.burger {
+  position: fixed; /* Fix the button in a specific location */
+  top: 20px; /* Adjust vertical placement */
+  right: 20px; /* Adjust horizontal placement */
+  z-index: 1101; /* Ensure it's above the side menu */
+  width: 40px;
+  height: 30px;
+  background: transparent;
+  cursor: pointer;
+  display: block;
+}
+
+.burger input {
+  display: none; /* Hide the checkbox */
+}
+
+/* The three lines of the hamburger button */
+.burger span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: #9b1c31;
+  border-radius: 9px;
+  transition: 0.25s ease-in-out;
+}
+
+/* Line positioning */
+.burger span:nth-of-type(1) {
+  top: 0px;
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(3) {
+  top: 100%;
+  transform-origin: left center;
+  transform: translateY(-100%);
+}
+
+/* Animation when checked */
+.burger input:checked ~ label span:nth-of-type(1) {
+  transform: rotate(45deg);
+  top: 0px;
+  left: 5px;
+}
+
+.burger input:checked ~ label span:nth-of-type(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.burger input:checked ~ label span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  top: 28px;
+  left: 5px;
+}
+
+/* Side Menu */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -250px; /* Initially hidden */
+  width: 250px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9); /* Light black background */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Optional shadow */
+  padding: 20px;
+  z-index: 1000;
+  transition: right 0.3s ease-in-out;
+}
+
+/* Show side menu when checkbox is checked */
+.burger input:checked ~ .side-menu {
+  right: 0; /* Slide the menu into view */
+}
+
+/* Style for the links in the side menu */
+.side-menu .menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-menu .menu li {
+  margin: 10px 0;
+}
+
+/* Side Menu Links */
+.side-menu .menu li a {
+  text-decoration: none;
+  color: #fff; /* White text */
+  font-weight: bold; /* Bold links */
+  font-size: 18px; /* Font size for links */
+  display: block;
+  transition: color 0.2s ease-in-out, text-decoration 0.2s ease-in-out;
+}
+
+.side-menu .menu li a:hover {
+  color: red; /* Red text on hover */
+  text-decoration: underline; /* Underlined on hover */
+}
+
+/* Hide default navigation links on mobile */
+@media (max-width: 768px) {
+  .burger label {
+    display: block; /* Show hamburger icon only on phones */
+  }
+  .visible-links {
+    display: none !important; /* Hide PC navigation on mobile */
+  }
+}
+
+/* Desktop view */
+@media (min-width: 769px) {
+  .burger {
+    display: none; /* Hide hamburger menu on larger screens */
+  }
+  .side-menu {
+    right: -250px; /* Keep side menu hidden */
+  }
+  .visible-links {
+    display: flex; /* Show PC navigation */
+  }
 }

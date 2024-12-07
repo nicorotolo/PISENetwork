@@ -1,11 +1,17 @@
 # main links
 main:
-  
-  # - title: "About"
-  #   url: https://mmistakes.github.io/minimal-mistakes/about/
-  # - title: "Sample Posts"
-  #   url: /year-archive/
-  # - title: "Sample Collections"
-  #   url: /collection-archive/
-  # - title: "Sitemap"
-  #   url: /sitemap/
+  - title: Home
+    url: /
+    description: Go to the homepage
+  - title: About Us
+    url: /about-us/
+    description: Learn more about our story
+  - title: Events
+    url: /events/
+    description: Upcoming Events
+  - title: Editorial
+    url: /editorial/
+    description: Read our latest editorials and newsletter
+  - title: Collaborate with Us
+    url: /collaborate/
+    description: Get Involved

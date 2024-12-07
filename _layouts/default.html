@@ -1,42 +1,38 @@
----
----
-
 <!doctype html>
-{% include copyright.html %}
 <html lang="{{ site.locale | replace: "_", "-" | default: "en" }}" class="no-js">
-  <head>
-    {% include head.html %}
-    {% include head/custom.html %}
-  </head>
 
-  <link rel="stylesheet" href="{{ '/assets/css/navbar.css' | relative_url }}">
+<head>
+  <!-- Head content for metadata, page titles, and linked styles/scripts -->
+  {% include head.html %}
+  {% include head/custom.html %}
+</head>
+
+<!-- Link to additional stylesheets -->
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+<script src="{{ '/assets/js/burger.js' | relative_url }}"></script>
 
 
-  <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
-    {% include_cached skip-links.html %}
-    {% include_cached masthead.html %}
 
-    <!-- Add the Navigation Bar Here -->
-    {% include navbar.html %}
+<body>
+  <!-- Masthead: Top banner or header of the site -->
+  {% include_cached masthead.html %}
 
-    <div class="initial-content">
-      {{ content }}
-      {% include after-content.html %}
-    </div>
+  <!-- Main content of the page -->
+  <div class="initial-content">
+    {{ content }}
+    {% include after-content.html %}
+  </div>
 
-    {% if site.search == true %}
-      <div class="search-content">
-        {% include_cached search/search_form.html %}
-      </div>
-    {% endif %}
+  <!-- Footer section of the site -->
+  <div id="footer" class="page__footer">
+    <footer>
+      {% include footer/custom.html %}
+      {% include_cached footer.html %}
+    </footer>
+  </div>
 
-    <div id="footer" class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
-        {% include_cached footer.html %}
-      </footer>
-    </div>
+  <!-- JavaScript for dynamic behavior -->
+  <script src="{{ site.baseurl }}/assets/js/burger.js"></script>
+</body>
 
-    {% include scripts.html %}
-  </body>
 </html>

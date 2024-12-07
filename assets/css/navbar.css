@@ -43,3 +43,61 @@
 }
 
 /*# sourceMappingURL=navbar.css.map */
+
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .desktop-menu {
+    display: none; /* Hide desktop menu on small screens */
+  }
+
+  #mobile-nav {
+    display: none; /* Hide mobile nav by default */
+    background-color: #f0f0f0; /* Match the design */
+    position: absolute;
+    top: 50px; /* Adjust based on your header height */
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  #mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  #mobile-nav li {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  #mobile-nav li a {
+    text-decoration: none;
+    color: #9b1c31;
+    display: block;
+  }
+
+  .toggle {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    margin: 10px;
+  }
+
+  .toggle .bars {
+    height: 4px;
+    background-color: #9b1c31;
+    border-radius: 2px;
+    transition: transform 0.3s;
+  }
+
+  #checkbox:checked ~ #mobile-nav {
+    display: block; /* Show the menu when checked */
+  }
+}
+

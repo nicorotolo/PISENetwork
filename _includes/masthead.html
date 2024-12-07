@@ -2,31 +2,52 @@
 
 <div class="masthead">
   <div class="masthead__inner-wrap">
-    <div class="masthead__menu">
-      <nav id="site-nav" class="greedy-nav">
-        {% unless logo_path == empty %}
-          <a class="site-logo" href="{{ '/' | relative_url }}">
-            <img src="{{ logo_path | relative_url }}" alt="{{ site.masthead_title | default: site.title }}">
-          </a>
-        {% endunless %}
-        <div class="masthead-title-wrapper">
-          <a class="site-title" href="{{ '/' | relative_url }}">
-            {{ site.masthead_title | default: site.title }}
-            {% if site.subtitle %}<span class="site-subtitle">{{ site.subtitle }}</span>{% endif %}
-          </a>
+    <nav id="site-nav" class="greedy-nav">
+      <!-- Logo -->
+      {% unless site.logo == empty %}
+        <a class="site-logo" href="{{ '/' | relative_url }}">
+          <img src="{{ site.logo | relative_url }}" alt="{{ site.title }}">
+        </a>
+      {% endunless %}
+
+      <!-- Title -->
+      <a class="site-title" href="{{ '/' | relative_url }}">
+        {{ site.masthead_title | default: site.title }}
+        {% if site.subtitle %}
+          <span class="site-subtitle">{{ site.subtitle }}</span>
+        {% endif %}
+      </a>
+
+      <!-- Hamburger Button and Side Menu -->
+      <div class="burger">
+        <input type="checkbox" id="burger" />
+        <label for="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <!-- Side Menu (Direct Sibling) -->
+        <div class="side-menu">
+          <ul class="menu">
+            {% for item in site.data.navigation.main %}
+              <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+            {% endfor %}
+          </ul>
         </div>
-        <ul class="visible-links">
-          {%- for link in site.data.navigation.main -%}
-            <li class="masthead__menu-item">
-              <a
-                href="{{ link.url | relative_url }}"
-                {% if link.description %} title="{{ link.description }}"{% endif %}
-                {% if link.target %} target="{{ link.target }}"{% endif %}
-              >{{ link.title }}</a>
-            </li>
-          {%- endfor -%}
-        </ul>
-      </nav>
-    </div>
+      </div>
+
+      <!-- Default Navigation Links -->
+      <ul class="visible-links">
+        {% for link in site.data.navigation.main %}
+          <li class="masthead__menu-item">
+            <a
+              href="{{ link.url | relative_url }}"
+              {% if link.description %} title="{{ link.description }}"{% endif %}
+            >{{ link.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
   </div>
 </div>
