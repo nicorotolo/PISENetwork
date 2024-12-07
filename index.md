@@ -22,6 +22,40 @@ Stay tuned for upcoming events and exciting news about our community!
   <a href="{{ site.baseurl }}/events/" class="cta-button">Upcoming Events</a>
 </div>
 
+
+<h2 class="event-title">The PISE Academic Year Inauguration Event</h2>
+<p class="event-subtitle">20th September 2024, Ca' Dolfin, Venice</p>
+
+
+
+<div id="myCarousel" class="carousel slide mx-auto" style="max-width: 600px;" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/assets/images/dolfin1.jpg" class="d-block w-100" alt="Slide 1">
+    </div>
+    <div class="carousel-item">
+      <img src="/assets/images/dolfin2.jpg" class="d-block w-100" alt="Slide 2">
+    </div>
+    <div class="carousel-item">
+      <img src="/assets/images/dolfin3.jpg" class="d-block w-100" alt="Slide 3">
+    </div>
+    <div class="carousel-item">
+      <img src="/assets/images/dolfin4.jpg" class="d-block w-100" alt="Slide 4">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
+
 <div class="social-links">
   <a href="https://www.linkedin.com/groups/9804209/" target="_blank">
     <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="30" style="border-radius: 10%;">
