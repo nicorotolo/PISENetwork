@@ -10,10 +10,18 @@
 
 /* Customize the images */
 #homepage-carousel .carousel-item img {
-    object-fit: cover;
-    height: 80vh; /* Increased height for better formatting */
-    filter: brightness(0.9); /* Slight dark overlay for better text contrast */
-    border-radius: 8px; /* Soft corners for a modern feel */
+    object-fit: cover; /* Ensures images fill their container while maintaining aspect ratio */
+    height: 80vh; /* Default height for larger screens */
+    width: 100%; /* Always occupy the full width */
+    border-radius: 8px; /* Soft corners */
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+    #homepage-carousel .carousel-item img {
+        height: auto; /* Allow the image height to adapt naturally */
+        max-height: 60vh; /* Limit height to ensure proper scaling */
+    }
 }
 
 /* Control buttons */
@@ -21,7 +29,7 @@
 #homepage-carousel .carousel-control-next-icon {
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     border-radius: 50%;
-    width: 50px; /* Slightly larger buttons */
+    width: 50px;
     height: 50px;
     display: flex;
     justify-content: center;
