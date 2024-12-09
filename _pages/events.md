@@ -25,7 +25,7 @@ Stay informed about our latest events, including workshops, networking sessions,
 
   <!-- Add to Calendar Button -->
   <div class="add-to-calendar-container" style="margin-top: 20px;">
-    <button onclick="window.open('https://calendar.google.com/calendar/u/0/r?cid=5bafd044d7d4022a0eb80ea3694717d3eff047c74b0a39783caaa43efdd20597@group.calendar.google.com', '_blank')">
+    <button class="custom-button" onclick="window.open('https://calendar.google.com/calendar/u/0/r?cid=5bafd044d7d4022a0eb80ea3694717d3eff047c74b0a39783caaa43efdd20597@group.calendar.google.com', '_blank')">
       Add to Your Calendar
       <span></span>
     </button>

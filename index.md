@@ -26,35 +26,31 @@ Stay tuned for upcoming events and exciting news about our community!
 <h2 class="event-title">The PISE Academic Year Inauguration Event</h2>
 <p class="event-subtitle">20th September 2024, Ca' Dolfin, Venice</p>
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 
-<div id="myCarousel" class="carousel slide mx-auto" style="max-width: 600px;" data-bs-ride="carousel">
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="/assets/images/dolfin1.jpg" class="d-block w-100" alt="Slide 1">
+      <img src="{{ site.baseurl }}/assets/images/dolfin1.jpg" class="d-block w-100" alt="Slide 1">
     </div>
     <div class="carousel-item">
-      <img src="/assets/images/dolfin2.jpg" class="d-block w-100" alt="Slide 2">
+      <img src="{{ site.baseurl }}/assets/images/dolfin2.jpg" class="d-block w-100" alt="Slide 2">
     </div>
     <div class="carousel-item">
-      <img src="/assets/images/dolfin3.jpg" class="d-block w-100" alt="Slide 3">
-    </div>
-    <div class="carousel-item">
-      <img src="/assets/images/dolfin4.jpg" class="d-block w-100" alt="Slide 4">
+      <img src="{{ site.baseurl }}/assets/images/dolfin3.jpg" class="d-block w-100" alt="Slide 3">
     </div>
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-
-
-
 
 <div class="social-links">
   <a href="https://www.linkedin.com/groups/9804209/" target="_blank">
@@ -64,43 +60,3 @@ Stay tuned for upcoming events and exciting news about our community!
     <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" width="30" style="border-radius: 10%;">
   </a>
 </div>
-
-<style>
-    .cta-container {
-    text-align: center;
-    margin: 40px 0;
-  }
-  .cta-button {
-    display: inline-block;
-    margin: 10px;
-    padding: 15px 25px;
-    background-color: #9b1c31;
-    color: #fff !important;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s;
-  }
-  .cta-button:hover {
-    background-color: #e3c8c1;
-    transform: scale(1.1);
-  }
-  .social-links {
-    text-align: center;
-    margin: 40px 0;
-  }
-  .social-links a {
-    margin: 0 10px;
-  }
-  header.splash {
-    animation: parallax 10s infinite alternate ease-in-out; /* Add parallax effect */
-  }
-  @keyframes parallax {
-    0% {
-      background-position: center top;
-    }
-    100% {
-      background-position: center bottom;
-    }
-  }
-</style>

@@ -329,9 +329,8 @@
 
 
 
-/* add-to-calendar button styling*/
 
-/* Button Style Adapted with Custom Colors */
+/* Add-to-Calendar Button Styles */
 .add-to-calendar-container {
   display: flex;
   justify-content: center;
@@ -339,8 +338,7 @@
   margin-top: 20px;
 }
 
-
-button {
+.add-to-calendar-container .custom-button {
   border: none;
   display: block;
   position: relative;
@@ -356,7 +354,7 @@ button {
   font-weight: 500;
 }
 
-button span {
+.add-to-calendar-container .custom-button span {
   position: absolute;
   left: 0;
   top: 0;
@@ -367,7 +365,7 @@ button span {
   border: 4px solid #9b1c31; /* Border matches primary color */
 }
 
-button span::before {
+.add-to-calendar-container .custom-button span::before {
   content: "";
   display: block;
   position: absolute;
@@ -380,16 +378,56 @@ button span::before {
   transition: all 0.3s;
 }
 
-button:hover span::before {
+.add-to-calendar-container .custom-button:hover span::before {
   transform: translate(-50%, -50%) rotate(-90deg);
   width: 100%;
   background: #9b1c31; /* Fill matches primary color */
 }
 
-button:hover {
+.add-to-calendar-container .custom-button:hover {
   color: white; /* White text on hover */
 }
 
-button:active span::before {
+.add-to-calendar-container .custom-button:active span::before {
   background: #7f1628; /* Darker variant for active state */
+}
+
+
+
+.cta-container {
+  text-align: center;
+  margin: 40px 0;
+}
+.cta-button {
+  display: inline-block;
+  margin: 10px;
+  padding: 15px 25px;
+  background-color: #9b1c31;
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+.cta-button:hover {
+  background-color: #e3c8c1;
+  transform: scale(1.1);
+}
+.social-links {
+  text-align: center;
+  margin: 40px 0;
+}
+.social-links a {
+  margin: 0 10px;
+}
+header.splash {
+  animation: parallax 10s infinite alternate ease-in-out; /* Add parallax effect */
+}
+@keyframes parallax {
+  0% {
+    background-position: center top;
+  }
+  100% {
+    background-position: center bottom;
+  }
 }
