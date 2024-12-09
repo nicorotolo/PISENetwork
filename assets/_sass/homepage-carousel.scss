@@ -1,0 +1,66 @@
+/* === homepage carousel style === */
+
+
+/* Style for the carousel container */
+#homepage-carousel {
+    max-width: 100%;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Customize the images */
+#homepage-carousel .carousel-item img {
+    object-fit: cover;
+    height: 80vh; /* Increased height for better formatting */
+    filter: brightness(0.9); /* Slight dark overlay for better text contrast */
+    border-radius: 8px; /* Soft corners for a modern feel */
+}
+
+/* Control buttons */
+#homepage-carousel .carousel-control-prev-icon,
+#homepage-carousel .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 50%;
+    width: 50px; /* Slightly larger buttons */
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hover effect for controls */
+#homepage-carousel .carousel-control-prev-icon:hover,
+#homepage-carousel .carousel-control-next-icon:hover {
+    background-color: #9b1c31; /* Red background on hover */
+    color: white; /* Ensure arrows are white */
+}
+
+/* Adjust the SVG arrows to white */
+#homepage-carousel .carousel-control-prev-icon::after,
+#homepage-carousel .carousel-control-next-icon::after {
+    content: ''; /* Clear default styling */
+    background: none;
+}
+
+#homepage-carousel .carousel-control-prev:hover .carousel-control-prev-icon,
+#homepage-carousel .carousel-control-next:hover .carousel-control-next-icon {
+    color: white; /* Ensure arrows inside are white on hover */
+}
+
+/* Dots indicator (if added) */
+#homepage-carousel .carousel-indicators [data-bs-target] {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+}
+
+#homepage-carousel .carousel-indicators [data-bs-target].active {
+    background-color: #9b1c31; /* Match theme primary color */
+}
+
+/* Accessibility */
+#homepage-carousel .visually-hidden {
+    font-family: 'Inter', sans-serif; /* Match website typography */
+    font-size: 0.9rem;
+}
