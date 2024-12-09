@@ -272,6 +272,9 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
+  - bootstrap
+
+  
 
 # mimic GitHub Pages with --safe
 whitelist:
@@ -350,3 +353,6 @@ navigation:
     url: "/contact"
 
       
+collections:
+  events:
+    output: true

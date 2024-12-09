@@ -223,9 +223,6 @@
 }
 
 
-
-
-
 //title for carousel
 .event-title {
   text-align: center;
@@ -240,4 +237,159 @@
   font-size: 1.2rem;
   margin-bottom: 20px;
   color: #555; /* Subtle gray for subtitle */
+}
+
+
+
+/* Accordion Buttons */
+.accordion-button {
+  background-color: #9b1c31; /* Default background color (brand red) */
+  color: white; /* White text */
+  border: 1px solid #9b1c31; /* Red border matching background */
+  border-radius: 5px; /* Slightly rounded corners */
+  font-weight: bold; /* Bold text */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth color transitions */
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #e3c8c1; /* Lighter shade of red for active state */
+  color: #9b1c31; /* Text matches brand red */
+}
+
+.accordion-button:hover {
+  background-color: #7f1628; /* Darker shade of red for hover */
+  color: white; /* Text remains white on hover */
+}
+
+/* Remove borders and shadows around accordion items */
+.accordion-item {
+  border: none; /* Remove the outer border */
+  box-shadow: none; /* Remove shadow if present */
+  margin-bottom: 10px; /* Adds space between items */
+  border-radius: 5px; /* Optional: slightly rounded corners */
+  overflow: hidden; /* Ensures corners are clean */
+
+}
+
+/* Remove borders and shadows around accordion buttons */
+.accordion-button {
+  border: none; /* Remove border */
+  box-shadow: none; /* Remove shadow */
+  outline: none; /* Remove focus outline if present */
+}
+
+
+/* Accordion Body */
+.accordion-body {
+  background-color: #fafafa; /* Subtle light gray for body content */
+  color: #333; /* Text color for better readability */
+}
+
+/* Card Styling */
+.card {
+  border: 1px solid #9b1c31; /* Red border for cards */
+  border-radius: 10px; /* Slightly rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background-color: #fff; /* White background for content */
+}
+
+.card-title {
+  color: #9b1c31; /* Brand red for card titles */
+  font-weight: bold; /* Bold titles */
+}
+
+.card:hover {
+  background-color: #fdf0f1; /* Subtle pinkish background change on hover */
+  transform: scale(1.02); /* Slight zoom effect for interactivity */
+  transition: all 0.3s ease; /* Smooth transitions for hover effect */
+}
+
+.card-text {
+  color: #555; /* Neutral gray for body text */
+}
+
+/* Event List Layout */
+.event-list {
+  display: flex;
+  flex-direction: column; /* Stack events vertically */
+  gap: 20px; /* Space between event cards */
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px); /* Slide in from below */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End at normal position */
+  }
+}
+
+
+
+/* add-to-calendar button styling*/
+
+/* Button Style Adapted with Custom Colors */
+.add-to-calendar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+
+button {
+  border: none;
+  display: block;
+  position: relative;
+  padding: 0.7em 2.4em;
+  font-size: 18px;
+  background: transparent;
+  cursor: pointer;
+  user-select: none;
+  overflow: hidden;
+  color: #9b1c31; /* Custom primary color */
+  z-index: 1;
+  font-family: inherit;
+  font-weight: 500;
+}
+
+button span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: -1;
+  border: 4px solid #9b1c31; /* Border matches primary color */
+}
+
+button span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 8%;
+  height: 500%;
+  background: #fafafa; /* Light background */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-60deg);
+  transition: all 0.3s;
+}
+
+button:hover span::before {
+  transform: translate(-50%, -50%) rotate(-90deg);
+  width: 100%;
+  background: #9b1c31; /* Fill matches primary color */
+}
+
+button:hover {
+  color: white; /* White text on hover */
+}
+
+button:active span::before {
+  background: #7f1628; /* Darker variant for active state */
 }
