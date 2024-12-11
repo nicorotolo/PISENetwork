@@ -1,65 +1,63 @@
 /* === Add to Calendar Button === */
 
 
-/* Add-to-Calendar Button Styles */
-.add-to-calendar-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
-  .add-to-calendar-container .custom-button {
-    border: none;
-    display: block;
-    position: relative;
-    padding: 0.7em 2.4em;
-    font-size: 18px;
-    background: transparent;
-    cursor: pointer;
-    user-select: none;
-    overflow: hidden;
-    color: #9b1c31; /* Custom primary color */
-    z-index: 1;
-    font-family: inherit;
-    font-weight: 500;
-  }
-  
-  .add-to-calendar-container .custom-button span {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    z-index: -1;
-    border: 4px solid #9b1c31; /* Border matches primary color */
-  }
-  
-  .add-to-calendar-container .custom-button span::before {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 8%;
-    height: 500%;
-    background: #fafafa; /* Light background */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-60deg);
-    transition: all 0.3s;
-  }
-  
-  .add-to-calendar-container .custom-button:hover span::before {
-    transform: translate(-50%, -50%) rotate(-90deg);
-    width: 100%;
-    background: #9b1c31; /* Fill matches primary color */
-  }
-  
-  .add-to-calendar-container .custom-button:hover {
-    color: white; /* White text on hover */
-  }
-  
-  .add-to-calendar-container .custom-button:active span::before {
-    background: #7f1628; /* Darker variant for active state */
-  }
-  
+/* From Uiverse.io by Gaurav-WebDev */
+/* Styling for Add to Calendar Button */
+.add-to-calendar-button {
+  height: 50px;
+  width: 300px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+.add-to-calendar-button:hover {
+  box-shadow: 0.5px 0.5px 150px #252525;
+}
+
+.add-to-calendar-button::after {
+  content: "Added!";
+  height: 50px;
+  width: 300px;
+  background-color: #eeeeee;
+  color: #9b1c31;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translateY(50px);
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.add-to-calendar-button::before {
+  content: "Add to your Calendar";
+  height: 50px;
+  width: 300px;
+  background-color: #9b1c31;
+  color: #fff;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translateY(0px) scale(1.2);
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.add-to-calendar-button:hover::after {
+  transform: translateY(0) scale(1.2);
+}
+
+.add-to-calendar-button:hover::before {
+  transform: translateY(-50px) scale(0) rotate(120deg);
+}

@@ -12,8 +12,8 @@
   }
   
   .accordion-button:not(.collapsed) {
-    background-color: #e3c8c1; /* Lighter shade of red for active state */
-    color: #9b1c31; /* Text matches brand red */
+    background-color: #9b1c31; /* Lighter shade of red for active state */
+    color: white; /* Text matches brand red */
   }
   
   .accordion-button:hover {
@@ -59,7 +59,7 @@
   }
   
   .card:hover {
-    background-color: #fdf0f1; /* Subtle pinkish background change on hover */
+    background-color: #eeeeee; /* Subtle pinkish background change on hover */
     transform: scale(1.02); /* Slight zoom effect for interactivity */
     transition: all 0.3s ease; /* Smooth transitions for hover effect */
   }

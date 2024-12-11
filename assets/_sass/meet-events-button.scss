@@ -1,0 +1,27 @@
+/* === Styling for the meet-events-button === */
+
+.meet-events-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #ffffff !important;
+    background-color: #9b1c31; /* red background to indicate action */
+    text-decoration: none !important; 
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect */
+.meet-events-button:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    color: #ffffff; /* Set the text color */
+    background-color: #9b1c31; 
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .meet-events-button {
+        width: 100%; /* Full-width button on smaller screens */
+        text-align: center;
+    }
+}
