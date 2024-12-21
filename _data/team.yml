@@ -1,5 +1,6 @@
 - name: Nicola Rotolo
-  position: Co-founder and Managing Partner
+  position: Co-founder and Managing Partner 
+  role: Head of Marketing, Communication, and Publications
   image: /assets/images/team-pictures/nicola_rotolo.jpg
   description: MSc in Philosophy and Public Policy at the London School of Economics | MSc in Political Economy at Sapienza
   linkedin: https://www.linkedin.com/in/nicolarotolo/
@@ -7,6 +8,7 @@
 
 - name: Giorgio Sanders
   position: Co-founder and Managing Partner
+  role: Head of Events 
   image: /assets/images/team-pictures/giorgio_sanders.jpg
   description: MSc student at the London School of Economics
   linkedin: https://www.linkedin.com/in/giorgio-sanders-/
@@ -14,6 +16,7 @@
 
 - name: Riccardo Gilioli
   position: Managing Partner
+  role: Head of External Relations and Talent Acquisition
   image: /assets/images/team-pictures/riccardo_gilioli.jpg
   description: To be defined
   linkedin: null
@@ -21,6 +24,7 @@
 
 - name: Simone Rizzo
   position: Managing Partner
+  role: Head of Administration and Operations
   image: /assets/images/team-pictures/simone_rizzo.jpg
   description: To be defined
   linkedin: null

@@ -1,63 +1,189 @@
 /* === Our mission and our story sections' styling === */
 
 
-/* our team */
-.team-section {
-  text-align: center;
-  margin-bottom: 40px;
+/* Roadmap Container */
+.roadmap {
+  position: relative;
+  max-width: 1100px;
+  margin: 50px auto;
+  overflow: hidden; /* Prevents overlapping with other sections */
 }
 
-.team-section h2 {
-  font-size: 2em;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 10px;
-}
-
-.team-section hr {
-  width: 100px; /* Length of the dividing line */
-  height: 3px;
-  background-color: #9b1c31;
-  border: none;
-  margin: 0 auto; /* Center the line */
-}
-
-.content-container {
+/* Milestone Boxes */
+.milestone {
+  position: relative;
+  width: 45%;
   padding: 20px;
-  line-height: 1.6;
-  font-size: 1.1em;
+  background: #fdfdfd;
+  border: 2px solid #b22222;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  animation: fadeIn 0.8s ease-in-out;
+  clear: both; /* Ensures milestones stay clear of each other */
 }
 
-.involvement-option {
-  margin-bottom: 15px;
+.milestone.left {
+  float: left;
+}
+
+.milestone.right {
+  float: right;
+}
+
+.milestone-content {
   padding: 10px;
-  background-color: #f9f9f9;
-  border-left: 4px solid #9b1c31;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* our mission and our story */
-
-.mission-section, .story-section {
-  padding: 40px 20px;
-  margin: 20px auto;
-  max-width: 800px;
-  text-align: center;
+.milestone h2 {
+  margin-top: 0;
+  color: #b22222;
+  font-size: 1.2em;
 }
 
-.mission-section h2, .story-section h2 {
-  font-size: 2em;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 10px;
+.milestone h2 i {
+  color: #b22222;
+  margin-right: 10px;
 }
 
-.mission-section p, .story-section p {
-  font-size: 1.1em;
-  line-height: 1.6;
-  color: #555;
+.milestone p {
+  margin-bottom: 0;
+  font-size: 1em;
 }
 
-.mission-section h2, .story-section h2, .mission-section p, .story-section p {
-  margin: 0 auto;
+/* Connector (Circle) */
+.connector {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border: 4px solid #b22222;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.milestone.left .connector {
+  right: -10px;
+}
+
+.milestone.right .connector {
+  left: -10px;
+}
+
+/* Central Vertical Line with Gradient */
+.roadmap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #b22222, #ff6347); /* Gradient effect */
+  z-index: 1;
+  border-left: 4px dashed #b22222; /* Dashed line */
+}
+
+/* Icons for Milestones */
+.icon-left, .icon-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 100px; /* Icon size for visibility */
+  color: #b22222; /* Match theme color */
+}
+
+.icon-left {
+  right: -210px; /* Adjusted further away from the box */
+}
+
+.icon-right {
+  left: -210px; /* Adjusted further away from the box */
+}
+
+/* Fade-in Animation for Milestones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Clearfix for Floats */
+.roadmap:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+
+/* Responsive Layout for Small Screens */
+@media (max-width: 768px) {
+  .roadmap {
+    margin: 20px auto;
+    padding: 0 10px;
+  }
+
+  .milestone {
+    width: 100%; /* Full width for stacking */
+    float: none; /* Remove floating for vertical alignment */
+    text-align: center; /* Center-align text and icons */
+    margin-bottom: 20px; /* Add space between stacked items */
+  }
+
+  .milestone.left, .milestone.right {
+    float: none; /* Disable floating for small screens */
+  }
+
+  .milestone-content {
+    padding: 15px;
+  }
+
+  .milestone h2 {
+    font-size: 1.4em;
+    text-align: center;
+  }
+
+  .milestone p {
+    font-size: 1em;
+  }
+
+  /* Adjust Icons */
+  .icon-left, .icon-right {
+    position: static; /* Ensure icons remain visible for mobile */
+    margin: 20px auto 0.5px; /* Space icons below heading and center */
+    font-size: 40px; /* Consistent icon size */
+    text-align: center; /* Align icons properly */
+    display: inline-block; /* Make icons visible */
+  }
+
+  /* Hide Central Line */
+  .roadmap::before {
+    display: none;
+  }
+
+  .connector {
+    display: none; /* Hide the connector circles */
+  }
+}
+
+
+
+/* Our People Section Title */
+.team-section h2 {
+  color: #b22222; /* Match the red theme of the mission title */
+  font-size: 1.5em; /* Similar font size as milestone titles */
+  font-family: Arial, sans-serif; /* Use the same font family */
+  text-align: center; /* Center-align the title */
+  border-bottom: 2px solid #cccccc; /* Add a gray line below the title */
+  padding-bottom: 5px; /* Add spacing between the title and the line */
+  padding-top: 20px; /* Add padding above the title */
+  margin-bottom: 20px; /* Space below the title */
 }
