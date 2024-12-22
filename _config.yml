@@ -23,7 +23,7 @@ subtitle                 : "Learning, Growing, and Succeeding Together"# site ta
 name                     : "Your Name"
 description              : "The official community for PISE students and alumni at Ca' Foscari University. Our mission is to provide networking opportunities, promote professional development, and create a space where extra-academic growth flourishes."
 favicon                  : "/assets/images/favicon.png"
-url                      : "https://nicorotolo.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "https://pisenetwork.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "/PISENetwork" # the subpath of your site, e.g. "/blog"
 repository               : "nicorotolo/PISENetwork" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
