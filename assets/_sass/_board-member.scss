@@ -1,12 +1,15 @@
 /* === Board Member Styles for Flip Effect === */
 
-/* Business Card Container */
 .business-card-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Flexible minimum size */
+  gap: 20px; /* Space between cards */
+  padding: 10px; /* Padding for the container */
 }
+
+
+
+
 
 /* Business Card */
 .business-card {
@@ -68,7 +71,7 @@
 
 .business-card-front .board-position {
   font-size: 0.8em;
-  color: #555;
+  color: #9b1c31;
   font-style: italic;
   margin-top: 5px;
 }

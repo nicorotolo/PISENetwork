@@ -45,58 +45,73 @@ header:
     <div class="milestone-content">
       <h2>Our Story</h2>
       <p>
-        Founded by a group of passionate students, the PISE Network was born from a shared vision to
+        Founded by Giorgio and Nicola, two passionate PISE Alumni, the PISE Network was born from a shared vision to
         create a lasting support system for students and graduates.
       </p>
     </div>
   </div>
 </div>
 
-
-
-<!-- Add the section title and divider -->
-
 <div class="team-section">
   <h2>Our People</h2>
-  <hr>
-  <div class="business-card-container">
-    {% for member in site.data.team %}
-    <div class="business-card">
-      <div class="business-card-inner">
-        <!-- Front of the card -->
-        <div class="business-card-front">
-          <img src="{{ site.baseurl }}{{ member.image }}" alt="{{ member.name }}">
-          <h3>{{ member.name }}</h3>
-          <p class="board-position">{{ member.position }}</p>
-        </div>
-        <!-- Back of the card -->
-        <div class="business-card-back">
-          <p>{{ member.description }}</p>
-          <div class="social-links">
-            {% if member.linkedin %}
-            <a href="{{ member.linkedin }}" target="_blank" aria-label="LinkedIn profile of {{ member.name }}">
-              <i class="fab fa-linkedin"></i>
-            </a>
-            {% endif %}
-            {% if member.instagram %}
-            <a href="{{ member.instagram }}" target="_blank" aria-label="Instagram profile of {{ member.name }}">
-              <i class="fab fa-instagram"></i>
-            </a>
-            {% endif %}
+
+  <div class="team-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>Index</h3>
+      <ul class="sidebar-list">
+        {% assign grouped_teams = site.data.team | group_by: "team_category" %}
+        {% for category in grouped_teams %}
+          <li>
+            <a href="#{{ category.name | slugify }}">{{ category.name }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </aside>
+
+    <!-- Categories -->
+    <div class="team-categories">
+      {% for category in grouped_teams %}
+        <div class="team-category-section" id="{{ category.name | slugify }}">
+          <h3 class="team-category">{{ category.name }}</h3>
+          <div class="business-card-container">
+            {% for member in category.items %}
+              <div class="business-card">
+                <div class="business-card-inner">
+                  <div class="business-card-front">
+                    {% if member.image %}
+                      <img src="{{ site.baseurl }}{{ member.image }}" alt="{{ member.name }}">
+                    {% else %}
+                      <div class="placeholder-circle"></div>
+                    {% endif %}
+                    <h3>{{ member.name }}</h3>
+                    <p class="board-role">{{ member.role }}</p>
+                  </div>
+                  <div class="business-card-back">
+                    <p>{{ member.description }}</p>
+                    <div class="social-links">
+                      {% if member.linkedin %}
+                        <a href="{{ member.linkedin }}" target="_blank" aria-label="LinkedIn profile of {{ member.name }}">
+                          <i class="fab fa-linkedin"></i>
+                        </a>
+                      {% endif %}
+                      {% if member.instagram %}
+                        <a href="{{ member.instagram }}" target="_blank" aria-label="Instagram profile of {{ member.name }}">
+                          <i class="fab fa-instagram"></i>
+                        </a>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
           </div>
         </div>
-      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
   </div>
 </div>
-
-
-
 
 <div class="note" style="text-align: center; font-size: 1.2em; color: #333; margin-top: 30px;">
   <strong>Note:</strong> More team members will be added soon as the network grows.
 </div>
-
-
-

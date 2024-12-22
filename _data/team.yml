@@ -1,12 +1,14 @@
 - name: Nicola Rotolo
+  team_category: Our Managing Partners
   position: Co-founder and Managing Partner 
   role: Head of Marketing, Communication, and Publications
   image: /assets/images/team-pictures/nicola_rotolo.jpg
-  description: MSc in Philosophy and Public Policy at the London School of Economics | MSc in Political Economy at Sapienza
+  description: MSc in Philosophy and Public Policy at the LSE | MSc in Political Economy at Sapienza
   linkedin: https://www.linkedin.com/in/nicolarotolo/
   instagram: https://www.instagram.com/nicola.rotolo/profilecard/?igsh=MTJ2MDhjZXhmOTBu
 
 - name: Giorgio Sanders
+  team_category: Our Managing Partners
   position: Co-founder and Managing Partner
   role: Head of Events 
   image: /assets/images/team-pictures/giorgio_sanders.jpg
@@ -15,6 +17,7 @@
   instagram: https://www.instagram.com/giorgio_sanders?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==
 
 - name: Riccardo Gilioli
+  team_category: Our Managing Partners
   position: Managing Partner
   role: Head of External Relations and Talent Acquisition
   image: /assets/images/team-pictures/riccardo_gilioli.jpg
@@ -23,9 +26,21 @@
   instagram: null
 
 - name: Simone Rizzo
+  team_category: Our Managing Partners
   position: Managing Partner
   role: Head of Administration and Operations
   image: /assets/images/team-pictures/simone_rizzo.jpg
   description: To be defined
   linkedin: null
   instagram: null
+
+
+- name: Bernardo Prieto Villafuerte
+  team_category: Our Marketing, Communication, and Publications team
+  position: null
+  role: Project Manager of Editorial
+  image: /assets/images/team-pictures/bernardo_prieto.jpg
+  description: To be defined
+  linkedin: null
+  instagram: null
+
