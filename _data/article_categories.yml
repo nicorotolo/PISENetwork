@@ -1,0 +1,23 @@
+economics:
+  label: "Economics"
+  color: "#83934D"
+  text:  "#ffffff"     # colore del testo sul badge (facoltativo)
+  icon:  "fas fa-chart-line"  # facoltativo
+  hero_image: "/assets/images/editorial/hero-economics.jpg"
+  description: "Analyses, policy notes, and quant takes on the economy."
+
+philosophy:
+  label: "Philosophy"
+  color: "#4B5563"     
+  text:  "#ffffff"
+  icon:  "fas fa-lightbulb"
+  hero_image: "/assets/images/editorial/hero-philosophy.jpg"
+  description: "Ideas, arguments, and debates from PISE’s philosophical angle."
+
+politics:
+  label: "Politics"
+  color: "#2563EB"
+  text:  "#ffffff"
+  hero_image: "/assets/images/editorial/hero-test.jpg"
+  description: "Opinion pieces on how politics is and should be done."
+

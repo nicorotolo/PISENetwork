@@ -1,0 +1,78 @@
+<!-- _includes/reading-progress.html -->
+<div id="progress-bar"><div id="progress"></div></div>
+
+<div id="reading-bar">
+  <span>You are reading: <strong>{{ page.title }}</strong></span>
+  <span><i class="fas fa-clock"></i> {% include reading_time.html %}</span>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const progEl   = document.getElementById('progress-bar');
+  const barEl    = document.getElementById('reading-bar');
+  const progress = document.getElementById('progress');
+  if (!progEl || !barEl || !progress) return;
+
+  // Mostra la barra solo quando entri nel testo di 120px
+  const SHOW_OFFSET = 120;
+
+  // Elementi di riferimento (fallback multipli)
+  const article = document.querySelector('main article') || document.querySelector('article');
+  if (!article) return;
+
+  const bodySec = article.querySelector('.article-body')
+               || article.querySelector('section')
+               || article.querySelector('.entry-content')
+               || article.querySelector('.prose')
+               || article;
+
+  const masthead = document.querySelector('.masthead');
+  const getHeaderH = () => masthead ? masthead.getBoundingClientRect().height : 0;
+
+  // di default nascosti (li mostriamo quando si entra nel testo)
+  progEl.style.display = 'none';
+  barEl .style.display = 'none';
+
+  let startY = 0, endY = 0, spanY = 1;
+
+  function recalc() {
+    const scrollY = window.scrollY || window.pageYOffset;
+    const rect = bodySec.getBoundingClientRect();
+
+    startY = rect.top + scrollY;               // inizio del contenuto
+    endY   = rect.bottom + scrollY;            // fine del contenuto
+    spanY  = Math.max(1, (endY - startY) - window.innerHeight); // evita 100% prematuro
+
+    onScroll();
+  }
+
+  function onScroll() {
+    const y = window.scrollY || window.pageYOffset;
+    const headerOff = getHeaderH();
+
+    // mostra/nascondi quando entri nel contenuto + offset
+    const pastStart = (y + headerOff) >= (startY + SHOW_OFFSET);
+    progEl.style.display = pastStart ? 'block' : 'none';
+    barEl .style.display = pastStart ? 'flex'  : 'none';
+
+    if (!pastStart) {
+      progress.style.width = '0%';
+      return;
+    }
+
+    let pct = ((y + headerOff) - startY) / spanY * 100;
+    pct = Math.min(Math.max(pct, 0), 100);
+    progress.style.width = pct + '%';
+  }
+
+  // Ricalcoli robusti
+  window.addEventListener('load', recalc);
+  window.addEventListener('resize', recalc);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(recalc).catch(()=>{});
+  if ('ResizeObserver' in window) new ResizeObserver(recalc).observe(bodySec);
+  bodySec.addEventListener('load', e => { if (e.target && e.target.tagName === 'IMG') recalc(); }, true);
+
+  recalc();
+});
+</script>

@@ -51,3 +51,35 @@
     </nav>
   </div>
 </div>
+
+
+
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    new Swiper('.swiper-{{ include.id }}', {
+      effect: 'coverflow',
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 100,
+        depth: 200,
+        modifier: 1.2,
+        slideShadows: false
+      },
+      autoplay: { delay: 3000, disableOnInteraction: false },
+      pagination: {
+        el: '.swiper-{{ include.id }} .swiper-pagination',
+        clickable: true,
+        renderBullet: (i, cls) => `<span class="${cls}"></span>`
+      }
+    });
+  });
+</script>
+
+{% if page.layout == "editorial-article" %}
+  {% include reading-progress.js.html %}
+{% endif %}

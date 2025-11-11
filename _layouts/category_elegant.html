@@ -1,0 +1,111 @@
+---
+layout: default
+---
+
+{%- comment -%}
+Layout per pagina di categoria editoriale.
+Funziona così:
+- Prende la chiave di categoria da front matter: "cat" o "category" o usa il titolo pagina.
+- Cerca prima match esatto su categoria (es. "Philosophy").
+- Se nulla, prova sullo slug (es. "philosophy").
+{%- endcomment -%}
+
+{%- assign cat_key  = page.cat | default: page.category | default: page.title -%}
+{%- assign cat_slug = cat_key | slugify -%}
+
+{%- comment -%} 1) Match esatto su array categories {%- endcomment -%}
+{%- assign posts_in_cat = site.editorial | where_exp: 'p', 'p.categories contains cat_key' -%}
+
+{%- comment -%} 2) Se vuoto, riprova con lo slug {%- endcomment -%}
+{%- if posts_in_cat == empty -%}
+  {%- assign posts_in_cat = site.editorial | where_exp: 'p', 'p.categories contains cat_slug' -%}
+{%- endif -%}
+
+<header class="page__header">
+  <h1 class="page__title">{{ cat_key }}</h1>
+  <p class="page__subtitle">Articoli nella categoria “{{ cat_key }}”</p>
+</header>
+
+{%- if posts_in_cat == empty -%}
+  <p>Nessun articolo trovato per questa categoria.</p>
+{%- else -%}
+  <div class="cat-grid">
+    {%- for post in posts_in_cat -%}
+      <article class="article-card">
+        <a class="article-thumb" href="{{ post.url | relative_url }}">
+          {%- if post.image -%}
+            <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+          {%- else -%}
+            <img src="{{ site.teaser | default: '/assets/images/placeholder-800x450.png' | relative_url }}" alt="{{ post.title }}">
+          {%- endif -%}
+        </a>
+        <div class="article-body">
+          <h2 class="article-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h2>
+
+          {%- if post.categories and post.categories.size > 0 -%}
+            <div class="article-cats">
+              {%- for c in post.categories -%}
+                <span class="cat-badge">{{ c }}</span>
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+
+          {%- if post.excerpt -%}
+            <p class="article-excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+          {%- endif -%}
+
+          <div class="article-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">
+              {{ post.date | date: "%d %b %Y" }}
+            </time>
+          </div>
+        </div>
+      </article>
+    {%- endfor -%}
+  </div>
+{%- endif -%}
+
+<style>
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1.25rem;
+}
+.article-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .75rem;
+  background: var(--mm-card-bg, #fff);
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: .75rem;
+  overflow: hidden;
+}
+.article-thumb { display:block; aspect-ratio: 16/9; overflow: hidden; }
+.article-thumb img { width:100%; height:100%; object-fit: cover; transition: transform .3s ease; }
+.article-thumb:hover img { transform: scale(1.03); }
+
+.article-body { padding: .9rem 1rem 1.1rem; }
+.article-title { font-size: 1.05rem; margin: .2rem 0 .4rem; line-height: 1.25; }
+.article-title a { text-decoration: none; }
+.article-title a:hover { text-decoration: underline; }
+
+.article-cats {
+  display: flex; flex-wrap: wrap; gap: .35rem; margin-bottom: .35rem;
+}
+.cat-badge {
+  display: inline-block;
+  font-size: .72rem;           /* leggermente più piccole come volevi */
+  line-height: 1;
+  padding: .35rem .55rem;
+  border-radius: 999px;
+  background: rgba(155, 28, 49, .85); /* trasparenza */
+  color: #fff;
+  transition: opacity .2s ease, transform .15s ease, filter .2s ease;
+}
+.cat-badge:hover { opacity: 1; transform: translateY(-1px); filter: brightness(.98); text-decoration: none; }
+
+.article-excerpt { margin: .35rem 0 .6rem; color: #555; }
+.article-meta { font-size: .8rem; color: #777; }
+</style>

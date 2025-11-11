@@ -1,0 +1,84 @@
+---
+layout: default
+---
+
+{% include reading-progress.html %}
+
+<main class="max-w-3xl mx-auto px-3 py-6">
+  <article class="prose lg:prose-xl mx-auto">
+    <!-- Titolo e metadati -->
+    <header class="article-header">
+      <!-- 1) Titolo e reading-time -->
+      <div class="header-title-time">
+        <h1>{{ page.title }}</h1>
+
+        {% if page.reading_time %}
+        <div class="reading-time">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 8v4l2 2m6-2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <span>{% include reading_time.html %}</span>
+        </div>
+        {% endif %}
+      </div>
+
+      <!-- 2) Autore e data -->
+      <div class="article-meta">
+        {% assign author = site.data.authors[page.author] %}
+        <span class="author-name">{{ author.name | default: page.author }}</span>
+        <span>•</span>
+        <time datetime="{{ page.date | date_to_xmlschema }}">
+          {{ page.date | date: "%-d %B %Y" }}
+        </time>
+      </div>
+    </header>
+
+    {% if page.categories %}
+      <div class="category-boxes">
+        {% for raw in page.categories %}
+          {% assign slug = raw | slugify %}
+          {% assign cat  = site.data.article_categories[slug] %}
+
+          {% comment %}
+          Fallback: se la categoria non è nel file dati,
+          usiamo etichetta = nome originale e colore di default
+          {% endcomment %}
+          {% assign label = cat.label | default: raw %}
+          {% assign bg    = cat.color | default: '#9b1c31' %}
+          {% assign txt   = cat.text  | default: '#ffffff' %}
+          {% assign icon  = cat.icon  | default: '' %}
+
+          <a
+            class="category-badge"
+            href="{{ '/categories/' | append:slug | append:'/' | relative_url }}"
+            style="--cat-bg: {{ bg }}; --cat-txt: {{ txt }};"
+            aria-label="Categoria: {{ label }}"
+          >
+            {% if icon != '' %}<i class="{{ icon }}" aria-hidden="true"></i>{% endif %}
+            {{ label }}
+          </a>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <!-- Immagine in evidenza -->
+    {% if page.image %}
+      <figure class="my-6">
+        <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+      </figure>
+    {% endif %}
+
+    <!-- Contenuto vero e proprio -->
+    <section>
+      {{ content }}
+    </section>
+
+    </footer>
+      <!-- *** Author Card *** -->
+    {% include author-card.html %}
+  </article>
+</main>
+
+
+

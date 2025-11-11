@@ -1,7 +1,67 @@
 ---
-layout: archive
+title: "Categorie"
+permalink: /categories/
+layout: default
 ---
 
-{{ content }}
+<div class="cat-index">
+  <h1 class="page-title">Categorie</h1>
 
-{% include posts-taxonomy.html taxonomies=site.categories %}
+  {%- comment -%} 1) Raccogli tutte le categorie presenti in site.editorial {%- endcomment -%}
+  {%- assign cats_string = "" -%}
+  {%- for p in site.editorial -%}
+    {%- for c in p.categories -%}
+      {%- assign cats_string = cats_string | append: c | append: "||" -%}
+    {%- endfor -%}
+  {%- endfor -%}
+  {%- assign uniq_cats = cats_string | split: "||" | uniq | sort -%}
+
+  {%- comment -%} 2) Griglia di categorie con conteggio {%- endcomment -%}
+  <div class="cat-grid">
+    {%- for raw in uniq_cats -%}
+      {%- if raw != "" -%}
+        {%- assign slug = raw | slugify -%}
+        {%- assign cat  = site.data.article_categories[slug] -%}
+        {%- assign label = cat.label | default: raw -%}
+        {%- assign color = cat.color | default: "#1f4fff" -%}
+        {%- assign text  = cat.text  | default: "#ffffff" -%}
+
+        {%- assign count = 0 -%}
+        {%- for p in site.editorial -%}
+          {%- if p.categories contains raw -%}
+            {%- assign count = count | plus: 1 -%}
+          {%- endif -%}
+        {%- endfor -%}
+
+        <a class="cat-card" href="#{{ slug }}" style="--card-bg: {{ color }}; --card-txt: {{ text }};">
+          <span class="cat-label">{{ label }}</span>
+          <span class="cat-count">{{ count }}</span>
+        </a>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+
+  <hr>
+
+  {%- comment -%} 3) Blocchi: elenco articoli per categoria {%- endcomment -%}
+  {%- for raw in uniq_cats -%}
+    {%- if raw != "" -%}
+      {%- assign slug = raw | slugify -%}
+      {%- assign cat  = site.data.article_categories[slug] -%}
+      {%- assign label = cat.label | default: raw -%}
+      <h2 id="{{ slug }}" class="cat-section-title">{{ label }}</h2>
+      <ul class="cat-post-list">
+        {%- for p in site.editorial -%}
+          {%- if p.categories contains raw -%}
+            <li>
+              <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
+              <span class="meta"> — {{ p.date | date: "%B %d, %Y" }}</span>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+      <p class="back-top"><a href="#top">Back to top ↑</a></p>
+      <hr>
+    {%- endif -%}
+  {%- endfor -%}
+</div>

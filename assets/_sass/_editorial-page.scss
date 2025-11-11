@@ -1,0 +1,130 @@
+/* --- Editorial: categorie sull’immagine --- */
+.article-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.article-thumb {
+  position: relative;      /* serve per l’overlay */
+  flex: 0 0 32%;           /* la colonna occupa il 40% del contenitore, adattandosi */
+  aspect-ratio: 16 / 9;    /* mantiene sempre rapporto 16:9 */
+  border-radius: .5rem;
+  overflow: hidden;
+}
+
+.article-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- Overlay categorie sull'immagine --- */
+.cat-badges {
+  position: absolute;
+  top: .75rem;
+  left: .75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  z-index: 1;
+}
+
+.cat-badge {
+  --badge-bg: #9b1c31;     /* default fallback */
+  --badge-txt: #ffffff !important;
+  background: var(--badge-bg);
+  color: var(--badge-txt);
+  opacity: 0.70;
+  font-size: .82rem;
+  line-height: 1;
+  padding: .45rem .65rem;
+  border-radius: 999px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+  transition: transform .15s ease, filter .2s ease;
+}
+
+.cat-badges .cat-badge:hover { color: var(--badge-txt) !important; transform: translateY(-1px) !important; text-decoration: none !important; opacity: 1 !important;}
+
+
+/* L'icona segue il colore del testo */
+.cat-badge i { color: currentColor; }
+
+
+/* --- Responsive fine-tuning (facoltativo) --- */
+@media (max-width: 900px) {
+  .article-thumb { flex-basis: 48%; }
+}
+@media (max-width: 700px) {
+  .article-thumb { flex-basis: 100%; }
+}
+
+
+/* --- cambio pagine --- */
+
+.pager {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  justify-content: center;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.pg-btn, .pg-num {
+  appearance: none;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  padding: .45rem .75rem;
+  border-radius: .5rem;
+  font-size: .95rem;
+  cursor: pointer;
+}
+.pg-btn[disabled] { opacity: .5; cursor: not-allowed; }
+
+.pg-pages { display: flex; gap: .35rem; flex-wrap: wrap; }
+
+.pg-num.is-active {
+  background: #9b1c31;   /* colore primario */
+  color: #fff;
+  border-color: #9b1c31;
+}
+#no-results.hidden { display: none; }
+
+
+/* --- stili per la categories page --- */
+
+
+.cat-index { scroll-margin-top: 80px; }
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: .8rem;
+  margin: .8rem 0 1.5rem;
+}
+.cat-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .8rem 1rem;
+  border-radius: .75rem;
+  text-decoration: none;
+  background: var(--card-bg, #fff);
+  color: var(--card-txt, #fff);
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+  transition: transform .12s ease, box-shadow .15s ease, filter .2s ease;
+}
+.cat-card:hover { transform: translateY(-2px); filter: brightness(.96); box-shadow: 0 10px 22px rgba(0,0,0,.12); }
+.cat-label { font-weight: 600; }
+.cat-count { background: rgba(255,255,255,.2); padding: .15rem .55rem; border-radius: 999px; font-variant-numeric: tabular-nums; }
+
+.cat-section-title { margin-top: 2rem; }
+.cat-post-list { list-style: none; padding: 0; }
+.cat-post-list li { padding: .2rem 0; }
+.cat-post-list .meta { color: #6b7280; font-size: .9rem; margin-left: .35rem; }
+.back-top { text-align: right; }

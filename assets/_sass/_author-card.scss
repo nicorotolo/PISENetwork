@@ -1,0 +1,123 @@
+/* Contenitore principale */
+.author-card {
+  max-width: 42rem;
+  margin: 1rem auto 0;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Bloc­co avatar + icone in colonna */
+.author-avatar-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Rimuovo ogni margin/gap e lo gestisco con justify-content */
+.author-avatar-block .social-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; /* o space-between / space-around */
+  align-items: center;
+  flex: 1;      /* fa sì che occupi tutta l'altezza rimanente */
+  margin: 0;    /* elimina margin-top/margin-bottom */
+  gap: 0;       /* elimina ogni gap */
+  padding: 0;   /* pulisco eventuali padding */
+}
+
+/* Assicuro che le singole icone non abbiano margin */
+.author-avatar-block .social-link {
+  margin: 0;    /* rimuove eventuali margini residui */
+}
+
+
+/* Avatar: dimensioni fisse e cerchio perfetto */
+.author-avatar-block img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  border: 4px solid #e2e8f0;
+  object-fit: cover;
+}
+
+/* Colonna di icone sotto l’avatar */
+.author-avatar-block .social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.author-avatar-block .social-link {
+  display: inline-flex;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #9b1c31 !important;
+  transition: transform 0.2s ease;
+}
+
+.author-avatar-block .social-link:hover {
+  transform: translateY(-2px);
+}
+
+.author-avatar-block .social-link svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+
+/* Contenuto testo (nome, ruolo, bio) */
+.author-content h3 {
+  font-size: 1.5rem;
+  color: #2d3748;
+  margin: 0;
+  margin-bottom: 0.75rem;
+}
+
+.author-role {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #718096;
+  margin-bottom: 0.75rem;
+}
+
+/* Riduciamo leggermente il font della bio */
+.author-content p {
+  font-size: 0.95rem;
+  color: #4a5568;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Layout responsive */
+
+@media (min-width: 768px) {
+  .author-card {
+    flex-direction: row;
+    /* Stretch dei figli sulla verticale */
+    align-items: stretch;
+  }
+
+  .author-avatar-block {
+    /* Fissa la colonna a larghezza 8rem */
+    flex: 0 0 8rem;
+    margin-right: 0rem;
+
+    /* La facciamo estendere all'altezza del contenitore padre */
+    align-self: stretch;
+
+    /* Distribuiamo avatar e icone sull'intera colonna */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

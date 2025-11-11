@@ -1,46 +1,66 @@
 - name: Nicola Rotolo
-  team_category: Our Managing Partners
-  position: Co-founder and Managing Partner 
-  role: Head of Marketing, Communication, and Publications
+  team_category: Alumni
+  role: Co-founder
   image: /assets/images/team-pictures/nicola_rotolo.jpg
-  description: MSc in Philosophy and Public Policy at the LSE | MSc in Political Economy at Sapienza
+  description: PCM, Ministry for Sport and Youth | MSc in Philosophy and Public Policy at the LSE | MSc in Political Economy at Sapienza
   linkedin: https://www.linkedin.com/in/nicolarotolo/
   instagram: https://www.instagram.com/nicola.rotolo/profilecard/?igsh=MTJ2MDhjZXhmOTBu
 
 - name: Giorgio Sanders
-  team_category: Our Managing Partners
-  position: Co-founder and Managing Partner
-  role: Head of Events 
+  team_category: Alumni
+  role: Co-founder 
   image: /assets/images/team-pictures/giorgio_sanders.jpg
-  description: MSc student at the London School of Economics
+  description: MAG | MSc student at the London School of Economics
   linkedin: https://www.linkedin.com/in/giorgio-sanders-/
   instagram: https://www.instagram.com/giorgio_sanders?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==
 
-- name: Riccardo Gilioli
-  team_category: Our Managing Partners
-  position: Managing Partner
-  role: Head of External Relations and Talent Acquisition
-  image: /assets/images/team-pictures/riccardo_gilioli.jpg
-  description: To be defined
+- name: Andreachiara Borrelli
+  team_category: Alumni
+  role: null
+  image: /assets/images/team-pictures/andreachiara_borrelli.jpg
+  description: MSc Political Economy of Europe at LSE | Research Analyst - Int. Businesses and Public sector, Environmental-related projects
+  linkedin: http://www.linkedin.com/in/andreachiara-borrelli-418748205
+  instagram: null
+
+- name: Gabriel Rossi
+  team_category: Alumni
+  role: null
+  image: /assets/images/team-pictures/gabriel_rossi.jpg
+  description: Philosophy and Political Science in Venice | refined through an Erasmus Mundus in Economics of Trade
+  linkedin: http://www.linkedin.com/in/gabriel-rossi-0316a5246
+  substack: https://substack.com/@collitore
+
+- name: Bahar Lian Ünar
+  team_category: Alumni
+  role: null
+  image: /assets/images/team-pictures/placeholder.jpg
+  description: PISE Alumnus
+  linkedin: null
+  substack: null
+
+- name: Ayman Zaki
+  team_category: Alumni
+  role: null
+  image: /assets/images/team-pictures/placeholder.jpg
+  description: PISE Alumnus
+  linkedin: null
+  substack: null
+
+
+- name: Matteo Lais
+  team_category: Current students
+  role: null
+  image: /assets/images/team-pictures/matteo_lais.jpg
+  description: PISE Student
   linkedin: null
   instagram: null
 
-- name: Simone Rizzo
-  team_category: Our Managing Partners
-  position: Managing Partner
-  role: Head of Administration and Operations
-  image: /assets/images/team-pictures/simone_rizzo.jpg
-  description: BSc PISE Ca' Foscari Venezia | PISE Representative and POLIS Venezia President
-  linkedin: https://www.linkedin.com/in/simonerizzo08/
-  instagram: https://www.instagram.com/simrizzo/
-
 
 - name: Bernardo Prieto
-  team_category: Our Marketing, Communication, and Publications team
-  position: null
+  team_category: Current students
   role: Project Manager of Editorial
-  image: /assets/images/team-pictures/bernardo_prieto.jpg
-  description: To be defined
+  image: /assets/images/team-pictures/placeholder.jpg
+  description: Academic writer | PISE student
   linkedin: null
   instagram: null
 

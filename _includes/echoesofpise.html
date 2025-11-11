@@ -1,0 +1,59 @@
+{% comment %}
+Include robusto per Echoes of PISE
+Accetta:
+  include.text / page.excerpt / page.content
+  include.date / page.date
+  include.author_name / page.author.name
+  include.author_bio  / page.author.bio
+  include.author_role / page.author.role
+  include.author_image / page.author.image
+  include.linkedin / page.author.linkedin
+  include.twitter  / page.author.twitter
+{% endcomment %}
+
+{% assign _text   = include.text    | default: page.excerpt | default: page.content %}
+{% assign _date   = include.date    | default: page.date %}
+{% assign _name   = include.author_name  | default: page.author.name | default: page.author %}
+{% assign _bio    = include.author_bio   | default: page.author.bio %}
+{% assign _role   = include.author_role  | default: page.author.role %}
+{% assign _image  = include.author_image | default: page.author.image %}
+{% assign _in     = include.linkedin     | default: page.author.linkedin %}
+{% assign _tw     = include.twitter      | default: page.author.twitter %}
+
+<div class="opinion-box">
+  <!-- SINISTRA: testo con details -->
+  <div class="opinion-content">
+    <details class="quote-details">
+      <summary>
+        <span class="preview-text">{{ _text | strip_html }}</span>
+        <span class="toggle"></span>
+      </summary>
+
+      <div class="echo-quote">
+        {{ _text | markdownify }}
+
+        {% if _date %}
+          <p class="quote-date">Published on: {{ _date | date: "%b %dth, %Y" }}</p>
+        {% endif %}
+      </div>
+    </details>
+  </div>
+
+  <!-- DESTRA: autore (class names match your SCSS) -->
+  <aside class="opinion-sidebar">
+    {% if include.author_image %}
+      <img class="opinion-image" src="{{ include.author_image | relative_url }}" alt="Portrait of {{ include.author_name | escape }}">
+    {% endif %}
+
+    {% if include.author_name %}
+      <div class="opinion-author">{{ include.author_name }}</div>
+    {% endif %}
+
+    {% if include.author_bio or include.author_role %}
+      <div class="opinion-role">
+        {% if include.author_role %}<span class="author-role">{{ include.author_role }}</span>{% endif %}
+        {% if include.author_bio %}{% if include.author_role %} — {% endif %}{{ include.author_bio }}{% endif %}
+      </div>
+    {% endif %}
+  </aside>
+</div>

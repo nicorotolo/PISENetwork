@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+  {% if page.header.overlay_image %}
+  <header class="header-overlay" style="background-image: url('{{ page.header.overlay_image | relative_url }}'); filter: opacity({{ page.header.overlay_filter | default: 0.5 }});">
+    <div class="header-content">
+      <h1>{{ page.title }}</h1>
+      <p><em>{{ page.date | date: "%B %d, %Y" }}</em></p>
+    </div>
+  </header>
+  {% endif %}
+
+  <main class="article-container">
+    {% if page.featured_image %}
+    <div class="featured-image">
+      <img src="{{ page.featured_image | relative_url }}" alt="{{ page.title }}">
+    </div>
+    {% endif %}
+  
+    <article class="article-content">
+      {{ content }}
+    </article>
+  
+    <footer class="author-info">
+      {% if page.author_name %}
+      <div class="author-image">
+        <img src="{{ page.author_image | relative_url }}" alt="{{ page.author_name }}">
+      </div>
+      <div class="author-details">
+        <h3>About the Author</h3>
+        <p><strong>{{ page.author_name }}</strong></p>
+        <p>{{ page.author_bio }}</p>
+      </div>
+      {% endif %}
+    </footer>
+  </main>
+
+  <!-- Footer -->
+  <footer class="article-footer">
+    <p>Categories: {{ page.categories | join: ', ' }}</p>
+    <p>Tags: {{ page.tags | array_to_sentence_string }}</p>
+  </footer>
+</body>
+</html>

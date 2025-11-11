@@ -103,3 +103,25 @@ Stay informed about our latest events, including workshops, networking sessions,
     </div>
   </div>
 </div>
+
+
+<div class="team-section past-events-section">
+  <h2>Our Past Events</h2>
+
+  <!-- Primo evento -->
+  <p class="past-event">
+    <strong>The 2025 PISE Event Series</strong><br>
+    7th to 9th April 2025, San Giobbe, Venice
+  </p>
+  {% include carousel.html id="event2025" folder="2025-pise-event-series" %}
+
+  <!-- Secondo evento -->
+  <p class="past-event">
+    <strong>The PISE Academic Year Inauguration Event</strong><br>
+    20th September 2024, Ca’ Dolfin, Venice
+  </p>
+  {% include carousel.html id="inauguration2024" folder="2024-inaguration-year" %}
+
+  <!-- Aggiungi altri eventi qui per aggiungere un carosello di immagini con lo stesso stile... -->
+
+</div>

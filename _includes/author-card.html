@@ -1,0 +1,43 @@
+{%- assign author = site.data.authors[page.author] -%}
+{% if author %}
+<aside class="author-card">
+
+  <!-- 1. avatar + icone social in un blocco a sé -->
+  <div class="author-avatar-block">
+    <img src="{{ author.avatar | relative_url }}" alt="Avatar di {{ author.name }}">
+    
+    {% if author.social %}
+    <div class="social-links">
+      {% for item in author.social %}
+        {% assign platform = item[0] %}
+        {% assign url      = item[1] %}
+        <a
+          href="{{ url }}"
+          class="social-link"
+          target="_blank"
+          rel="noopener"
+          aria-label="{{ platform | capitalize }}"
+        >
+          {% if platform == "twitter"   %}{% include icons/twitter.svg   %}{% endif %}
+          {% if platform == "github"    %}{% include icons/github.svg    %}{% endif %}
+          {% if platform == "linkedin"  %}{% include icons/linkedin.svg  %}{% endif %}
+          {% if platform == "instagram" %}{% include icons/instagram.svg %}{% endif %}
+          {% if platform == "mail"      %}{% include icons/mail.svg      %}{% endif %}
+          {% if platform == "phone"     %}{% include icons/phone.svg     %}{% endif %}
+        </a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+
+  <!-- 2. contenuto testo (nome, ruolo, bio) -->
+  <div class="author-content">
+    <h3>{{ author.name }}</h3>
+    {% if author.role %}
+      <h4 class="author-role">{{ author.role }}</h4>
+    {% endif %}
+    <p>{{ author.bio }}</p>
+  </div>
+
+</aside>
+{% endif %}

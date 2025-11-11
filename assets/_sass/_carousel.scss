@@ -1,0 +1,160 @@
+// _sass/_carousel.scss
+
+@import 'variables';
+
+// 1. Carousel Container Layout
+.swiper-container {
+  position: relative;
+  max-width: 900px;       // larghezza massima del carosello
+  margin: 0 auto;         // centrato orizzontalmente
+  padding: 20px 0 60px;   // spazio sotto per i bullet
+  overflow: hidden;
+}
+
+// 2. Pagination Styling
+.swiper-container .swiper-pagination {
+  position: absolute;
+  bottom: 10px;           // distanza dal fondo del container
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+.swiper-container .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  margin: 0 6px;
+  background: #ccc;
+  opacity: 0.5;
+  transition: opacity .3s ease;
+}
+.swiper-container .swiper-pagination-bullet-active {
+  background: #8c1d34;    // colore rosso PISE
+  opacity: 1;
+}
+
+// 3. Slide Wrapper Layout
+.swiper-container .swiper-wrapper {
+  display: flex;
+  align-items: center;    // centra verticalmente le slide
+}
+
+// 4. Slide Sizing
+.swiper-container .swiper-slide {
+  /* Ogni slide sarà larga 300px (modifica a piacere) */
+  flex: 0 0 30%;       // occupa 30% del container
+  max-width: 300px;    // ma non più di 300px
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: $break-sm) {
+  .swiper-slide { flex: 0 0 80%; }
+}
+
+
+// 5. Image Presentation
+.swiper-container .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform .3s ease, opacity .3s ease;
+}
+
+// 6. Scale Effects Based on Orientation
+//   - slide orizzontali attive ingrandite
+.swiper-container .swiper-slide-active.landscape img {
+  transform: scale(1.2);
+}
+//   - slide verticali attive meno ingrandite
+.swiper-container .swiper-slide-active.portrait img {
+  transform: scale(1.05);
+}
+//   - slide orizzontali non attive leggermente ridotte
+.swiper-container .swiper-slide.landscape:not(.swiper-slide-active) img {
+  transform: scale(0.85);
+}
+//   - slide verticali non attive più ridotte
+.swiper-container .swiper-slide.portrait:not(.swiper-slide-active) img {
+  transform: scale(0.75);
+}
+
+// 7. Titles and Subtitles Styling
+.carousel-section {
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+.carousel-section .carousel-title {
+  color: #8c1d34;         // titolo in rosso PISE
+  margin-bottom: 0.25em;
+}
+.carousel-section .carousel-subtitle {
+  color: #333;
+  margin-bottom: 1em;
+  font-size: 1em;
+}
+
+
+/* 1) make the box a 2-col grid */
+.opinion-box {
+  display: grid;
+  grid-template-columns: 1fr 200px; /* left fluid, right fixed */
+  gap: 1.5rem;
+  background: #fff;
+  border-left: 4px solid #8c1d34;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  align-items: start;
+  border-radius: 0.75rem; /* Arrotonda tutti e quattro gli angoli */
+  overflow: hidden;
+}
+
+/* 2) left side: keep your quote styling */
+.opinion-content {
+  position: relative;
+}
+.quote-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2rem;
+  height: 2rem;
+  opacity: 0.2;
+}
+.opinion-content blockquote {
+  margin: 0;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* 3) right sidebar */
+.opinion-sidebar {
+  text-align: center;
+}
+.opinion-image {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+}
+.opinion-author {
+  font-weight: bold;
+  margin: 0.25rem 0 0;
+}
+.opinion-role {
+  font-size: 0.9em;
+  color: #666;
+  margin: 0.25rem 0 0;
+}
+
+/* 4) responsive: stack on small screens */
+@media (max-width: 640px) {
+  .opinion-box {
+    grid-template-columns: 1fr;
+  }
+  .opinion-sidebar {
+    margin-top: 1rem;
+  }
+}

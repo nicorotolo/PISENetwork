@@ -1,0 +1,38 @@
+nrotolo:
+  name:    "Nicola Rotolo"
+  avatar:  "/assets/images/team-pictures/nicola_rotolo.jpg"
+  bio:     "Policy advisor con formazione in filosofia, economia e scienze politiche. Miro ad analizzare l’intersezione tra idee, istituzioni e politiche per generare valore. Attualmente opero nella Segreteria Tecnica del Ministro per lo sport e i giovani, contribuendo alla definizione e al monitoraggio di interventi strategici in ambito sportivo e giovanile. Esperienze precedenti in consulenza, ricerca applicata e progettazione di politiche, con focus su governance, accountability e impatto socio-economico."
+  linkedin: "https://www.linkedin.com/in/nicolarotolo/"
+  instagram: null
+
+
+bprieto:
+  name:    "Bernardo Prieto"
+  avatar:  "/assets/images/authors/placeholder.jpg"
+  bio:     "Giornalista di PISE Network, che ancora si deve laureare cazzo"
+  twitter:  "@mrossi"
+
+
+mcosci:
+  name:    "Prof. Matteo Cosci"
+  avatar:  "/assets/images/matteo_cosci.jpg"
+  bio:     "Associate Professor in History of Philosophy and Academic coordinator of the PISE program at Ca’ Foscari University of Venice."
+
+aborrelli:
+  name:    "Andreachiara Borrelli"
+  avatar:  "/assets/images/team-pictures/andreachiara_borrelli.jpg"
+  bio:     "PISE Alumnus | MSc Political Economy of Europe Graduate at LSE | Research Analyst - Int. Businesses and Public sector with a focus on Environmental-related projects. "
+  linkedin: http://www.linkedin.com/in/andreachiara-borrelli-418748205
+
+mlais: 
+  name:    "Matteo Lais"
+  avatar:  "/assets/images/team-pictures/matteo_lais.jpg"
+  bio:     "Current PISE Student"
+  instagram: null
+
+lunar:
+  name:    "Bahar Lian Ünar"
+  avatar:  "/assets/images/team-pictures/placeholder.jpg"
+  bio:     "PISE Alumnus"
+  instagram: null
+

@@ -1,0 +1,22 @@
+---
+layout: default
+title: Editorial
+permalink: /editorial/
+---
+
+<div class="grid md:grid-cols-2 gap-8">
+  {% for post in site.editorial reversed %}
+    <div class="border rounded-lg overflow-hidden">
+      {% if post.image %}
+        <a href="{{ post.url }}">
+          <img src="{{ post.image }}" alt="{{ post.title }}" class="w-full h-48 object-cover">
+        </a>
+      {% endif %}
+      <div class="p-4">
+        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        <p class="text-sm text-gray-600">{{ post.date | date: "%d %B %Y" }}</p>
+        <p class="mt-2">{{ post.excerpt }}</p>
+      </div>
+    </div>
+  {% endfor %}
+</div>

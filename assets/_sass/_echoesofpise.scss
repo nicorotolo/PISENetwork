@@ -1,0 +1,220 @@
+/* ===== Echoes of PISE / Opinions ===== */
+
+/* Contenitore lista card */
+.opinions-container,
+.echoes-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Card principale */
+.opinion-box {
+  position: relative;
+  display: grid;                      /* 2 colonne: testo + sidebar */
+  grid-template-columns: 2fr 1fr;
+  gap: 1.25rem;
+  background: #fff;
+  border-left: 4px solid #8c1d34;     /* PISE red */
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+}
+
+/* Icona virgolette, decorativa */
+.quote-icon {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: 2rem;
+  height: 2rem;
+  opacity: .2;
+}
+
+/* Testo citazione */
+.opinion-box blockquote {
+  margin: 0 0 1rem 0;
+  border-left: none;      /* rimuove barra default blockquote */
+  padding-left: 0;
+  font-style: italic;
+  line-height: 1.5;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* ===== DETAILS: anteprima + show more/hide ===== */
+
+/* nasconde il marker di default del summary */
+.quote-details summary::-webkit-details-marker,
+.quote-details summary::-moz-list-bullet { display: none; }
+
+/* summary cliccabile (contenente eventuale anteprima e "show more") */
+.quote-details > summary {
+  display: block;
+  cursor: pointer;
+  margin: 0 0 .75rem 0;
+  font-style: italic;
+  line-height: 1.5;
+  text-align: justify;
+  list-style: none;
+  color: inherit;
+}
+
+/* porzioni dentro il summary */
+.quote-details > summary .preview-text { display: inline; }
+.quote-details > summary .show-text {
+  display: inline;
+  color: #9b1c31;
+  font-weight: bold;
+  margin-left: .5rem;
+  font-size: .9em;
+}
+
+/* quando APERTO: mostra full text e nasconde preview+show-text nel summary */
+.quote-details[open] > summary .preview-text { display: none; }
+.quote-details[open] > summary .show-text   { display: none; }
+
+/* bottone "hide" dentro al blockquote */
+.hide-btn {
+  background: none;
+  border: none;
+  color: #9b1c31;
+  font-weight: bold;
+  font-style: italic;
+  font-size: .9em;
+  cursor: pointer;
+  margin-top: .5rem;
+  padding: 0;
+  display: inline-block;
+}
+
+/* ===== Sidebar autore ===== */
+.opinion-sidebar { text-align: left; }
+
+/* Immagine autore tonda */
+.opinion-sidebar .opinion-image {
+  width: 150px;
+  height: 150px;
+  display: block; 
+  margin-inline: auto;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin-bottom: .5rem;
+}
+
+/* Nome autore in rosso PISE */
+.opinion-author {
+  color: #8c1d34;
+  font-weight: bold;
+  margin: .25rem 0 0;
+  font-size: 1.1rem !important;
+  line-height: 1.2;
+}
+
+/* Ruolo/descrizione compatta */
+.opinion-role {
+  font-size: .85rem !important;
+  color: #666;
+  margin: .25rem 0 0;
+  line-height: 1.3;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .opinion-box {
+    grid-template-columns: 1fr;   /* stack: testo sopra, autore sotto */
+    gap: 1rem !important;
+    padding: 1rem !important;
+  }
+  .opinion-sidebar {
+    margin-top: .5rem !important;
+    text-align: center !important;
+  }
+  .opinion-sidebar .opinion-image {
+    margin: 0 auto .5rem;
+    width: 90px;
+    height: 90px;
+  }
+  .opinion-author { font-size: 1rem !important; }
+  .opinion-role   { font-size: .8rem !important; }
+  .quote-details > summary,
+  .quote-details > blockquote {
+    font-size: .95rem !important;
+    line-height: 1.4 !important;
+  }
+}
+
+/* ========== Clamp dinamico + toggle (pulito) ========== */
+
+/* Ordine: quote sopra, summary sotto */
+.quote-details { display: grid; }
+.quote-details > .echo-quote { order: 1; line-height: 1.6; }  /* il JS usa questa line-height */
+.quote-details > summary     { order: 2; margin:.5rem 0 0; color:#9b1c31; cursor:pointer; }
+
+/* Testo del toggle */
+.quote-details > summary .toggle::after { content: "show more"; font-weight:700; }
+.quote-details[open] > summary .toggle::after { content: "hide"; }
+
+/* HIDE (details chiuso): MOSTRA la preview clampata */
+.quote-details:not([open]) > summary .preview-text {
+  display: -webkit-box !important;
+  -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: var(--echo-lines, 6) !important;
+  overflow: hidden !important;
+  visibility: visible !important;
+
+  /* fallback: N righe * line-height dal JS */
+  line-height: 1.6;
+  max-height: calc(var(--echo-lines, 6) * var(--echo-lineheight, 28px));
+
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* HIDE: nascondi il testo completo */
+.quote-details:not([open]) .echo-quote { display: none !important; }
+
+/* SHOW (details aperto): mostra tutto il testo completo e nascondi la preview */
+.quote-details[open] .echo-quote {
+  display: block !important;
+  -webkit-line-clamp: unset !important;
+  -webkit-box-orient: initial !important;
+  overflow: visible !important;
+  max-height: none !important;
+  height: auto !important;
+  white-space: normal !important;
+}
+.quote-details[open] > summary .preview-text { display: none !important; }
+
+/* === Make OPEN text look like the short preview === */
+
+/* same typography for both preview (closed) and full (open) */
+.quote-details .preview-text,
+.quote-details[open] .echo-quote,
+.echo-quote {
+  font-style: italic;
+  color: #8c1d34;              /* same PISE red as preview */
+  line-height: 1.6;
+  text-align: justify;
+  text-justify: inter-word;
+  max-width: 68ch;             /* comfortable reading width */
+  hyphens: auto;
+}
+
+/* paragraphs produced by markdownify */
+.echo-quote p {
+  margin: 0 0 .9rem 0;         /* same spacing as preview look */
+}
+
+/* optional: tone down the date block when open */
+.quote-date {
+  margin: 0 0 .9rem 0;
+  font-size: .95rem;
+  color: #777;
+}
+
+/* optional: keep the toggle snug under the text when closed */
+.quote-details > summary { margin-top: .5rem; }

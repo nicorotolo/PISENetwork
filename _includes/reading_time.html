@@ -1,0 +1,15 @@
+{%- comment -%}
+  Calcola il tempo di lettura in minuti
+  - number_of_words è un filtro built-in che conta le parole in page.content  
+  - 200 parole al minuto è una media comune  
+{%- endcomment -%}
+
+{%- assign wc = page.content | number_of_words -%}
+{%- assign minutes = wc | divided_by: 200 -%}
+{%- if minutes < 1 -%}
+  {%- assign minutes = 1 -%}
+{%- endif -%}
+
+<span class="uppercase font-semibold text-sm text-gray-500">
+  {{ minutes }} min read
+</span>

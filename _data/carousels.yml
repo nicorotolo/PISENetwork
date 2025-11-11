@@ -1,0 +1,37 @@
+# _data/carousels.yml
+
+event2025:
+  - src: 2025_event_series_1.jpg
+    alt: "2025 PISE Event Series 1"
+  - src: 2025_event_series_2.jpg
+    alt: "2025 PISE Event Series 2"
+  - src: 2025_event_series_3.jpg
+    alt: "2025 PISE Event Series 3"
+  - src: 2025_event_series_4.jpg
+    alt: "2025 PISE Event Series 4"
+  - src: 2025_event_series_5.jpg
+    alt: "2025 PISE Event Series 5"
+  - src: 2025_event_series_6.jpg
+    alt: "2025 PISE Event Series 6"
+  - src: 2025_event_series_7.jpg
+    alt: "2025 PISE Event Series 7"
+  - src: 2025_event_series_8.jpg
+    alt: "2025 PISE Event Series 8"
+  - src: 2025_event_series_9.jpg
+    alt: "2025 PISE Event Series 9"
+
+inauguration2024:
+  - src: dolfin1.jpg
+    alt: "Ca’ Dolfin – Evento inaugurazione 2024 – foto 1"
+  - src: dolfin2.jpg
+    alt: "Ca’ Dolfin – Evento inaugurazione 2024 – foto 2"
+  - src: dolfin3.jpg
+    alt: "Ca’ Dolfin – Evento inaugurazione 2024 – foto 3"
+  - src: dolfin4.jpg
+    alt: "Ca’ Dolfin – Evento inaugurazione 2024 – foto 4"
+  - src: dolfin5.jpg
+    alt: "Ca’ Dolfin – Evento inaugurazione 2024 – foto 5"
+  - src: dolfin6.jpg
+    alt: "Ca’ Dolfin – Evento inaugurazione 2024 – foto 6"
+  - src: dolfin7.jpg
+    alt: "Ca’ Dolfin – Evento inaugurazione 2024 – foto 7"
