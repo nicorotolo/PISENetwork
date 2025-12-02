@@ -9,7 +9,7 @@ header:
 ---
 
 <div class="container mx-auto px-4 py-8">
-  <h1 class="page-title text-3xl font-bold mb-6">Tutti gli articoli</h1>
+  <h1 class="page-title text-3xl font-bold mb-6">Our articles</h1>
 
   {%- comment -%}
   1) Costruisco una lista unica di categorie presenti nella collection "editorial"
@@ -25,23 +25,40 @@ header:
   {%- comment -%}
   2) Barra di ricerca per titolo + select per categoria
   {%- endcomment -%}
-  <div class="flex flex-col md:flex-row gap-3 mb-6">
+  <div class="flex flex-col gap-3 mb-6">
+    <!-- Barra di ricerca per titolo -->
     <input
       id="search-input"
       type="text"
       placeholder="Cerca per titolo..."
-      class="w-full md:w-2/3 border border-gray-300 rounded-lg px-3 py-2"
+      class="w-full border border-gray-300 rounded-lg px-3 py-2"
       aria-label="Cerca per titolo"
     />
 
-    <select id="category-select" class="w-full md:w-1/3 border border-gray-300 rounded-lg px-3 py-2" aria-label="Filtra per categoria">
-      <option value="">Tutte le categorie</option>
+    <!-- Filtri categoria come bottoni, sotto la barra -->
+    <div id="category-filter" class="category-filter">
       {%- for cat in all_cats -%}
         {%- if cat != "" -%}
-          <option value="{{ cat | downcase }}">{{ cat }}</option>
+          {% assign slug = cat | slugify %}
+          {% assign data = site.data.article_categories[slug] %}
+          {% assign label = data.label | default: cat %}
+          {% assign bg    = data.color | default: '#1f4fff' %}
+          {% assign txt   = data.text  | default: '#ffffff' %}
+          {% assign icon  = data.icon  | default: '' %}
+
+          <button
+            type="button"
+            class="cat-badge"
+            data-cat="{{ cat | downcase }}"
+            style="--badge-bg: {{ bg }}; --badge-txt: {{ txt }};"
+            aria-label="Filtra per categoria: {{ label }}"
+          >
+            {% if icon != '' %}<i class="{{ icon }}" aria-hidden="true"></i>{% endif %}
+            {{ label }}
+          </button>
         {%- endif -%}
       {%- endfor -%}
-    </select>
+    </div>
   </div>
 
   <ul id="article-list" class="article-list space-y-6">
@@ -125,36 +142,56 @@ header:
 
 
 <script>
-// Filtro client-side per titolo e categoria
-<script>
+// Filtro client-side per titolo e categorie (multi-selezione)
 (function() {
   var input   = document.getElementById('search-input');
-  var select  = document.getElementById('category-select');
   var list    = document.getElementById('article-list');
-  var items   = list ? Array.prototype.slice.call(list.querySelectorAll('.article-item')) : [];
+  if (!list) return;
+
+  var items   = Array.prototype.slice.call(list.querySelectorAll('.article-item'));
   var emptyMsg= document.getElementById('no-results');
 
-  // Pagination elements
+  // --- BOTTONI CATEGORIA ---
+  var catFilter  = document.getElementById('category-filter');
+  var catButtons = catFilter ? Array.prototype.slice.call(catFilter.querySelectorAll('[data-cat]')) : [];
+  var allBtn     = catFilter ? catFilter.querySelector('[data-cat=""]') : null;
+  var activeCats = []; // array di categorie attive (lowercase, es. ["economics","philosophy"])
+
+  // --- PAGINAZIONE ---
   var pager   = document.getElementById('pager');
-  var btnPrev = pager.querySelector('[data-act="prev"]');
-  var btnNext = pager.querySelector('[data-act="next"]');
+  var btnPrev = pager ? pager.querySelector('[data-act="prev"]') : null;
+  var btnNext = pager ? pager.querySelector('[data-act="next"]') : null;
   var pgPages = document.getElementById('pg-pages');
 
   var PAGE_SIZE = 10;
   var curPage = 1;
   var filtered = items.slice();
 
-  function normalize(s){ return (s||'').toLowerCase().trim(); }
+  function normalize(s){ return (s || '').toLowerCase().trim(); }
 
   function applyFilter(){
     var q   = normalize(input ? input.value : '');
-    var cat = normalize(select ? select.value : '');
+    var selectedCats = activeCats.slice(); // copia
 
     filtered = items.filter(function(li){
-      var title = li.getAttribute('data-title') || '';
-      var cats  = li.getAttribute('data-categories') || '';
-      var matchTitle = !q   || title.indexOf(q) !== -1;
-      var matchCat   = !cat || cats.split('|').indexOf(cat) !== -1;
+      var title   = normalize(li.getAttribute('data-title') || '');
+      var catsStr = (li.getAttribute('data-categories') || '').toLowerCase();
+      var catsArr = catsStr ? catsStr.split('|') : [];
+
+      var matchTitle = !q || title.indexOf(q) !== -1;
+
+      var matchCat;
+      if (selectedCats.length === 0) {
+        // Nessuna categoria selezionata => non filtriamo per categoria
+        matchCat = true;
+      } else {
+        // Almeno una categoria selezionata => l'articolo deve avere
+        // almeno una categoria in comune
+        matchCat = selectedCats.some(function(c) {
+          return catsArr.indexOf(c) !== -1;
+        });
+      }
+
       return matchTitle && matchCat;
     });
 
@@ -177,7 +214,6 @@ header:
     var end   = Math.min(start + PAGE_SIZE, total);
     filtered.slice(start, end).forEach(function(li){ li.style.display = ''; });
 
-    // Aggiorna controlli e meta
     buildPager(pageCount);
     updateMeta(start, end, total);
   }
@@ -189,74 +225,23 @@ header:
     meta.textContent = 'Mostrati ' + (start + 1) + '–' + end + ' di ' + total + ' articoli';
   }
 
-  // Mostra poche pagine con ellissi: [1] ... [p-1] [p] [p+1] ... [N]
   function buildPager(pageCount){
-    btnPrev.disabled = (curPage === 1);
-    btnNext.disabled = (curPage === pageCount || pageCount === 0);
+    if (!pager || !pgPages) return;
+
+    if (btnPrev) btnPrev.disabled = (curPage === 1);
+    if (btnNext) btnNext.disabled = (curPage === pageCount || pageCount === 0);
 
     pgPages.innerHTML = '';
+    if (pageCount <= 1) return;
 
-    function addNum(p){
-      var b = document.createElement('button');
-      b.className = 'pg-num' + (p === curPage ? ' is-active' : '');
-      b.textContent = p;
-      b.setAttribute('aria-label', 'Vai alla pagina ' + p);
-      if (p === curPage) b.setAttribute('aria-current', 'page');
-      b.addEventListener('click', function(){
-        curPage = p; render();
-        list.scrollIntoView({behavior:'smooth', block:'start'});
-      });
-      pgPages.appendChild(b);
-    }
-    function addEllipsis(){
-      var span = document.createElement('span');
-      span.className = 'pg-ellipsis';
-      span.textContent = '…';
-      span.setAttribute('aria-hidden', 'true');
-      pgPages.appendChild(span);
-    }
-
-    // Nessuna pagina? esci.
-    if (pageCount <= 1){ return; }
-
-    var windowSize = 1; // quante pagine ai lati della corrente
-    var first = 1, last = pageCount;
-
-    // Sempre mostra 1
-    addNum(first);
-
-    // Ellissi dopo 1?
-    if (curPage - windowSize > first + 1) addEllipsis();
-
-    // Pagine vicine alla corrente
-    var start = Math.max(first + 1, curPage - windowSize);
-    var end   = Math.min(last - 1,  curPage + windowSize);
-    for (var p = start; p <= end; p++) addNum(p);
-
-    // Ellissi prima di N?
-    if (curPage + windowSize < last - 1) addEllipsis();
-
-    // Sempre mostra N (se >1)
-    if (last > first) addNum(last);
-  }
-
-
-  function buildPager(pageCount){
-    // Prev/Next
-    btnPrev.disabled = (curPage === 1);
-    btnNext.disabled = (curPage === pageCount || pageCount === 0);
-
-    // Numeri pagina
-    pgPages.innerHTML = '';
     for (var p = 1; p <= pageCount; p++){
       var b = document.createElement('button');
-      b.className = 'pg-num' + (p === curPage ? ' is-active' : '');
+      b.className = 'pg-num' + (p === curPage ? ' is-active' : '' );
       b.textContent = p;
       (function(page){
         b.addEventListener('click', function(){
           curPage = page;
           render();
-          // scroll verso la lista per UX
           list.scrollIntoView({behavior:'smooth', block:'start'});
         });
       })(p);
@@ -264,13 +249,85 @@ header:
     }
   }
 
-  // Eventi
-  if (input)  input.addEventListener('input',  applyFilter);
-  if (select) select.addEventListener('change', applyFilter);
-  btnPrev.addEventListener('click', function(){ curPage--; render(); list.scrollIntoView({behavior:'smooth', block:'start'}); });
-  btnNext.addEventListener('click', function(){ curPage++; render(); list.scrollIntoView({behavior:'smooth', block:'start'}); });
+  // Aggiorna classe has-active sul container
+  function updateHasActive() {
+    if (!catFilter) return;
+    var hasSpecific = activeCats.length > 0;
+    catFilter.classList.toggle('has-active', hasSpecific);
+  }
 
-  // Avvio
+  // --- EVENTI ---
+
+  // Ricerca per titolo
+  if (input) {
+    input.addEventListener('input', applyFilter);
+  }
+
+  // Click sui bottoni categoria (multi-selezione)
+  catButtons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var cat = (btn.getAttribute('data-cat') || '').toLowerCase();
+
+      if (cat === '') {
+        // Click su "Tutte le categorie": azzera tutto
+        activeCats = [];
+        catButtons.forEach(function(b) {
+          if (b === btn) {
+            b.classList.add('is-active');
+          } else {
+            b.classList.remove('is-active');
+          }
+        });
+        updateHasActive();
+        applyFilter();
+        return;
+      }
+
+      // Click su una categoria normale: toggle
+      var idx = activeCats.indexOf(cat);
+      if (idx === -1) {
+        activeCats.push(cat);
+        btn.classList.add('is-active');
+      } else {
+        activeCats.splice(idx, 1);
+        btn.classList.remove('is-active');
+      }
+
+      // Se non c'è nessuna categoria attiva, riattivo "Tutte le categorie"
+      if (activeCats.length === 0) {
+        if (allBtn) allBtn.classList.add('is-active');
+      } else {
+        if (allBtn) allBtn.classList.remove('is-active');
+      }
+
+      updateHasActive();
+      applyFilter();
+    });
+  });
+
+  // Paginazione Prev/Next
+  if (btnPrev) {
+    btnPrev.addEventListener('click', function(){
+      if (curPage <= 1) return;
+      curPage--;
+      render();
+      list.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  }
+
+  if (btnNext) {
+    btnNext.addEventListener('click', function(){
+      curPage++;
+      render();
+      list.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  }
+
+  // Stato iniziale: nessun filtro attivo → "Tutte le categorie" selezionato
+  if (allBtn) {
+    allBtn.classList.add('is-active');
+  }
+  updateHasActive();
   applyFilter();
 })();
 </script>

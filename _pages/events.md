@@ -120,7 +120,7 @@ Stay informed about our latest events, including workshops, networking sessions,
     <strong>The PISE Academic Year Inauguration Event</strong><br>
     20th September 2024, Ca’ Dolfin, Venice
   </p>
-  {% include carousel.html id="inauguration2024" folder="2024-inaguration-year" %}
+  {% include carousel.html id="inauguration2024" folder="2024-inauguration-year" %}
 
   <!-- Aggiungi altri eventi qui per aggiungere un carosello di immagini con lo stesso stile... -->
 

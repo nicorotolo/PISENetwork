@@ -30,3 +30,9 @@ codekit-config.json
 .sass-cache
 _asset_bundler_cache
 _site
+
+
+# Articoli da tenere solo in locale
+_editorial/2025/lug/nrossi-primo-articolo.md
+_editorial/2025/lug/nrotolo-template.md
+

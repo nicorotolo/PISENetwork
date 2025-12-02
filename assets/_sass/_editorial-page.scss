@@ -128,3 +128,32 @@
 .cat-post-list li { padding: .2rem 0; }
 .cat-post-list .meta { color: #6b7280; font-size: .9rem; margin-left: .35rem; }
 .back-top { text-align: right; }
+
+
+/* --- stili per bottoni filtro --- */
+
+.category-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.category-filter .cat-badge {
+  cursor: pointer;
+  border: 0;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.category-filter .cat-badge.is-active {
+  transform: translateY(-1px);
+  opacity: 1;
+}
+
+/* Quando c'è almeno un filtro attivo, tutti i bottoni NON selezionati
+    (tranne "Tutte le categorie" data-cat="") diventano più opachi */
+.category-filter.has-active .cat-badge:not(.is-active)[data-cat]:not([data-cat=""]) {
+  opacity: 0.35;
+  filter: saturate(0.6);
+}
