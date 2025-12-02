@@ -18,6 +18,7 @@ politics:
   label: "Politics"
   color: "#2563EB"
   text:  "#ffffff"
+  icon:  "fa-solid fa-building-columns"
   hero_image: "/assets/images/editorial/hero-test.jpg"
   description: "Opinion pieces on how politics is and should be done."
 

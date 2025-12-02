@@ -130,6 +130,23 @@
 .back-top { text-align: right; }
 
 
+/* Badge categorie: forza il colore del testo anche se è un link */
+.cat-badge,
+.cat-badge:link,
+.cat-badge:visited {
+  color: var(--badge-txt, #ffffff) !important;
+  text-decoration: none;
+}
+
+/* Se per caso usi una classe diversa per i badge sugli articoli,
+   copriamo anche il wrapper e l'eventuale <a> interno */
+.article-category-badge,
+.article-category-badge a {
+  color: var(--badge-txt, #ffffff) !important;
+  text-decoration: none;
+}
+
+
 /* --- stili per bottoni filtro --- */
 
 .category-filter {

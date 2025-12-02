@@ -104,3 +104,163 @@ body {
     color: #666;
   }
   
+
+  /* author card */
+
+/* author card */
+
+.author-card {
+  margin-top: 3rem;
+  padding: 1.75rem 2rem;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+
+  /* 🔥 Mobile styling */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.25rem 1.25rem;  /* meno margini */
+    gap: 1rem;
+  }
+
+  /* Foto autore */
+  &__left {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  &__avatar {
+    width: 105px;
+    height: 105px;
+    border-radius: 999px;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__avatar--placeholder {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #f3f4f6;
+    color: #9b1c31;
+    font-weight: 600;
+    font-size: 1.3rem;
+    width: 105px;
+    height: 105px;
+    border-radius: 999px;
+  }
+
+  /* Colonna centrale */
+  &__center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (max-width: 768px) {
+      align-items: center;
+    }
+  }
+
+  &__header {
+    display: flex;
+    gap: 0.5rem;
+    align-items: baseline;
+    margin-bottom: 0.25rem;
+
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+  }
+
+  &__name {
+    font-size: 1.35rem;   /* tuo valore */
+    font-weight: 700;
+    margin: 0;
+    color: #9b1c31 !important; /* rosso PISE fisso */
+  }
+
+  &__role {
+    font-size: 0.9rem;
+    color: #6b7280;
+  }
+
+  &__meta {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-bottom: 0.75rem;
+  }
+
+  &__bio {
+    font-size: 0.85rem;   /* tuo valore */
+    line-height: 1.6;
+    text-align: justify;
+    margin: 0;
+
+    @media (max-width: 768px) {
+      text-align: left;
+    }
+  }
+
+  /* Colonna destra (social) */
+  &__right {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-self: center;
+
+    /* 🔥 Su mobile diventano orizzontali */
+    @media (max-width: 768px) {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 1.25rem;
+      margin-top: 0.5rem;
+    }
+  }
+
+  /* Icone social */
+  &__social {
+    font-size: 1.45rem;  
+    color: #9b1c31 !important;      /* rosso fisso */
+    opacity: 0.70;                  /* opache */
+    text-decoration: none;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: opacity 0.18s ease;
+
+    i {
+      color: #9b1c31 !important;    /* forza colore anche sulle icone FA */
+    }
+
+    &:hover {
+      opacity: 1;                   /* niente cambio colore, solo più visibili */
+    }
+  }
+}
+
+.author-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-4px);   /* 🔥 effetto sollevamento */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08); /* leggero effetto “in avanti” */
+  }
+}

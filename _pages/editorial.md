@@ -138,7 +138,7 @@ header:
 
 <p id="pg-meta" class="pg-meta" aria-live="polite"></p>
 
-<p id="no-results" class="hidden text-gray-500 mt-4">Nessun articolo trovato.</p>
+<p id="no-results" class="hidden text-gray-500 mt-4">No article found.</p>
 
 
 <script>
