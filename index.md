@@ -83,7 +83,7 @@ Stay tuned for upcoming events and exciting news about our community!
 
 {% include carousel.html
    id="inauguration2024"
-   folder="2024-inaguration-year"
+   folder="2024-inauguration-year"
    title="The 2024/25 PISE Academic Year Inauguration"
    subtitle="September 9th, 2025, Ca' Dolfin, Venice"
 %}
