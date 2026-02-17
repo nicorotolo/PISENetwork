@@ -16,9 +16,33 @@ Welcome to the official website of the PISE Network! We connect over 300 graduat
 Stay tuned for upcoming events and exciting news about our community!
 
 <div class="cta-container">
-  <a href="{{ site.baseurl }}/collaborate/" class="cta-button">Get Involved</a>
-  <a href="{{ site.baseurl }}/events/" class="cta-button">Upcoming Events</a>
+  <a href="{{ site.baseurl }}/collaborate/" class="btn btn--primary btn--lg">Get Involved</a>
+  <a href="{{ site.baseurl }}/events/" class="btn btn--primary btn--lg">Upcoming Events</a>
 </div>
+
+<section class="pise-guide-section">
+  <div class="pise-guide-grid">
+    <a href="/assets/guides/Welcome-to-Venice.pdf"
+       class="pise-guide-image"
+       download>
+      <img src="/assets/images/Welcome-to-Venice-guide-cover.jpg"
+           alt="Welcome to Venice – PISE Network guide cover">
+    </a>
+    <div class="pise-guide-text">
+      <h2>Welcome to Venice: New Student Guide</h2>
+      <p>
+        A complete introduction to Venice and student life at Ca’ Foscari:
+        housing, transport, culture, local insights, practical steps,
+        useful contacts and everything a new PISE student needs to settle in.
+      </p>
+      <a class="btn btn--primary btn--lg"
+         href="/assets/guides/Welcome-to-Venice.pdf"
+         download>
+        Download PDF
+      </a>
+    </div>
+  </div>
+</section>
 
 
 <h2 style="text-align:center; color:#8c1d34; margin-top:3rem;">Echoes of PISE</h2>
