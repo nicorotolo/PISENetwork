@@ -1,0 +1,26 @@
+<div class="article-feedback" data-article-id="{{ include.article_id | strip }}">
+  <div class="article-feedback__left">
+    <div class="article-like-row">
+      <button
+        class="article-like-button"
+        type="button"
+        aria-label="Like this article"
+        aria-pressed="false">
+        <span class="article-like-icon" aria-hidden="true">&#128077;</span>
+        <span class="article-like-button-text">Like</span>
+      </button>
+      <span class="article-like-label">Did you enjoy this article?</span>
+    </div>
+
+    <p class="article-feedback__hint">
+      One thumbs up per browser. The count is saved for each article.
+    </p>
+  </div>
+
+  <div class="article-feedback__right">
+    <span class="article-like-count" aria-live="polite">
+      <span class="article-like-count-number">0</span>
+      <span class="article-like-count-label">likes</span>
+    </span>
+  </div>
+</div>

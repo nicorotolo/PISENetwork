@@ -20,9 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
       cont: el,
       countdown: true,
       date: deadline.getTime(),
-      outputFormat: "week|day|hour|minute|second",
+      outputFormat: "day|hour|minute|second",
       outputTranslation: {
-        week: "Weeks",
         day: "Days",
         hour: "Hours",
         minute: "Minutes",

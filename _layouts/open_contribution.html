@@ -1,0 +1,126 @@
+---
+layout: default
+---
+
+{% assign call = page %}
+{% assign call_is_closed = false %}
+{% if call.deadline_iso %}
+  {% assign deadline_ts = call.deadline_iso | date: "%s" %}
+  {% assign now_ts = site.time | date: "%s" %}
+  {% if deadline_ts < now_ts %}
+    {% assign call_is_closed = true %}
+  {% endif %}
+{% endif %}
+
+<main id="main" role="main" class="open-contribution">
+  <section class="open-contribution__hero">
+    <div class="open-contribution__hero-grid">
+      <div class="open-contribution__hero-content">
+        <div class="open-contribution__hero-topline">
+          <div class="open-contribution__badge">Open Contributions</div>
+          <div class="open-contribution__status{% if call_is_closed %} open-contribution__status--closed{% endif %}">
+            {% if call_is_closed %}Call closed{% else %}Current call{% endif %}
+          </div>
+        </div>
+
+        <p class="open-contribution__eyebrow">Editorial call for {{ call.date | default: site.time | date: "%B %Y" }}</p>
+        <h1 class="open-contribution__title">{{ call.theme | default: call.title }}</h1>
+
+        <div class="open-contribution__info-row">
+          {% if call.teaser_image %}
+          <figure class="open-contribution__visual">
+            <img src="{{ call.teaser_image | relative_url }}"
+                 alt="{{ call.theme | default: call.title }}">
+          </figure>
+          {% endif %}
+
+          <div class="open-contribution__info-stack">
+            <div class="open-contribution__meta">
+              <div class="open-contribution__meta-item">
+                <span>Deadline</span>
+                <strong>{{ call.deadline_label }}</strong>
+              </div>
+              {% if call.word_count %}
+              <div class="open-contribution__meta-item">
+                <span>Abstract length</span>
+                <strong>{{ call.word_count }}</strong>
+              </div>
+              {% endif %}
+            </div>
+
+            {% if call.deadline_iso and call_is_closed == false %}
+            <div class="open-contribution__countdown-wrap">
+              <div class="open-contribution__countdown-label">Time left to submit</div>
+              <div class="open-contribution__countdown" data-deadline="{{ call.deadline_iso }}">
+                <div class="open-contribution__countdown-unit">
+                  <span data-part="days">--</span>
+                  <small>Days</small>
+                </div>
+                <div class="open-contribution__countdown-unit">
+                  <span data-part="hours">--</span>
+                  <small>Hours</small>
+                </div>
+                <div class="open-contribution__countdown-unit">
+                  <span data-part="minutes">--</span>
+                  <small>Minutes</small>
+                </div>
+                <div class="open-contribution__countdown-unit">
+                  <span data-part="seconds">--</span>
+                  <small>Seconds</small>
+                </div>
+              </div>
+            </div>
+            {% else %}
+            <div class="open-contribution__closed-note">
+              This call closed on {{ call.deadline_label }}.
+            </div>
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="open-contribution__actions">
+          {% if call.form_url and call_is_closed == false %}
+          <a class="pise-btn pise-btn--primary pise-btn--lg"
+             href="{{ call.form_url }}" target="_blank" rel="noopener">
+            Submit your contribution{% if call.word_count %} ({{ call.word_count }}){% endif %}
+          </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="open-contribution__body">
+    {{ content }}
+  </section>
+
+  {% if call.angles %}
+  <section class="open-contribution__angles">
+    <h2>Angles to explore</h2>
+    <div class="open-contribution__grid">
+      <div class="open-contribution__card">
+        <h3>Philosophy</h3>
+        <p>{{ call.angles.philosophy }}</p>
+      </div>
+      <div class="open-contribution__card">
+        <h3>Politics</h3>
+        <p>{{ call.angles.politics }}</p>
+      </div>
+      <div class="open-contribution__card">
+        <h3>Economics</h3>
+        <p>{{ call.angles.economics }}</p>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <div class="open-contribution__page-footer">
+    <a class="pise-btn pise-btn--secondary"
+       href="{{ '/editorial/open-contributions/' | relative_url }}">
+      View archive
+    </a>
+  </div>
+</main>
+
+<script src="{{ '/assets/js/open_contributions_countdown.js' | relative_url }}"></script>

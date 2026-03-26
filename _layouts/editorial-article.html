@@ -67,12 +67,25 @@ layout: default
     {% endif %}
 
     <!-- Contenuto vero e proprio -->
-    <section>
+    <section class="article-content">
+      <div class="article-like-trigger" aria-hidden="true"></div>
       {{ content }}
     </section>
+
+    {% if page.article_likes != false %}
+      {% capture article_like_id %}{{ page.id | default: page.slug | default: page.url }}{% endcapture %}
+      {% include article-like-block.html article_id=article_like_id %}
+    {% endif %}
 
     <footer class="article-footer">
       {% include author-card.html %}
     </footer>
   </article>
 </main>
+
+{% if page.article_likes != false %}
+  {% include article-like-inline-styles.html %}
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app-compat.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore-compat.js" defer></script>
+  <script src="{{ '/assets/js/article-likes.js?v=2026-03-17c' | relative_url }}" defer></script>
+{% endif %}

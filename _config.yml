@@ -10,7 +10,7 @@
 # Review documentation to determine if you should use `theme` or `remote_theme`
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
-# theme                  : "minimal-mistakes-jekyll"
+theme                    : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    : "contrast" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
@@ -231,9 +231,6 @@ kramdown:
 # Sass/SCSS
 sass:
   sass_dir: _sass
-  load_paths:
-    - assets/css
-    - assets/_sass
 
   style: compressed # https://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
 
@@ -353,29 +350,23 @@ defaults:
       path: ""
       type: editorial
     values:
-      layout: editorial
+      layout: editorial-article
       author_profile: true
       read_time: true
       share: true
       related: true
-
-
-#navigation inputs
-navigation:
-  - title: "Home"
-    url: "/"
-  - title: "Board"
-    url: "/board/"
-  - title: "Events"
-    url: "/events"
-  - title: "Editorial"
-    url: "/editorial"
-  - title: "Resources"
-    url: "/resources"
-  - title: "Contact"
-    url: "/contact"
-
-      
+  - scope:
+      path: "_editorial/open-contributions"
+      type: editorial
+    values:
+      layout: open_contribution
+      author_profile: false
+      read_time: false
+      share: false
+      comments: false
+      related: false
+      toc: false
+      classes: wide
 collections:
   events:
     output: true
@@ -384,15 +375,4 @@ collections:
     permalink: /editorial/:path/
 
 
-# ─── 2. Mappatura abbreviata dei mesi (per chiarezza) ─────────────────────────
-# Assicurati che i nomi delle sottocartelle dei mesi siano in italiano abbreviato:
-#   gen, feb, mar, apr, mag, giu, lug, ago, set, ott, nov, dic
 
-# ─── 3. Valori di default per ogni file in _editorial ──────────────────────────
-defaults:
-  - scope:
-      path: ""            # tutta la cartella di progetto
-      type: editorial     # solo per la collezione editorial
-    values:
-      layout: editorial-article   # useremo _layouts/editorial-article.html
-      reading_time: true     

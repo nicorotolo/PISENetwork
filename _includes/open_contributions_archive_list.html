@@ -1,0 +1,18 @@
+{% assign calls = site.editorial | where: "content_type", "open_contribution" %}
+
+{% if calls and calls.size > 0 %}
+  {% assign calls_sorted = calls | sort: "deadline_iso" | reverse %}
+
+  <div class="open-contributions-archive">
+    {% for call in calls_sorted %}
+      <div class="open-contributions-archive__item">
+        <h3><a href="{{ call.url | relative_url }}">{{ call.theme }}</a></h3>
+        <div class="open-contributions-archive__meta">
+          Deadline: {{ call.deadline_label }}{% if call.is_current %} — <strong>Current</strong>{% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% else %}
+  <p>No Open Contributions published yet.</p>
+{% endif %}

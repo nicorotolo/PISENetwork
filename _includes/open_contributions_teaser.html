@@ -1,0 +1,60 @@
+{% assign calls = site.editorial | where: "content_type", "open_contribution" %}
+{% assign current_call = calls | where: "is_current", true | sort: "deadline_iso" | last %}
+
+{% if current_call %}
+<section class="open-contributions-teaser">
+  <div class="open-contributions-teaser__inner">
+
+    <div class="open-contributions-teaser__content">
+      <div class="open-contributions-teaser__kicker">Open Contributions — Current call</div>
+
+      <h2 class="open-contributions-teaser__title">
+        {{ current_call.theme | default: current_call.title }}
+      </h2>
+
+      <p class="open-contributions-teaser__meta">
+        Deadline: <strong>{{ current_call.deadline_label }}</strong>
+      </p>
+
+      <div class="open-contributions-teaser__actions">
+        <!-- SECONDARY (PISE button style) -->
+        <a class="pise-btn pise-btn--secondary"
+          href="{{ current_call.url | relative_url }}">
+          Read the full call
+        </a>
+
+        <!-- PRIMARY -->
+        <a class="pise-btn pise-btn--primary"
+          href="{{ current_call.form_url }}"
+          target="_blank" rel="noopener noreferrer">
+          Submit the abstract{% if current_call.word_count %} ({{ current_call.word_count }}){% endif %}
+        </a>
+      </div>
+    </div>
+
+    <div class="open-contributions-teaser__media">
+      {% if current_call.teaser_image %}
+        <img class="open-contributions-teaser__img"
+            src="{{ current_call.teaser_image | relative_url }}"
+            alt="{{ current_call.theme | default: current_call.title }}">
+      {% else %}
+        <div class="open-contributions-teaser__placeholder" aria-hidden="true"></div>
+      {% endif %}
+
+      <div class="open-contributions-teaser__flip js-flip-countdown"
+          data-deadline="{{ current_call.deadline_iso }}"></div>
+    </div>
+
+    <!-- moved OUTSIDE content so it can sit bottom-right of the full card -->
+    <a class="open-contributions-teaser__archive"
+      href="{{ '/editorial/open-contributions/' | relative_url }}">
+      Previous calls
+    </a>
+
+  </div>
+</section>
+
+<link rel="stylesheet" href="{{ '/assets/vendor/simplecountdown/countDown.min.css' | relative_url }}">
+<script src="{{ '/assets/vendor/simplecountdown/countDown.min.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/open_contributions_flip_countdown.js' | relative_url }}" defer></script>
+{% endif %}
