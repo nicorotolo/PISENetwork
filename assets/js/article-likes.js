@@ -1,6 +1,6 @@
 (function () {
   const firebaseConfig = {
-    apiKey: "AIzaSyC6KaHNrfihzFlj6TWQuDoY4wreWU11oag",
+    apiKey: "AIzaSyDNpEAGEB0gUsuAevVLpCFOQaDj7fK8u4Q",
     authDomain: "pise-network.firebaseapp.com",
     projectId: "pise-network",
     storageBucket: "pise-network.firebasestorage.app",
