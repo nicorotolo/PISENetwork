@@ -1,188 +1,17 @@
-{%- comment -%}
-Include for data-driven carousels.
-Parameters:
-  - id (required): key in site.data.carousels
-  - folder (required): folder name in assets/images/
-  - title (optional): title displayed above the carousel
-  - subtitle (optional): subtitle / description
+{%- comment -%}  
+Include per caroselli data-driven  
+Parametri:  
+  - id (obbligatorio): chiave in site.data.carousels  
+  - folder (obbligatorio): nome della cartella in assets/images/  
+  - title (facoltativo): titolo da mostrare sopra il carousel  
+  - subtitle (facoltativo): sottotitolo / descrizione  
 {%- endcomment -%}
 
-{% assign items = site.data.carousels[include.id] %}
+{% assign items  = site.data.carousels[include.id] %}
 {% assign folder = include.folder %}
 
-<style>
-  .carousel-shell {
-    position: relative;
-    width: calc(100vw - 2rem);
-    max-width: 1180px;
-    margin: 0 auto 3.5rem;
-    padding: 0 3.5rem 3.2rem;
-    overflow: hidden;
-    text-align: center;
-  }
 
-  .carousel-shell .swiper-wrapper {
-    align-items: center;
-  }
-
-  .carousel-shell .swiper-slide {
-    width: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.5rem 0;
-    opacity: 1 !important;
-    transform: scale(0.88);
-    transition: transform 240ms ease;
-  }
-
-  .carousel-shell .swiper-slide-active,
-  .carousel-shell .swiper-slide-duplicate-active,
-  .carousel-shell .swiper-slide-next,
-  .carousel-shell .swiper-slide-prev,
-  .carousel-shell .swiper-slide-duplicate-next,
-  .carousel-shell .swiper-slide-duplicate-prev {
-    opacity: 1 !important;
-  }
-
-  .carousel-shell .swiper-slide-active,
-  .carousel-shell .swiper-slide-duplicate-active {
-    transform: scale(1);
-  }
-
-  .carousel-shell .swiper-media {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .carousel-shell .swiper-media img {
-    display: block;
-    width: auto;
-    height: clamp(220px, 30vw, 420px);
-    max-width: min(72vw, 620px);
-    object-fit: contain;
-    border-radius: 1.5rem;
-    box-shadow: 0 18px 42px rgba(30, 24, 27, 0.12);
-    opacity: 1 !important;
-    filter: none !important;
-  }
-
-  .carousel-shell .carousel-title {
-    margin-bottom: 0.45rem;
-    color: #8c1d34;
-    text-align: center;
-  }
-
-  .carousel-shell .carousel-subtitle {
-    max-width: 48rem;
-    margin: 0 auto 1.6rem;
-    color: #3d3739;
-    text-align: center;
-  }
-
-  .carousel-shell .carousel-nav {
-    position: absolute;
-    top: 50%;
-    z-index: 5;
-    display: grid;
-    place-items: center;
-    width: 2.8rem;
-    height: 2.8rem;
-    border: 0;
-    border-radius: 999px;
-    background: rgba(255, 255, 255, 0.92);
-    box-shadow: 0 10px 24px rgba(30, 24, 27, 0.14);
-    color: #8c1d34;
-    cursor: pointer;
-    transform: translateY(-50%);
-    transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
-  }
-
-  .carousel-shell .carousel-nav:hover,
-  .carousel-shell .carousel-nav:focus-visible {
-    background: #ffffff;
-    box-shadow: 0 14px 30px rgba(30, 24, 27, 0.2);
-    transform: translateY(-50%) scale(1.04);
-  }
-
-  .carousel-shell .carousel-nav:focus-visible {
-    outline: 2px solid #8c1d34;
-    outline-offset: 2px;
-  }
-
-  .carousel-shell .carousel-nav-prev {
-    left: 0.2rem;
-  }
-
-  .carousel-shell .carousel-nav-next {
-    right: 0.2rem;
-  }
-
-  .carousel-shell .carousel-nav span {
-    font-size: 1.75rem;
-    line-height: 1;
-  }
-
-  .carousel-shell .swiper-controls {
-    position: relative;
-    width: min(100%, 780px);
-    margin: 1.35rem auto 0;
-  }
-
-  .carousel-shell .swiper-scrollbar {
-    position: static;
-    height: 0.35rem;
-    border-radius: 999px;
-    background: rgba(140, 29, 52, 0.12);
-  }
-
-  .carousel-shell .swiper-scrollbar-drag {
-    border-radius: 999px;
-    background: #8c1d34;
-  }
-
-  @media (max-width: 900px) {
-    .carousel-shell {
-      padding-left: 2.6rem;
-      padding-right: 2.6rem;
-    }
-  }
-
-  @media (max-width: 640px) {
-    .carousel-shell {
-      width: calc(100vw - 1rem);
-      margin-bottom: 2.75rem;
-      padding: 0 0 3rem;
-    }
-
-    .carousel-shell .swiper-slide {
-      transform: scale(0.94);
-    }
-
-    .carousel-shell .carousel-nav {
-      display: none;
-    }
-
-    .carousel-shell .swiper-media img {
-      height: clamp(210px, 58vw, 320px);
-      max-width: 82vw;
-      border-radius: 1.1rem;
-    }
-
-    .carousel-shell .swiper-controls {
-      width: calc(100% - 1rem);
-      margin-top: 1rem;
-    }
-  }
-</style>
-
-<div
-  class="carousel-section swiper carousel-shell swiper-{{ include.id }}"
-  data-carousel-id="{{ include.id }}"
->
+<div class="carousel-section swiper-container swiper-{{ include.id }}">
   {%- if include.title %}
     <h2 class="carousel-title">{{ include.title }}</h2>
   {%- endif %}
@@ -193,109 +22,61 @@ Parameters:
   <div class="swiper-wrapper">
     {% for slide in items %}
       <div class="swiper-slide">
-        <div class="swiper-media">
-          <img
-            src="{{ '/assets/images/' | append: folder | append: '/' | append: slide.src | relative_url }}"
-            alt="{{ slide.alt }}"
-            loading="lazy"
-          />
-        </div>
+        <img
+          src="{{ '/assets/images/' | append: folder | append: '/' | append: slide.src | relative_url }}"
+          alt="{{ slide.alt }}"
+        />
+        {% if slide.caption %}
+          <div class="swiper-caption">{{ slide.caption }}</div>
+        {% endif %}
       </div>
     {% endfor %}
   </div>
-
-  <button
-    class="carousel-nav carousel-nav-prev carousel-prev-{{ include.id }}"
-    type="button"
-    aria-label="Previous slide"
-  >
-    <span aria-hidden="true">&lsaquo;</span>
-  </button>
-
-  <button
-    class="carousel-nav carousel-nav-next carousel-next-{{ include.id }}"
-    type="button"
-    aria-label="Next slide"
-  >
-    <span aria-hidden="true">&rsaquo;</span>
-  </button>
-
-  <div class="swiper-controls">
-    <div class="swiper-scrollbar swiper-scrollbar-{{ include.id }}"></div>
-  </div>
+  <div class="swiper-pagination swiper-pagination-{{ include.id }}"></div>
 </div>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const carousel = document.querySelector('.swiper-{{ include.id }}');
-    if (!carousel || typeof Swiper === 'undefined') return;
-    if (carousel.dataset.swiperReady === 'true') return;
-    carousel.dataset.swiperReady = 'true';
-    const prevButton = carousel.querySelector('.carousel-prev-{{ include.id }}');
-    const nextButton = carousel.querySelector('.carousel-next-{{ include.id }}');
-    const scrollbar = carousel.querySelector('.swiper-scrollbar-{{ include.id }}');
-
-    const swiper = new Swiper(carousel, {
+    new Swiper('.swiper-{{ include.id }}', {
+      effect: 'coverflow',
       grabCursor: true,
       loop: true,
       centeredSlides: true,
-      centerInsufficientSlides: true,
-      observer: true,
-      observeParents: true,
-      watchOverflow: true,
-      speed: 650,
-      slidesPerView: 'auto',
-      spaceBetween: 20,
-      loopAdditionalSlides: 3,
+      centeredSlidesBounds: true,          // <— importante per i bordi
+      slidesPerView: 'auto',               // <— SEMPRE 'auto'
+      spaceBetween: 16,
+      loopAdditionalSlides: 2,
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 120,
+        modifier: 1,
+        slideShadows: false
+      },
       autoplay: {
-        delay: 3200,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true
+        delay: 3000,
+        disableOnInteraction: false
       },
-      mousewheel: {
-        forceToAxis: true,
-        releaseOnEdges: true,
-        sensitivity: 0.9
+      pagination: {
+        el: '.swiper-pagination-{{ include.id }}',
+        clickable: true,
+        renderBullet: (i, cls) => `<span class="${cls}"></span>`
       },
-      keyboard: {
-        enabled: true,
-        onlyInViewport: true
-      },
-      navigation: {
-        nextEl: nextButton,
-        prevEl: prevButton
-      },
-      scrollbar: {
-        el: scrollbar,
-        draggable: true,
-        dragSize: 'auto',
-        snapOnRelease: true
-      },
-      breakpoints: {
-        640: {
-          spaceBetween: 18
+      watchSlidesProgress: true,
+      on: {
+        init: function() {
+          this.slides.forEach(slide => {
+            const img = slide.querySelector('img');
+            if (!img) return;
+            slide.classList.add(
+              img.naturalWidth < img.naturalHeight ? 'portrait' : 'landscape'
+            );
+          });
         },
-        900: {
-          spaceBetween: 20
-        },
-        1200: {
-          spaceBetween: 24
+        resize: function() {
+          this.update(); // ricalcola dimensioni su resize
         }
       }
     });
-
-    if (prevButton) {
-      prevButton.addEventListener('click', (event) => {
-        event.preventDefault();
-        swiper.slidePrev();
-      });
-    }
-
-    if (nextButton) {
-      nextButton.addEventListener('click', (event) => {
-        event.preventDefault();
-        swiper.slideNext();
-      });
-    }
   });
 </script>
