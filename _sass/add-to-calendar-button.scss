@@ -1,0 +1,63 @@
+/* === Add to Calendar Button === */
+
+
+/* From Uiverse.io by Gaurav-WebDev */
+/* Styling for Add to Calendar Button */
+.add-to-calendar-button {
+  height: 50px;
+  width: 300px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+.add-to-calendar-button:hover {
+  box-shadow: 0.5px 0.5px 150px #252525;
+}
+
+.add-to-calendar-button::after {
+  content: "Added!";
+  height: 50px;
+  width: 300px;
+  background-color: #eeeeee;
+  color: #9b1c31;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translateY(50px);
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.add-to-calendar-button::before {
+  content: "Add to your Calendar";
+  height: 50px;
+  width: 300px;
+  background-color: #9b1c31;
+  color: #fff;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translateY(0px) scale(1.2);
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.add-to-calendar-button:hover::after {
+  transform: translateY(0) scale(1.2);
+}
+
+.add-to-calendar-button:hover::before {
+  transform: translateY(-50px) scale(0) rotate(120deg);
+}

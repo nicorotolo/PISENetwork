@@ -1,0 +1,77 @@
+/* Roadmap Container */
+.roadmap {
+    position: relative;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+  }
+  
+  /* Vertical Line */
+  .roadmap:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: #0056b3; /* Use website's primary color */
+  }
+  
+  /* Milestone Containers */
+  .milestone {
+    position: relative;
+    margin: 20px 0;
+    padding: 20px;
+    width: 50%;
+  }
+  
+  /* Alternating Alignment */
+  .milestone.left {
+    left: 0;
+    text-align: right;
+  }
+  
+  .milestone.right {
+    left: 50%;
+    text-align: left;
+  }
+  
+  /* Milestone Content */
+  .milestone-content {
+    position: relative;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Icons (Markers) */
+  .milestone:before {
+    content: '⚫'; /* Placeholder icon */
+    position: absolute;
+    top: 20px;
+    left: -15px; /* Adjust to center the icon on the line */
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: #0056b3; /* Match line color */
+  }
+  
+  .milestone.right:before {
+    left: calc(100% + 15px); /* Adjust icon position for right-aligned content */
+  }
+  
+  /* Title Styling */
+  .milestone h2 {
+    color: #0056b3;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  /* Text Styling */
+  .milestone p {
+    font-size: 1.1em;
+    color: #333;
+  }
+  

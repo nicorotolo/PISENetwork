@@ -1,0 +1,39 @@
+
+
+.cta-container {
+    text-align: center;
+    margin: 40px 0;
+  }
+  .cta-button {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 25px;
+    background-color: #9b1c31;
+    color: #fff !important;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  .cta-button:hover {
+    background-color: #e3c8c1;
+    transform: scale(1.1);
+  }
+  .social-links {
+    text-align: center;
+    margin: 40px 0;
+  }
+  .social-links a {
+    margin: 0 10px;
+  }
+  header.splash {
+    animation: parallax 10s infinite alternate ease-in-out; /* Add parallax effect */
+  }
+  @keyframes parallax {
+    0% {
+      background-position: center top;
+    }
+    100% {
+      background-position: center bottom;
+    }
+  }

@@ -1,0 +1,295 @@
+/* Badge categoria */
+.badge-category {
+  display: inline-block;
+  background: #9b1c31;
+  color: #fff !important;
+  padding: 0.2em 0.5em;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: 0.5em;
+}
+
+/* Meta linea (“data • tempo”) */
+.meta {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1em;
+}
+
+/* Immagine di copertina */
+.cover-image {
+  width: 100%;
+  border-radius: 6px;
+  margin: 0rem;
+  margin-top: 0rem;
+}
+
+/* Share menu */
+.share-menu {
+  margin-bottom: 1.5em;
+}
+.share-menu a {
+  margin-right: 1em;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Author box */
+.author-box {
+  display: flex;
+  align-items: flex-start;
+  border-top: 1px solid #ddd;
+  padding-top: 1.5em;
+  margin-top: 2em;
+}
+.author-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 1em;
+}
+.author-info h3 {
+  margin: 0 0 0.3em;
+}
+.author-info p {
+  margin: 0.2em 0;
+}
+.author-social a {
+  margin-right: 0.5em;
+  font-size: 0.9rem;
+}
+
+/* Articoli correlati */
+.related-posts h4 {
+  margin-top: 2em;
+}
+.related-posts ul {
+  list-style: disc inside;
+  padding-left: 0;
+}
+.related-posts li {
+  margin-bottom: 0.5em;
+}
+
+/* Share icons */
+.share-menu a,
+.author-social a {
+  font-size: 1.2rem;      /* grandezza icone */
+  margin-right: 0.8em;    /* spazio fra le icone */
+  color: #333;            /* colore di default */
+  transition: color .2s;
+}
+.share-menu a:hover,
+.author-social a:hover {
+  color: #9b1c31;         /* colore al passaggio del mouse */
+}
+
+/* barra di avanzamento lettura */
+#reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 6px;           /* spessore: aumentalo o riducilo */
+  width: 5;               /* parte da zero */
+  background: #9b1c31c2;    
+  z-index: 9999;          /* sopra a tutto */
+  transition: width .35s cubic-bezier(.4,0,.2,1);
+}
+
+@media (max-width: 600px) {
+  #reading-bar { display: none !important; }
+}
+
+
+// 1. Testo più compatto
+.prose {
+  max-width: 60ch;       /* larghezza massima per linee più corte */
+  margin-top: 1rem;      /* riduci spazio sopra */
+  margin-bottom: 1rem;   /* riduci spazio sotto */
+}
+.prose p {
+  margin-bottom: 1rem;   /* margine inferiore dei paragrafi */
+  line-height: 1.6;      /* interlinea un po’ meno ariosa */
+}
+
+// 2. Titoli con margini ridotti
+.prose h1 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+.prose h2 {
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+// 3. Immagini meno “giganti”
+.prose img {
+  margin: 1.5rem auto;   /* margini verticali ridotti */
+  max-width: 100%;
+}
+
+// 4. Blockquote e altri elementi
+.prose blockquote {
+  margin: 1.5rem 0;      /* riduci gap */
+  padding-left: 0.75rem;
+}
+
+// 5. Author-card e share box più compatte
+.author-card {
+  padding: 1rem;         /* da 1.5rem a 1rem */
+}
+.article-share {
+  margin-top: 1rem;      /* da mt-8 a mt-4 */
+}
+
+/* Wrapper titolo + reading time */
+.header-title-time {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* spinge gli elementi agli estremi */
+  width: 100%;                     /* occuperà tutta la linea */
+}
+
+/* Titolo prende tutto lo spazio disponibile */
+.header-title-time h1 {
+  margin: 0;
+  flex: 1;                     /* si espande fino allo spazio rimasto */
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Reading time sull’estremo destro */
+.reading-time {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-left: 1rem;           /* un po’ di respiro dal titolo */
+}
+
+/* Icona orologio dentro il box reading-time */
+.reading-time svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  margin-right: 0.25rem;
+  stroke: currentColor;
+  fill: none;
+}
+
+
+
+/* STILI per reading-progress */
+/* progress-bar fissa in alto – nascosta di default */
+#progress-bar {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 6px;
+  background: rgba(0,0,0,0.1);
+  background-color: #e0e0e0; // grigio chiaro fisso sempre visibile
+  z-index: 10000;
+  display: none;
+}
+#progress-bar #progress {
+  height: 100%;
+  width: 0;
+  background: #9b1c31;
+}
+
+/* reading-bar: titolo + tempo – nascosta di default */
+#reading-bar {
+  position: fixed;
+  top: 4px; left: 0;
+  width: 100%;
+  padding: 8px 16px;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-size: 0.9rem;
+  z-index: 9999;
+}
+#reading-bar span { color: #333; }
+#reading-bar i.fas { margin-right: 6px; }
+
+/* styles fo the categories' buttons */
+.category-boxes {
+  margin: .6rem 0 1.2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+}
+
+.category-badge {
+  --cat-bg: #9b1c31; /* fallback */
+  --cat-txt: #ffffff; /* fallback */
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .22rem .5rem;
+  font-size: .50rem;
+  font-weight: 530;
+  text-decoration: none;
+  color: var(--cat-txt);
+  background: var(--cat-bg);
+  border-radius: 999px; /* pill */
+  transition: filter .2s ease;
+  line-height: 1;
+}
+.category-badge:hover { filter: brightness(90%); }
+.category-badge i { font-size: .9em; }
+
+/* Riduci lo spazio sotto al titolo/metadati */
+.article-header {
+  margin-bottom: .25rem; /* era più grande */
+}
+.article-header h1 {
+  margin-bottom: .60rem;
+}
+
+/* Spaziatura delle categorie */
+.category-boxes {
+  margin-top: 1.2rem;   /* più staccate dal titolo */
+  margin-bottom: 0rem; /* più vicine alla foto */
+}
+
+/* Avvicina ulteriormente la foto alle categorie */
+.category-boxes + figure {
+  margin-top: .1rem;
+}
+
+/* (opzionale) rendi i badge un filo più compatti */
+.category-badge {
+  padding: .26rem .56rem;
+  font-size: .84rem;
+}
+
+
+/* --- Badge categorie nella PAGINA ARTICOLO --- */
+/* Badge categorie nella pagina articolo: forza il testo bianco su tutti gli stati */
+.single .page__content a.category-badge:link,
+.single .page__content a.category-badge:visited,
+.single .page__content a.category-badge:hover,
+.single .page__content a.category-badge:active {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+/* (opzionale) se i badge sono dentro un wrapper .category-boxes */
+.single .page__content .category-boxes a.category-badge:link,
+.single .page__content .category-boxes a.category-badge:visited,
+.single .page__content .category-boxes a.category-badge:hover,
+.single .page__content .category-boxes a.category-badge:active {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+/* icone all’interno del badge */
+.single .page__content a.category-badge i,
+.single .page__content a.category-badge svg {
+  color: #fff !important;
+  fill: #fff !important;
+}

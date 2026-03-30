@@ -1,0 +1,102 @@
+/* Reset lista articoli */
+.article-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Titolo della pagina: nessuna linea sotto */
+.page-title {
+  border-bottom: none;
+  margin-bottom: 1rem;
+}
+
+/* Singola voce articoli: flex orizzontale, centrato verticalmente */
+.article-item {
+  display: flex;
+  align-items: center;       /* centra verticalmente immagine e testo */
+  padding: 1rem 0;
+}
+
+/* Copertina: rapporto 16:9, dimensioni maggiori */
+.article-item img {
+  width: 300px;               /* prova ad aumentare se vuoi ancora più grande */
+  height: 225px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 1.5rem;       /* spazio maggiore fra immagine e testo */
+}
+
+/* Blocco testo (per eventuali padding interni o larghezza minima) */
+.article-text {
+  flex: 1;                    /* occupa il resto dello spazio */
+}
+
+/* Titolo articolo: nero, non sottolineato, rosso su hover */
+.article-text h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.article-text h2 a {
+  color: #222 !important;
+  text-decoration: none !important;
+  transition: color 0.2s ease;
+}
+.article-text h2 a:hover {
+  color: #8c1d34 !important;
+  text-decoration: none !important;
+}
+
+/* Estratto */
+.article-excerpt {
+  margin: 0 0 0.25rem;
+  font-size: 0.6rem;
+  color: #666;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+/* Meta (autore + data) */
+.article-meta {
+  font-size: 0.875rem;
+  color: #444;
+  margin: 0;
+}
+
+/* Separatore sottile fra un articolo e l’altro */
+.article-divider {
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin: 0;
+}
+
+
+/* === STILI PER SMARTPHONE === */
+@media (max-width: 600px) {
+  .article-item {
+    display: flex;
+    flex-direction: column;   /* disposto in colonna invece che in riga */
+    align-items: flex-start;  /* allinea a sinistra testo e immagine */
+    padding: 0.75rem 0;
+  }
+
+  .article-item img {
+    width: 100%;      /* occupa tutta la larghezza del contenitore */
+    height: auto;     /* mantiene il ratio originale */
+    margin: 0 0 1rem; /* spazio solo sotto l’immagine */
+  }
+
+  .article-text {
+    width: 100%;      /* assicurati che il testo vada a capo */
+  }
+
+  .article-text h2 {
+    font-size: 1.1rem;  /* riduci un po’ il titolo */
+  }
+
+  .article-excerpt {
+    font-size: 0.9rem;  /* estratto leggermente più leggibile */
+    line-height: 1.4;   /* compatto ma leggibile su schermo piccolo */
+  }
+}
