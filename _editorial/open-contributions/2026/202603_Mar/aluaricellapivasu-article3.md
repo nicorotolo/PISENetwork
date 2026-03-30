@@ -3,7 +3,7 @@ layout: editorial-article
 title:    "Private Power, Public War: big tech's quiet takeover of cyberspace"
 date:     2026-03-30 10:00:00 +02:00
 author:   alauricellapivasu
-image:    /assets/images/team-pictures/placeholder.jpg
+image:    /assets/images/editorial/open-contributions/2026/202603_Mar_files/alauricellapivasu-article-image.jpg
 categories: [politics, economics]
 reading_time: true       # attiva la barra di avanzamento in alto
 ---
