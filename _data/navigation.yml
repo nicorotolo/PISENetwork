@@ -3,7 +3,7 @@ main:
   - title: Home
     url: /
     description: Go to the homepage
-  - title: About Us
+  - title: About us
     url: /about-us/
     description: Learn more about our story
   - title: Events
@@ -12,6 +12,6 @@ main:
   - title: Editorial
     url: /editorial/
     description: Read our latest editorials and newsletter
-  - title: Collaborate with Us
+  - title: Collaborate with us
     url: /collaborate/
     description: Get Involved
