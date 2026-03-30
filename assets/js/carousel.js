@@ -1,187 +1,303 @@
-class Carousel {
-  constructor(container) {
-    this.container = container;
-    this.track     = container.querySelector('.carousel-track');
-    this.items     = Array.from(this.track.children);
-    this.indicators = container.querySelector('.carousel-indicators');
-    this.originalHTML = this.track.innerHTML;
-    this.init();
+function initCarousel(carousel) {
+  if (!carousel || carousel.dataset.carouselReady === "true") {
+    return;
   }
 
-  init() {
-    this.calcSpacing();
-    this.buildLoop();
-    this.buildIndicators();
-    this.bindEvents();
-    this.positionStart();
-    this.updateEffects();
-    this.startAuto();
-    this.observeResize();
+  const viewport = carousel.querySelector("[data-carousel-viewport]");
+  const track = carousel.querySelector("[data-carousel-track]");
+  const allSlides = Array.from(carousel.querySelectorAll("[data-carousel-slide]"));
+  const slides = allSlides.filter((slide) => !slide.dataset.carouselClone);
+  const prevButton = carousel.querySelector("[data-carousel-prev]");
+  const nextButton = carousel.querySelector("[data-carousel-next]");
+  const dotsRoot = carousel.querySelector("[data-carousel-dots]");
+  const caption = carousel.querySelector("[data-carousel-caption]");
+
+  if (!viewport || !track || slides.length === 0) {
+    return;
   }
 
-calcSpacing() {
-  // prendi il gap tra le slide dal CSS
-  const { gap } = getComputedStyle(this.track);
-  this.gap = parseFloat(gap);
+  let index = slides.findIndex((slide) => slide.classList.contains("is-active"));
+  if (index < 0) {
+    index = 0;
+  }
 
-  // larghezza + gap di ogni singola slide
-  this.spacing = this.items[0].offsetWidth + this.gap;
+  let displayIndex = slides.length > 1 ? index + 1 : index;
+  let dragStartX = 0;
+  let dragDeltaX = 0;
+  let dragStartTime = 0;
+  let isDragging = false;
+  let isAnimating = false;
+  let pointerId = null;
+  let autoplayTimer = null;
+  let isHovered = false;
 
-  // calcola di quanto spostare lo scroll per centrare la slide
-  this.centerOffset = (this.container.offsetWidth - this.spacing) / 2;
+  const dots = dotsRoot
+    ? slides.map((_, slideIndex) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "carousel__dot";
+        button.setAttribute("aria-label", `Go to image ${slideIndex + 1}`);
+        button.addEventListener("click", () => goTo(slideIndex));
+        dotsRoot.appendChild(button);
+        return button;
+      })
+    : [];
 
-  // quante slide sono visibili nello schermo
-  this.visible = Math.ceil(this.container.offsetWidth / this.spacing);
+  function currentDisplaySlide() {
+    return allSlides[Math.max(0, Math.min(displayIndex, allSlides.length - 1))] || null;
+  }
 
-  // quante slide-clone creare prima e dopo
-  this.clones  = this.visible + 1;
-}
+  function normalize(nextIndex) {
+    return (nextIndex + slides.length) % slides.length;
+  }
 
+  function applyState() {
+    allSlides.forEach((slide) => {
+      slide.classList.remove("is-active", "is-prev", "is-next");
+    });
 
-  buildLoop() {
-    this.track.innerHTML = this.originalHTML;
-    // prepend last clones
-    for (let i = this.items.length - this.clones; i < this.items.length; i++) {
-      this.track.insertBefore(this.items[i].cloneNode(true), this.track.firstChild);
+    const prevIndex = normalize(index - 1);
+    const nextIndex = normalize(index + 1);
+
+    slides[index].classList.add("is-active");
+    slides[prevIndex].classList.add("is-prev");
+    slides[nextIndex].classList.add("is-next");
+
+    if (slides.length > 1) {
+      if (index === 0) {
+        allSlides[0].classList.add("is-prev");
+      }
+
+      if (index === slides.length - 1) {
+        allSlides[allSlides.length - 1].classList.add("is-next");
+      }
     }
-    // append first clones
-    this.items.slice(0, this.clones).forEach(item => {
-      this.track.appendChild(item.cloneNode(true));
-    });
-    this.allItems = this.track.querySelectorAll('.item');
-  }
 
-  buildIndicators() {
-    this.indicators.innerHTML = '';
-    this.items.forEach((_, i) => {
-      const dot = document.createElement('div');
-      dot.className = 'indicator';
-      if (i === 0) dot.classList.add('active');
-      this.indicators.appendChild(dot);
-    });
-    this.dots = Array.from(this.indicators.children);
-  }
-
-  bindEvents() {
-    let down=false, startX, startScroll;
-
-    this.container.addEventListener('pointerdown', e => {
-      down = true;
-      startX = e.clientX;
-      startScroll = this.container.scrollLeft;
-      this.stopAuto();
-      this.container.setPointerCapture(e.pointerId);
+    dots.forEach((dot, dotIndex) => {
+      const isActive = dotIndex === index;
+      dot.classList.toggle("is-active", isActive);
+      dot.setAttribute("aria-current", isActive ? "true" : "false");
     });
 
-    this.container.addEventListener('pointermove', e => {
-      if (!down) return;
-      this.container.scrollLeft = startScroll + (startX - e.clientX);
-      this.updateEffects();
+    if (caption) {
+      const text = slides[index].dataset.caption || "";
+      caption.textContent = text;
+      caption.hidden = text === "";
+    }
+  }
+
+  function render(offset = 0) {
+    const activeSlide = currentDisplaySlide();
+    if (!activeSlide) {
+      return;
+    }
+
+    const slideCenter = activeSlide.offsetLeft + activeSlide.offsetWidth / 2;
+    const viewportCenter = viewport.clientWidth / 2;
+    const x = viewportCenter - slideCenter + offset;
+    track.style.transform = `translate3d(${x}px, 0, 0)`;
+  }
+
+  function setTransition(enabled) {
+    track.style.transition = enabled ? "transform 520ms cubic-bezier(0.22, 1, 0.36, 1)" : "none";
+  }
+
+  function syncFromDisplayIndex() {
+    if (slides.length <= 1) {
+      return;
+    }
+
+    if (displayIndex === 0) {
+      displayIndex = slides.length;
+      setTransition(false);
+      render();
+    } else if (displayIndex === allSlides.length - 1) {
+      displayIndex = 1;
+      setTransition(false);
+      render();
+    }
+  }
+
+  function finalizeTransition() {
+    if (slides.length <= 1) {
+      return;
+    }
+
+    syncFromDisplayIndex();
+    isAnimating = false;
+  }
+
+  function goTo(nextIndex, { immediate = false } = {}) {
+    index = normalize(nextIndex);
+    displayIndex = slides.length > 1 ? index + 1 : index;
+    applyState();
+    setTransition(!immediate);
+    render();
+
+    if (!immediate) {
+      isAnimating = true;
+    }
+  }
+
+  function stopAutoplay() {
+    if (autoplayTimer) {
+      window.clearInterval(autoplayTimer);
+      autoplayTimer = null;
+    }
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+
+    if (slides.length <= 1) {
+      return;
+    }
+
+    autoplayTimer = window.setInterval(() => {
+      if (isDragging || isAnimating || isHovered) {
+        return;
+      }
+
+      shiftDisplay(1);
+    }, 4200);
+  }
+
+  function shiftDisplay(delta) {
+    if (slides.length <= 1) {
+      return;
+    }
+
+    index = normalize(index + delta);
+    displayIndex += delta;
+    applyState();
+    setTransition(true);
+    render();
+    isAnimating = true;
+  }
+
+  function onPointerDown(event) {
+    if (isAnimating || (event.pointerType === "mouse" && event.button !== 0)) {
+      return;
+    }
+
+    isDragging = true;
+    pointerId = event.pointerId;
+    dragStartX = event.clientX;
+    dragDeltaX = 0;
+    dragStartTime = performance.now();
+
+    viewport.classList.add("is-dragging");
+    viewport.setPointerCapture(pointerId);
+    setTransition(false);
+    stopAutoplay();
+  }
+
+  function onPointerMove(event) {
+    if (!isDragging || event.pointerId !== pointerId) {
+      return;
+    }
+
+    dragDeltaX = event.clientX - dragStartX;
+    render(dragDeltaX);
+  }
+
+  function finishDrag(event) {
+    if (!isDragging || event.pointerId !== pointerId) {
+      return;
+    }
+
+    const elapsed = Math.max(performance.now() - dragStartTime, 1);
+    const velocity = dragDeltaX / elapsed;
+    const activeSlide = currentDisplaySlide();
+    const width = activeSlide ? activeSlide.offsetWidth : viewport.clientWidth;
+    const threshold = Math.min(width * 0.16, 120);
+    const shouldMove =
+      Math.abs(dragDeltaX) > threshold || Math.abs(velocity) > 0.45;
+
+    isDragging = false;
+    viewport.classList.remove("is-dragging");
+    viewport.releasePointerCapture(pointerId);
+    pointerId = null;
+
+    if (shouldMove && slides.length > 1) {
+      shiftDisplay(dragDeltaX < 0 ? 1 : -1);
+    } else {
+      setTransition(true);
+      render();
+    }
+
+    if (!isHovered) {
+      startAutoplay();
+    }
+  }
+
+  function cancelDrag(event) {
+    if (!isDragging || event.pointerId !== pointerId) {
+      return;
+    }
+
+    isDragging = false;
+    viewport.classList.remove("is-dragging");
+    viewport.releasePointerCapture(pointerId);
+    pointerId = null;
+    setTransition(true);
+    render();
+
+    if (!isHovered) {
+      startAutoplay();
+    }
+  }
+
+  if (prevButton) {
+    prevButton.addEventListener("click", () => {
+      if (!isAnimating) {
+        shiftDisplay(-1);
+      }
     });
-
-    const finish = e => {
-      if (!down) return;
-      down = false;
-      this.container.releasePointerCapture(e.pointerId);
-      this.snap();
-      this.startAuto();
-    };
-    this.container.addEventListener('pointerup', finish);
-    this.container.addEventListener('pointercancel', finish);
-
-    this.container.addEventListener('scroll', () => {
-      const maxScroll = this.track.scrollWidth - this.container.offsetWidth;
-      if (this.container.scrollLeft > maxScroll - this.spacing)
-        this.container.scrollLeft = this.spacing * this.clones;
-      if (this.container.scrollLeft < this.spacing * (this.clones - 1))
-        this.container.scrollLeft = maxScroll - this.spacing * (this.clones - 1);
-      this.updateEffects();
-    });
-
-    this.container.addEventListener('touchstart', () => this.stopAuto());
-    this.container.addEventListener('touchend',   () => this.startAuto());
   }
 
-  positionStart() {
-    // base = spazio delle clones meno offset di centratura
-    const base = this.spacing * this.clones - this.centerOffset;
-    this.container.scrollLeft = base;
-  }
-
-  updateEffects() {
-    const cx = this.container.getBoundingClientRect().left + this.container.offsetWidth/2;
-    this.allItems.forEach(item => {
-      const rect = item.getBoundingClientRect();
-      const d    = Math.abs((rect.left + rect.width/2) - cx)/(this.container.offsetWidth/2);
-      item.style.transform = `scale(${1 + Math.max(0,1-d)})`;
-      item.style.opacity   = `${0.2 + Math.max(0,1-d)*0.8}`;
-    });
-    this.updateIndicators();
-  }
-
-  updateIndicators() {
-    const base   = this.spacing * this.clones - this.centerOffset;
-    const offset = this.container.scrollLeft - base;
-    let idx = Math.round(offset / this.spacing);
-    idx = Math.max(0, Math.min(this.items.length - 1, idx));
-    this.dots.forEach((dot,i) => {
-      dot.classList.toggle('active', i === idx);
+  if (nextButton) {
+    nextButton.addEventListener("click", () => {
+      if (!isAnimating) {
+        shiftDisplay(1);
+      }
     });
   }
 
+  viewport.addEventListener("pointerdown", onPointerDown);
+  viewport.addEventListener("pointermove", onPointerMove);
+  viewport.addEventListener("pointerup", finishDrag);
+  viewport.addEventListener("pointercancel", cancelDrag);
+  viewport.addEventListener("lostpointercapture", cancelDrag);
+  viewport.addEventListener("mouseenter", () => {
+    isHovered = true;
+    stopAutoplay();
+  });
+  viewport.addEventListener("mouseleave", () => {
+    isHovered = false;
+    if (!isDragging) {
+      startAutoplay();
+    }
+  });
+  track.addEventListener("transitionend", finalizeTransition);
 
-  snap() {
-    const base   = this.spacing * this.clones - this.centerOffset;
-    const offset = this.container.scrollLeft - base;
-    const idx    = Math.round(offset / this.spacing);
-    const target = base + idx * this.spacing;
-    this.animate(this.container.scrollLeft, target, 400);
-  }
+  window.addEventListener("resize", () => {
+    setTransition(false);
+    render();
+  });
 
-  animate(from, to, dur) {
-    const start = performance.now();
-    const el    = this.container;
-    const step  = now => {
-      const t    = Math.min(1, (now - start)/dur);
-      const ease = t<0.5 ? 2*t*t : -1 + (4-2*t)*t;
-      el.scrollLeft = from + (to-from)*ease;
-      if (t<1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }
-
-  startAuto() {
-    this.stopAuto();
-    this.auto = setInterval(() => this.autoScroll(), 3000);
-  }
-  stopAuto() {
-    clearInterval(this.auto);
-  }
-  
-  autoScroll() {
-    const base = this.spacing * this.clones - this.centerOffset;
-    let idx = Math.round((this.container.scrollLeft - base) / this.spacing);
-    idx = Math.min(idx + 1, this.items.length);
-    const target = base + (idx < this.items.length 
-      ? idx * this.spacing 
-      : 0);
-    this.animate(this.container.scrollLeft, target, 500);
-  }
-
-  observeResize() {
-    new ResizeObserver(() => {
-      this.stopAuto();
-      this.calcSpacing();
-      this.buildLoop();
-      this.positionStart();
-      this.updateEffects();
-      this.startAuto();
-    }).observe(this.container);
-  }
+  carousel.dataset.carouselReady = "true";
+  applyState();
+  goTo(index, { immediate: true });
+  startAutoplay();
 }
 
-// Initialize all carousels on DOMContentLoaded
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.carousel-container')
-          .forEach(el => new Carousel(el));
-});
+function initCarousels() {
+  document.querySelectorAll("[data-carousel]").forEach(initCarousel);
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initCarousels);
+} else {
+  initCarousels();
+}

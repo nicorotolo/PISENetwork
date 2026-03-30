@@ -1,82 +1,102 @@
-{%- comment -%}  
-Include per caroselli data-driven  
-Parametri:  
-  - id (obbligatorio): chiave in site.data.carousels  
-  - folder (obbligatorio): nome della cartella in assets/images/  
-  - title (facoltativo): titolo da mostrare sopra il carousel  
-  - subtitle (facoltativo): sottotitolo / descrizione  
+{%- comment -%}
+Simple image carousel.
+Parameters:
+  - id (required): key in site.data.carousels
+  - folder (required): folder name in assets/images/
+  - title (optional)
+  - subtitle (optional)
 {%- endcomment -%}
 
-{% assign items  = site.data.carousels[include.id] %}
+{% assign items = site.data.carousels[include.id] %}
 {% assign folder = include.folder %}
 
+{% if items and items.size > 0 %}
+  <section
+    class="carousel"
+    data-carousel
+    aria-label="{{ include.title | default: include.id | escape }}"
+  >
+    {% if include.title %}
+      <h2 class="carousel__title">{{ include.title }}</h2>
+    {% endif %}
 
-<div class="carousel-section swiper-container swiper-{{ include.id }}">
-  {%- if include.title %}
-    <h2 class="carousel-title">{{ include.title }}</h2>
-  {%- endif %}
-  {%- if include.subtitle %}
-    <p class="carousel-subtitle">{{ include.subtitle }}</p>
-  {%- endif %}
+    {% if include.subtitle %}
+      <p class="carousel__subtitle">{{ include.subtitle }}</p>
+    {% endif %}
 
-  <div class="swiper-wrapper">
-    {% for slide in items %}
-      <div class="swiper-slide">
-        <img
-          src="{{ '/assets/images/' | append: folder | append: '/' | append: slide.src | relative_url }}"
-          alt="{{ slide.alt }}"
-        />
-        {% if slide.caption %}
-          <div class="swiper-caption">{{ slide.caption }}</div>
-        {% endif %}
+    <div class="carousel__stage">
+      <button class="carousel__button" type="button" data-carousel-prev aria-label="Previous image">
+        <span aria-hidden="true">&lsaquo;</span>
+      </button>
+
+      <div class="carousel__viewport" data-carousel-viewport>
+        <div class="carousel__track" data-carousel-track>
+          {% assign last_slide = items | last %}
+          {% assign first_slide = items | first %}
+
+          {% if items.size > 1 %}
+            <figure
+              class="carousel__slide is-clone"
+              data-carousel-slide
+              data-carousel-clone="true"
+              data-caption="{{ last_slide.caption | default: '' | escape }}"
+              aria-hidden="true"
+            >
+              <img
+                src="{{ '/assets/images/' | append: folder | append: '/' | append: last_slide.src | relative_url }}"
+                alt="{{ last_slide.alt | default: '' | escape }}"
+                loading="lazy"
+                draggable="false"
+              />
+            </figure>
+          {% endif %}
+
+          {% for slide in items %}
+            <figure
+              class="carousel__slide{% if forloop.first %} is-active{% endif %}"
+              data-carousel-slide
+              data-carousel-index="{{ forloop.index0 }}"
+              data-caption="{{ slide.caption | default: '' | escape }}"
+            >
+              <img
+                src="{{ '/assets/images/' | append: folder | append: '/' | append: slide.src | relative_url }}"
+                alt="{{ slide.alt | default: '' | escape }}"
+                loading="lazy"
+                draggable="false"
+              />
+            </figure>
+          {% endfor %}
+
+          {% if items.size > 1 %}
+            <figure
+              class="carousel__slide is-clone"
+              data-carousel-slide
+              data-carousel-clone="true"
+              data-caption="{{ first_slide.caption | default: '' | escape }}"
+              aria-hidden="true"
+            >
+              <img
+                src="{{ '/assets/images/' | append: folder | append: '/' | append: first_slide.src | relative_url }}"
+                alt="{{ first_slide.alt | default: '' | escape }}"
+                loading="lazy"
+                draggable="false"
+              />
+            </figure>
+          {% endif %}
+        </div>
       </div>
-    {% endfor %}
-  </div>
-  <div class="swiper-pagination swiper-pagination-{{ include.id }}"></div>
-</div>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    new Swiper('.swiper-{{ include.id }}', {
-      effect: 'coverflow',
-      grabCursor: true,
-      loop: true,
-      centeredSlides: true,
-      centeredSlidesBounds: true,          // <— importante per i bordi
-      slidesPerView: 'auto',               // <— SEMPRE 'auto'
-      spaceBetween: 16,
-      loopAdditionalSlides: 2,
-      coverflowEffect: {
-        rotate: 0,
-        stretch: 0,
-        depth: 120,
-        modifier: 1,
-        slideShadows: false
-      },
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false
-      },
-      pagination: {
-        el: '.swiper-pagination-{{ include.id }}',
-        clickable: true,
-        renderBullet: (i, cls) => `<span class="${cls}"></span>`
-      },
-      watchSlidesProgress: true,
-      on: {
-        init: function() {
-          this.slides.forEach(slide => {
-            const img = slide.querySelector('img');
-            if (!img) return;
-            slide.classList.add(
-              img.naturalWidth < img.naturalHeight ? 'portrait' : 'landscape'
-            );
-          });
-        },
-        resize: function() {
-          this.update(); // ricalcola dimensioni su resize
-        }
-      }
-    });
-  });
-</script>
+      <button class="carousel__button" type="button" data-carousel-next aria-label="Next image">
+        <span aria-hidden="true">&rsaquo;</span>
+      </button>
+    </div>
+
+    {% if items.size > 1 %}
+      <div class="carousel__dots" data-carousel-dots aria-label="Slide navigation"></div>
+    {% endif %}
+
+    <p class="carousel__caption" data-carousel-caption{% unless items[0].caption %} hidden{% endunless %}>
+      {{ items[0].caption }}
+    </p>
+  </section>
+{% endif %}
