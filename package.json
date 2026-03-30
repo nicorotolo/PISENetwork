@@ -19,8 +19,10 @@
   },
   "homepage": "https://mmistakes.github.io/minimal-mistakes/",
   "scripts": {
-    "build:css": "sass assets/css/custom.scss assets/css/custom.css --style=compressed",
-    "watch:css": "sass --watch assets/css/custom.scss assets/css/custom.css --style=compressed"
+    "build:main-css": "sass assets/css/main.scss assets/css/main.css --style=compressed",
+    "build:custom-css": "sass assets/css/custom.scss assets/css/custom.css --style=compressed",
+    "build:css": "npm run build:main-css && npm run build:custom-css",
+    "watch:css": "sass --watch assets/css/main.scss:assets/css/main.css assets/css/custom.scss:assets/css/custom.css --style=compressed"
   },
   "engines": {
     "node": ">= 0.10.0"

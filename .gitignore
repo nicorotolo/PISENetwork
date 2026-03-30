@@ -30,6 +30,9 @@ codekit-config.json
 .sass-cache
 _asset_bundler_cache
 _site
+assets/css/*.map
+assets/css/*.debug.css
+assets/css/*.debug.css.map
 
 
 # Articoli da tenere solo in locale
