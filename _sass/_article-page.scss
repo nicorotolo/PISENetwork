@@ -293,3 +293,52 @@
   color: #fff !important;
   fill: #fff !important;
 }
+
+/* Bibliography block kept visually secondary and collapsed by default */
+.article-bibliography {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.article-bibliography details {
+  background: #f8f6f2;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 0.75rem;
+  padding: 0.85rem 1rem;
+}
+
+.article-bibliography summary {
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.article-bibliography summary:hover {
+  color: #9b1c31;
+}
+
+.article-bibliography__list {
+  margin: 0.9rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.article-bibliography__item {
+  margin-bottom: 0.55rem;
+  color: #4b5563;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.article-bibliography__item:last-child {
+  margin-bottom: 0;
+}
+
+.article-bibliography__item a {
+  color: #8c1d34;
+}
+
+.article-bibliography__separator {
+  margin-right: 0.2rem;
+}

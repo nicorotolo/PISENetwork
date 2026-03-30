@@ -3,7 +3,7 @@ layout: editorial-article
 title:    "AI & Warfare: a new era of conflict"
 date:     2026-03-25 10:00:00 +02:00
 author:   fsetti
-image:    /assets/images/editorial/open-contributions/2026/fsetti-article-image.jpg
+image:    /assets/images/editorial/open-contributions/2026/202603_Mar_files/fsetti-article-image.jpg
 categories: [politics]
 reading_time: true       # attiva la barra di avanzamento in alto
 ---

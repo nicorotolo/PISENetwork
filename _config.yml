@@ -203,7 +203,6 @@ exclude:
   - /test # ignore Minimal Mistakes /test
   - assets/css/main.scss
   - assets/css/custom.scss
-  - assets/images/editorial/open-contributions/2026/202603_Mar_files
 keep_files:
   - .git
   - .svn

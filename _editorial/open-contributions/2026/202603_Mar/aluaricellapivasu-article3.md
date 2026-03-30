@@ -3,9 +3,49 @@ layout: editorial-article
 title:    "Private Power, Public War: big tech's quiet takeover of cyberspace"
 date:     2026-03-30 10:00:00 +02:00
 author:   alauricellapivasu
-image:    /assets/images/editorial/open-contributions/2026/alauricellapivasu-article-image.jpg
+image:    /assets/images/editorial/open-contributions/2026/202603_Mar_files/alauricellapivasu-article-image.jpg
 categories: [politics, economics]
 reading_time: true       # attiva la barra di avanzamento in alto
+bibliography:
+  - title: "AI for Good: Why Microsoft Is Using AI for Positive Change | AI Magazine"
+    url: "https://aimagazine.com/articles/ai-for-good-why-microsoft-is-using-ai-for-positive-change"
+    citation: "Accessed March 30, 2026."
+  - title: "Article by Article, How Big Tech Shaped the EU's Roll-Back of Digital Rights | Corporate Europe Observatory"
+    url: "https://corporateeurope.org/en/2026/01/article-article-how-big-tech-shaped-eus-roll-back-digital-rights"
+    citation: "Accessed March 30, 2026."
+  - title: "A Declaration of the Independence of Cyberspace"
+    url: "https://www.eff.org/cyberspace-independence"
+    citation: "Barlow, John Perry. Electronic Frontier Foundation, January 20, 2016."
+  - title: "Ukraine's 'Secret Weapon' Is a Controversial Tech Company"
+    url: "https://time.com/6334176/ukraine-clearview-ai-russia/"
+    citation: "Bergengruen, Vera. TIME, November 14, 2023."
+  - title: "Tech Diplomacy 2.0: Examining the Intersections Between Industry and Governments in International Relations"
+    url: "https://doi.org/10.54852/ijcd.v6y202501"
+    citation: "Cotroneo, Clara, and Raluca Csernatoni. International Journal of Cyber Diplomacy 6 (September 2025): 3–18."
+  - title: "Big Tech and the US Digital-Military-Industrial Complex"
+    url: "https://www.intereconomics.eu/contents/year/2025/number/2/article/big-tech-and-the-us-digital-military-industrial-complex.html"
+    citation: "Coveri, Andrea, Claudio Cozza, and Dario Guarascio. n.d. Accessed March 30, 2026."
+  - title: "CyberSpace - Global Cyber Expectations for 2026: New Laws, Regulations and Increased Severity of Incidents? Part 1"
+    url: "https://cms.law/en/aut/legal-updates/cyberspace-global-cyber-expectations-for-2026-new-laws-regulations-and-increased-severity-of-incidents-part-1"
+    citation: "Accessed March 30, 2026."
+  - title: "Digital Diplomacy in 2026: Geopolitics, New Topics & Tools | Diplo"
+    url: "https://www.diplomacy.edu/topics/digital-diplomacy/"
+    citation: "Accessed March 30, 2026."
+  - title: "FragDenStaat-Fellowship: AI Regulation and Industry Influence: The Public Is Locked Out"
+    url: "https://fragdenstaat.de/en/articles/exclusive/2025/05/ai-regulation-and-industry-influence-the-public-is-locked-out/"
+    citation: "FragDenStaat. May 14, 2025."
+  - title: "The Iran War Highlights the Creeping Use of AI in Warfare | Chatham House - International Affairs Think Tank"
+    url: "https://www.chathamhouse.org/2026/03/iran-war-highlights-creeping-use-ai-warfare"
+    citation: "January 23, 2026."
+  - title: "The Need for a Digital Geneva Convention"
+    url: "https://blogs.microsoft.com/on-the-issues/2017/02/14/need-digital-geneva-convention/"
+    citation: "Microsoft On the Issues, February 14, 2017."
+  - title: "How Project Maven Became Central to America's AI-Powered Warfare"
+    url: "https://www.independent.co.uk/news/world/americas/project-maven-ai-us-airstrike-iraq-anthropic-b2929138.html"
+    citation: "The Independent, March 10, 2026."
+  - title: "What Are Some Examples of Cyber Security Measures for Tech Companies?"
+    url: "https://www.dataguard.com/blog/cyber-security-measures-examples-for-tech-companies/"
+    citation: "Accessed March 30, 2026."
 ---
 Cyberspace was conceived as independent, yet it never was. States claimed it first, but now Big Tech is going further, making itself structurally indispensable to how international security is governed, legitimized, and fought.
 

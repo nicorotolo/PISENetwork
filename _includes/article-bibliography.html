@@ -1,0 +1,27 @@
+{% assign bibliography_entries = page.bibliography | default: page.references | default: page.sources %}
+
+{% if bibliography_entries and bibliography_entries.size > 0 %}
+  <aside class="article-bibliography" aria-label="{{ page.bibliography_title | default: 'Bibliography' }}">
+    <details{% if page.bibliography_open %} open{% endif %}>
+      <summary>{{ page.bibliography_title | default: "Bibliography" }}</summary>
+      <ol class="article-bibliography__list">
+        {% for entry in bibliography_entries %}
+          <li class="article-bibliography__item">
+            {% if entry.url %}
+              {% assign entry_label = entry.title | default: entry.label | default: entry.url %}
+              <a href="{{ entry.url }}" target="_blank" rel="noopener">{{ entry_label }}</a>
+              {% if entry.citation %}
+                <span class="article-bibliography__separator">.</span>
+                {{ entry.citation }}
+              {% endif %}
+            {% elsif entry.citation %}
+              {{ entry.citation }}
+            {% else %}
+              {{ entry | markdownify | remove: '<p>' | remove: '</p>' }}
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ol>
+    </details>
+  </aside>
+{% endif %}

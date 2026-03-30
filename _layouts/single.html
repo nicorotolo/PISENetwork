@@ -51,6 +51,7 @@ layout: default
         {% endif %}
         {{ content }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
+        {% include article-bibliography.html %}
 
         {% if page.article_likes != false %}
           {% capture article_like_id %}{{ page.id | default: page.slug | default: page.url }}{% endcapture %}
@@ -89,5 +90,5 @@ layout: default
   {% include article-like-inline-styles.html %}
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app-compat.js" defer></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore-compat.js" defer></script>
-  <script src="{{ '/assets/js/article-likes.js?v=2026-03-17c' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/article-likes.js?v=2026-03-30a' | relative_url }}" defer></script>
 {% endif %}
