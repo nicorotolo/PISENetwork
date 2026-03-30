@@ -88,18 +88,20 @@ header:
                     <p class="board-role">{{ member.role }}</p>
                   </div>
                   <div class="business-card-back">
-                    <p>{{ member.description }}</p>
-                    <div class="social-links">
-                      {% if member.linkedin %}
-                        <a href="{{ member.linkedin }}" target="_blank" aria-label="LinkedIn profile of {{ member.name }}">
-                          <i class="fab fa-linkedin"></i>
-                        </a>
-                      {% endif %}
-                      {% if member.instagram %}
-                        <a href="{{ member.instagram }}" target="_blank" aria-label="Instagram profile of {{ member.name }}">
-                          <i class="fab fa-instagram"></i>
-                        </a>
-                      {% endif %}
+                    <div class="business-card-back-content">
+                      <p>{{ member.description }}</p>
+                      <div class="social-links">
+                        {% if member.linkedin %}
+                          <a href="{{ member.linkedin }}" target="_blank" aria-label="LinkedIn profile of {{ member.name }}">
+                            <i class="fab fa-linkedin"></i>
+                          </a>
+                        {% endif %}
+                        {% if member.instagram %}
+                          <a href="{{ member.instagram }}" target="_blank" aria-label="Instagram profile of {{ member.name }}">
+                            <i class="fab fa-instagram"></i>
+                          </a>
+                        {% endif %}
+                      </div>
                     </div>
                   </div>
                 </div>
