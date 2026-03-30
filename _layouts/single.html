@@ -40,6 +40,7 @@ layout: default
       {% endunless %}
 
       <section class="page__content" itemprop="text">
+        <div class="article-like-trigger" aria-hidden="true"></div>
         {% if page.toc %}
           <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
             <nav class="toc">
@@ -50,6 +51,11 @@ layout: default
         {% endif %}
         {{ content }}
         {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
+
+        {% if page.article_likes != false %}
+          {% capture article_like_id %}{{ page.id | default: page.slug | default: page.url }}{% endcapture %}
+          {% include article-like-block.html article_id=article_like_id %}
+        {% endif %}
       </section>
 
       <footer class="page__meta">
@@ -78,3 +84,10 @@ layout: default
     {% include page__related.html posts=site.posts %}
   {% endif %}
 </div>
+
+{% if page.article_likes != false %}
+  {% include article-like-inline-styles.html %}
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app-compat.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore-compat.js" defer></script>
+  <script src="{{ '/assets/js/article-likes.js?v=2026-03-17c' | relative_url }}" defer></script>
+{% endif %}

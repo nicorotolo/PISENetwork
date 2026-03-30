@@ -1,24 +1,29 @@
-// custom.scss
+// Build this file with:
+// sass assets/css/custom.scss assets/css/custom.css --style=compressed
+//
+// Single source of truth:
+// import the root-level `_sass` partials only.
 
-@import "accordion";
-@import "board-member";
-@import "hamburger-menu";
-@import "carousel";
-@import "add-to-calendar-button";
-@import "call-to-action-button";
-@import "about-us-text-style";
-@import "loading-pencil";
-@import "masthead-custom";
-@import "meet-events-button";
-@import "our-people-index";
-@import "testimonials-section";
-@import "article-post";
-@import "echoesofpise";
-@import "article-card";
-@import "article-page";
-@import "author-card";
-@import 'variables';
-@import "editorial-page";
-@import "pise-buttons";
-@import "pise-buttons";
-@import "Welcome-to-Venice-guide-box";
+@import "../../_sass/_accordion.scss";
+@import "../../_sass/_variables.scss";
+@import "../../_sass/_board-member.scss";
+@import "../../_sass/_hamburger-menu.scss";
+@import "../../_sass/_carousel.scss";
+@import "../../_sass/add-to-calendar-button.scss";
+@import "../../_sass/call-to-action-button.scss";
+@import "../../_sass/about-us-text-style.scss";
+@import "../../_sass/loading-pencil.scss";
+@import "../../_sass/masthead-custom.scss";
+@import "../../_sass/meet-events-button.scss";
+@import "../../_sass/our-people-index.scss";
+@import "../../_sass/testimonials-section.scss";
+@import "../../_sass/article-post.scss";
+@import "../../_sass/_echoesofpise.scss";
+@import "../../_sass/_article-card.scss";
+@import "../../_sass/_article-page.scss";
+@import "../../_sass/_author-card.scss";
+@import "../../_sass/article-likes.scss";
+@import "../../_sass/_editorial-page.scss";
+@import "../../_sass/_pise-buttons.scss";
+@import "../../_sass/_Welcome-to-Venice-guide-box.scss";
+@import "../../_sass/_open_contributions.scss";

@@ -51,10 +51,10 @@
       const textNode = button.querySelector(".article-like-button-text");
       button.classList.toggle("is-liked", liked);
       button.setAttribute("aria-pressed", liked ? "true" : "false");
-      button.disabled = liked;
+      button.setAttribute("aria-label", liked ? "Remove like from this article" : "Like this article");
 
       if (textNode) {
-        textNode.textContent = liked ? "Liked" : "Like";
+        textNode.textContent = liked ? "Unlike" : "Like";
       }
     });
   }
@@ -159,23 +159,26 @@
 
         buttons.forEach(function (button) {
           button.addEventListener("click", function () {
-            if (button.disabled || localStorage.getItem(storageKey) === "1") {
-              return;
-            }
-
+            const isLiked = localStorage.getItem(storageKey) === "1";
             const currentCount = parseInt(countTargets[0].countNode.textContent, 10) || 0;
-            updateLikedState(buttons, true);
-            updateCount(countTargets, currentCount + 1);
+            const nextCount = Math.max(0, currentCount + (isLiked ? -1 : 1));
+
+            updateLikedState(buttons, !isLiked);
+            updateCount(countTargets, nextCount);
 
             docRef.set({
               articleId: articleId,
-              likes: firebase.firestore.FieldValue.increment(1),
+              likes: firebase.firestore.FieldValue.increment(isLiked ? -1 : 1),
               updatedAt: firebase.firestore.FieldValue.serverTimestamp()
             }, { merge: true }).then(function () {
-              localStorage.setItem(storageKey, "1");
+              if (isLiked) {
+                localStorage.removeItem(storageKey);
+              } else {
+                localStorage.setItem(storageKey, "1");
+              }
             }).catch(function (error) {
-              console.error("Unable to save article like:", error);
-              updateLikedState(buttons, false);
+              console.error("Unable to update article like:", error);
+              updateLikedState(buttons, isLiked);
               updateCount(countTargets, currentCount);
             });
           });
@@ -186,14 +189,18 @@
 
       buttons.forEach(function (button) {
         button.addEventListener("click", function () {
-          if (button.disabled || localStorage.getItem(storageKey) === "1") {
-            return;
+          const isLiked = localStorage.getItem(storageKey) === "1";
+          const currentCount = readLocalCount(articleId);
+          const nextCount = Math.max(0, currentCount + (isLiked ? -1 : 1));
+
+          if (isLiked) {
+            localStorage.removeItem(storageKey);
+          } else {
+            localStorage.setItem(storageKey, "1");
           }
 
-          const nextCount = readLocalCount(articleId) + 1;
-          localStorage.setItem(storageKey, "1");
           writeLocalCount(articleId, nextCount);
-          updateLikedState(buttons, true);
+          updateLikedState(buttons, !isLiked);
           updateCount(countTargets, nextCount);
         });
       });

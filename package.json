@@ -18,6 +18,10 @@
     "url": "https://github.com/mmistakes/minimal-mistakes/issues"
   },
   "homepage": "https://mmistakes.github.io/minimal-mistakes/",
+  "scripts": {
+    "build:css": "sass assets/css/custom.scss assets/css/custom.css --style=compressed",
+    "watch:css": "sass --watch assets/css/custom.scss assets/css/custom.css --style=compressed"
+  },
   "engines": {
     "node": ">= 0.10.0"
   },

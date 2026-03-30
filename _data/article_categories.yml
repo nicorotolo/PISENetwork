@@ -16,7 +16,7 @@ philosophy:
 
 politics:
   label: "Politics"
-  color: "#2563EB"
+  color: "#355C7D"
   text:  "#ffffff"
   icon:  "fa-solid fa-building-columns"
   hero_image: "/assets/images/editorial/hero-test.jpg"

@@ -1,0 +1,66 @@
+{% if page.content_type == "open_contribution" %}
+
+<section class="oc-fullcall" {% if page.deadline_iso %}data-deadline="{{ page.deadline_iso }}"{% endif %}>
+  <div class="oc-fullcall__inner">
+
+    <div class="oc-fullcall__left">
+      <div class="oc-fullcall__pill">
+        Open Contributions — {% if page.is_current %}Current call{% else %}Archive{% endif %}
+      </div>
+
+      {% if page.theme %}
+        <h2 class="oc-fullcall__theme">{{ page.theme }}</h2>
+      {% endif %}
+
+      {% if page.deadline_label %}
+        <div class="oc-fullcall__deadline">
+          <strong>Deadline:</strong> {{ page.deadline_label }}
+        </div>
+      {% endif %}
+
+      {% if page.deadline_iso %}
+        <div class="oc-countdown" aria-live="polite">
+          <div class="oc-countdown__unit">
+            <div class="oc-countdown__num" data-part="days">--</div>
+            <div class="oc-countdown__lbl">DAYS</div>
+          </div>
+          <div class="oc-countdown__unit">
+            <div class="oc-countdown__num" data-part="hours">--</div>
+            <div class="oc-countdown__lbl">HOURS</div>
+          </div>
+          <div class="oc-countdown__unit">
+            <div class="oc-countdown__num" data-part="minutes">--</div>
+            <div class="oc-countdown__lbl">MINUTES</div>
+          </div>
+          <div class="oc-countdown__unit">
+            <div class="oc-countdown__num" data-part="seconds">--</div>
+            <div class="oc-countdown__lbl">SECONDS</div>
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="oc-fullcall__cta">
+        {% if page.is_current and page.form_url %}
+          <a class="pise-btn pise-btn--primary"
+             href="{{ page.form_url | escape }}"
+             target="_blank" rel="noopener">
+            Submit the abstract ({{ page.word_count | default: "100–200 words" }})
+          </a>
+        {% else %}
+          <span class="oc-fullcall__closed">Submissions closed.</span>
+        {% endif %}
+      </div>
+    </div>
+
+    <div class="oc-fullcall__right">
+      {% if page.teaser_image %}
+        <img class="oc-fullcall__img"
+             src="{{ page.teaser_image | relative_url }}"
+             alt="Open Contributions visual">
+      {% endif %}
+    </div>
+
+  </div>
+</section>
+
+{% endif %}
