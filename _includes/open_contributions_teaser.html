@@ -16,6 +16,9 @@
         Deadline: <strong>{{ current_call.deadline_label }}</strong>
       </p>
 
+      <div class="open-contributions-teaser__flip open-contributions-teaser__flip--mobile js-flip-countdown"
+          data-deadline="{{ current_call.deadline_iso }}"></div>
+
       <div class="open-contributions-teaser__actions">
         <!-- SECONDARY (PISE button style) -->
         <a class="pise-btn pise-btn--secondary"
@@ -41,16 +44,9 @@
         <div class="open-contributions-teaser__placeholder" aria-hidden="true"></div>
       {% endif %}
 
-      <div class="open-contributions-teaser__flip js-flip-countdown"
+      <div class="open-contributions-teaser__flip open-contributions-teaser__flip--desktop js-flip-countdown"
           data-deadline="{{ current_call.deadline_iso }}"></div>
     </div>
-
-    <!-- moved OUTSIDE content so it can sit bottom-right of the full card -->
-    <a class="open-contributions-teaser__archive"
-      href="{{ '/editorial/open-contributions/' | relative_url }}">
-      Previous calls
-    </a>
-
   </div>
 </section>
 
