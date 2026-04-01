@@ -20,6 +20,42 @@ Stay tuned for upcoming events and exciting news about our community!
   <a href="{{ site.baseurl }}/events/" class="btn btn--primary btn--lg">Upcoming Events</a>
 </div>
 
+<section class="pise-days-promo pise-days-promo--home-compact">
+  <div class="pise-days-promo__poster-layout pise-days-promo__poster-layout--home">
+    <div class="pise-days-promo__hero-row">
+      <h2>3 Days Of Talks<br>To Unlock<br>Innovation.</h2>
+
+      <div class="pise-days-promo__poster pise-days-promo__poster--home">
+        <div class="pise-days-promo__poster-card pise-days-promo__poster-card--poster">
+          <img src="{{ '/assets/images/pise-days-2026/promo-box.jpg' | relative_url }}" alt="Venice view for PISE Days">
+        </div>
+      </div>
+    </div>
+
+    <p class="pise-days-promo__lead pise-days-promo__lead--poster">
+      With talks and conversations on <strong>Innovation and Society</strong>, the PISE Days bring together students,
+      alumni, researchers and professionals in Venice for three days of exchange.
+    </p>
+
+    <div class="pise-days-promo__footer">
+      <div class="pise-days-promo__date-box">
+        <span class="pise-days-promo__meta-emoji">📅</span>
+        <span>April 15-16-17, 2026</span>
+      </div>
+      <div class="pise-days-promo__location-box">
+        <span class="pise-days-promo__meta-emoji">📍</span>
+        <span>Ca' Foscari University</span>
+      </div>
+    </div>
+
+    <div class="pise-days-promo__cta">
+      <a class="pise-days-promo__button pise-days-promo__button--primary" href="{{ '/pise-days-2026/' | relative_url }}">
+        Discover the PISE Days
+      </a>
+    </div>
+  </div>
+</section>
+
 <section class="pise-guide-section">
   <div class="pise-guide-grid">
     <a href="/assets/guides/Welcome-to-Venice.pdf"
