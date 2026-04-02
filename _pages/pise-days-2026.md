@@ -60,7 +60,7 @@ header:
 
       <article class="pise-days-page__card">
         <h3>Many voices</h3>
-        <p><strong>LSE, King's College, Crédit Agricole Italia, ARTE Generali, KPMG, MAG and Bank of Italy, and many more</strong> will bring the conversation into the room.</p>
+        <p><strong>LSE, King's College, Crédit Agricole Italia, ARTE Generali, KPMG, MAG, Bank of Italy, and many more</strong> will bring the conversation into the room.</p>
       </article>
     </div>
   </section>
