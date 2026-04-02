@@ -3,18 +3,17 @@
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <nav id="site-nav" class="greedy-nav">
-      <!-- Logo -->
-      {% unless site.logo == empty %}
-        <a class="site-logo" href="{{ '/' | relative_url }}">
-          <img src="{{ site.logo | relative_url }}" alt="{{ site.title }}">
-        </a>
-      {% endunless %}
+      <a class="masthead__brand" href="{{ '/' | relative_url }}">
+        {% unless site.logo == empty %}
+          <span class="site-logo">
+            <img src="{{ site.logo | relative_url }}" alt="{{ site.title }}">
+          </span>
+        {% endunless %}
 
-      <!-- Title -->
-      <a class="site-title" href="{{ '/' | relative_url }}">
-        {{ site.masthead_title | default: site.title }}
         {% if site.subtitle %}
-          <span class="site-subtitle">{{ site.subtitle }}</span>
+          <span class="site-title">
+            <span class="site-subtitle">{{ site.subtitle }}</span>
+          </span>
         {% endif %}
       </a>
 
