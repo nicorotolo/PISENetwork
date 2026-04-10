@@ -18,7 +18,7 @@
     return;
   }
 
-  var storageKey = "pise-days-popup-seen-v2";
+  var storageKey = "pise-days-popup-seen-v3";
   var storage = null;
 
   try {
@@ -28,6 +28,19 @@
     storage = window.sessionStorage;
   } catch (error) {
     storage = null;
+  }
+
+  var isExternalEntry = true;
+  if (document.referrer) {
+    try {
+      isExternalEntry = new URL(document.referrer).host !== window.location.host;
+    } catch (error) {
+      isExternalEntry = true;
+    }
+  }
+
+  if (!forceOpen && isExternalEntry && storage) {
+    storage.removeItem(storageKey);
   }
 
   if (!forceOpen && storage && storage.getItem(storageKey) === "true") {
