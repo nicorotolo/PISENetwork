@@ -18,8 +18,32 @@
     return;
   }
 
-  var storageKey = "pise-days-popup-dismissed-v1";
-  if (!forceOpen && window.localStorage && localStorage.getItem(storageKey) === "true") {
+  var storageKey = "pise-days-popup-seen-v3";
+  var storage = null;
+
+  try {
+    var storageProbeKey = "__pise_days_popup_probe__";
+    window.sessionStorage.setItem(storageProbeKey, "1");
+    window.sessionStorage.removeItem(storageProbeKey);
+    storage = window.sessionStorage;
+  } catch (error) {
+    storage = null;
+  }
+
+  var isExternalEntry = true;
+  if (document.referrer) {
+    try {
+      isExternalEntry = new URL(document.referrer).host !== window.location.host;
+    } catch (error) {
+      isExternalEntry = true;
+    }
+  }
+
+  if (!forceOpen && isExternalEntry && storage) {
+    storage.removeItem(storageKey);
+  }
+
+  if (!forceOpen && storage && storage.getItem(storageKey) === "true") {
     return;
   }
 
@@ -27,24 +51,24 @@
     modal.hidden = false;
     modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("pise-days-modal-open");
+
+    if (storage) {
+      storage.setItem(storageKey, "true");
+    }
   };
 
   var closeModal = function () {
     modal.hidden = true;
     modal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("pise-days-modal-open");
-
-    if (window.localStorage) {
-      localStorage.setItem(storageKey, "true");
-    }
   };
 
   window.__piseDaysPopup = {
     open: openModal,
     close: closeModal,
     reset: function () {
-      if (window.localStorage) {
-        localStorage.removeItem(storageKey);
+      if (storage) {
+        storage.removeItem(storageKey);
       }
     }
   };
