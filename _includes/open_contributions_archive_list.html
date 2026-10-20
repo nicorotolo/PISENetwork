@@ -1,18 +1,22 @@
-{% assign calls = site.editorial | where: "content_type", "open_contribution" %}
-
-{% if calls and calls.size > 0 %}
-  {% assign calls_sorted = calls | sort: "deadline_iso" | reverse %}
-
-  <div class="open-contributions-archive">
-    {% for call in calls_sorted %}
-      <div class="open-contributions-archive__item">
-        <h3><a href="{{ call.url | relative_url }}">{{ call.theme }}</a></h3>
-        <div class="open-contributions-archive__meta">
-          Deadline: {{ call.deadline_label }}{% assign deadline_ts = call.deadline_iso | date: "%s" | plus: 0 %}{% assign now_ts = site.time | date: "%s" | plus: 0 %}{% if call.is_current and deadline_ts > now_ts %} — <strong>Current</strong>{% else %} — Closed{% endif %}
+{% assign calls = site.editorial | where: "content_type", "open_contribution" | sort: "deadline_iso" | reverse %}
+{% if calls.size > 0 %}
+  <div class="pise-call-archive__list">
+    {% for call in calls %}
+      <article class="pise-call-archive__entry">
+        {% if call.teaser_image %}
+          <a class="pise-call-archive__image" href="{{ call.url | relative_url }}" tabindex="-1" aria-hidden="true">
+            <img src="{{ call.teaser_image | relative_url }}" alt="" loading="lazy">
+          </a>
+        {% endif %}
+        <div class="pise-call-archive__copy">
+          <p class="pise-call-archive__date">{{ call.deadline_iso | date: "%B %Y" }} <span>Call closed</span></p>
+          <h3><a href="{{ call.url | relative_url }}">{{ call.theme }}</a></h3>
+          <p class="pise-call-archive__deadline">Submission deadline: {{ call.deadline_label }}</p>
+          <a class="pise-call-archive__read" href="{{ call.url | relative_url }}">Read the archived call <span aria-hidden="true">→</span></a>
         </div>
-      </div>
+      </article>
     {% endfor %}
   </div>
 {% else %}
-  <p>No Open Contributions published yet.</p>
+  <p>No past editorial calls yet.</p>
 {% endif %}
