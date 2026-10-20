@@ -1,0 +1,22 @@
+{% assign person = include.member %}
+<article class="pise-person">
+  {% if person.image and person.image contains 'placeholder' %}
+    {% assign name_parts = person.name | split: ' ' %}
+    <div class="pise-person__initials" aria-hidden="true">{{ name_parts.first | slice: 0 }}{{ name_parts.last | slice: 0 }}</div>
+  {% elsif person.image %}
+    <img class="pise-person__photo" src="{{ person.image | relative_url }}" alt="" loading="lazy" width="80" height="80">
+  {% else %}
+    {% assign name_parts = person.name | split: ' ' %}
+    <div class="pise-person__initials" aria-hidden="true">{{ name_parts.first | slice: 0 }}{{ name_parts.last | slice: 0 }}</div>
+  {% endif %}
+  <div class="pise-person__details">
+    <h4>{{ person.name }}</h4>
+    <p class="pise-person__role">{{ person.role }}</p>
+    {% if person.linkedin or person.instagram %}
+      <div class="pise-person__socials">
+        {% if person.linkedin %}<a href="{{ person.linkedin }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn — {{ person.name }}">LinkedIn</a>{% endif %}
+        {% if person.instagram %}<a href="{{ person.instagram }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram — {{ person.name }}">Instagram</a>{% endif %}
+      </div>
+    {% endif %}
+  </div>
+</article>
