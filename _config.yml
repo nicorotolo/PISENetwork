@@ -104,9 +104,9 @@ social:
   name                   : # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
     - label: "LinkedIn"
-      url: "https://www.linkedin.com/groups/9804209/"
+      url: "https://www.linkedin.com/company/pisenetwork/?viewAsMember=true"
     - label: "Instagram"
-      url: "https://www.instagram.com/pise_network_and_alumni/"
+      url: "https://www.instagram.com/pise_network/"
     
 # Analytics
 analytics:
@@ -163,10 +163,10 @@ footer:
       # url:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
-      url: "https://www.linkedin.com/groups/9804209/"
+      url: "https://www.linkedin.com/company/pisenetwork/?viewAsMember=true"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      url: "https://www.instagram.com/pise_network_and_alumni/"
+      url: "https://www.instagram.com/pise_network/"
 
 
 

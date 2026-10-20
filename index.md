@@ -113,10 +113,10 @@ Stay tuned for upcoming events and exciting news about our community!
 %}
 
 <div class="social-links">
-  <a href="https://www.linkedin.com/groups/9804209/" target="_blank">
+  <a href="https://www.linkedin.com/company/pisenetwork/?viewAsMember=true" target="_blank">
     <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" width="30" style="border-radius:10%;">
   </a>
-  <a href="https://instagram.com/pise_network_and_alumni/" target="_blank">
+  <a href="https://www.instagram.com/pise_network/" target="_blank">
     <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" width="30" style="border-radius:10%;">
   </a>
 </div>
