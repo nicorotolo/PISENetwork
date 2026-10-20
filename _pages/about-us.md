@@ -52,33 +52,68 @@ header:
   </div>
 </div>
 
-<link rel="stylesheet" href="{{ '/assets/css/team-organigram.css?v=20261020' | relative_url }}">
-<section class="pise-team" aria-labelledby="team-heading">
-  <header class="pise-team__heading">
-    <h2 id="team-heading">Our People</h2>
-  </header>
-  {% assign leadership = site.data.team | where: "team_category", "Leadership" %}
-  <section class="pise-team__leadership" aria-labelledby="leadership">
-    <h3 id="leadership">Leadership</h3>
-    <div class="pise-team__leaders">
-      {% for member in leadership %}
-        {% include team-person.html member=member %}
-      {% endfor %}
-    </div>
-  </section>
-  {% assign grouped_teams = site.data.team | group_by: "team_category" %}
-  <div class="pise-team__areas">
-    {% for category in grouped_teams %}
-      {% unless category.name == "Leadership" %}
-        <section class="pise-team__area" aria-labelledby="{{ category.name | slugify }}">
-          <h3 id="{{ category.name | slugify }}">{{ category.name }}</h3>
-          <div class="pise-team__members">
+<div class="team-section">
+  <h2>Our People</h2>
+
+  <div class="team-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>Index</h3>
+      <ul class="sidebar-list">
+        {% assign grouped_teams = site.data.team | group_by: "team_category" %}
+        {% for category in grouped_teams %}
+          <li>
+            <a href="#{{ category.name | slugify }}">{{ category.name }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </aside>
+
+    <!-- Categories -->
+    <div class="team-categories">
+      {% for category in grouped_teams %}
+        <div class="team-category-section" id="{{ category.name | slugify }}">
+          <h3 class="team-category">{{ category.name }}</h3>
+          <div class="business-card-container">
             {% for member in category.items %}
-              {% include team-person.html member=member %}
+              <div class="business-card">
+                <div class="business-card-inner">
+                  <div class="business-card-front">
+                    {% if member.image %}
+                      <img src="{{ site.baseurl }}{{ member.image }}" alt="{{ member.name }}">
+                    {% else %}
+                      <div class="placeholder-circle"></div>
+                    {% endif %}
+                    <h3>{{ member.name }}</h3>
+                    <p class="board-role">{{ member.role }}</p>
+                  </div>
+                  <div class="business-card-back">
+                    <div class="business-card-back-content">
+                      <p>{{ member.description }}</p>
+                      <div class="social-links">
+                        {% if member.linkedin %}
+                          <a href="{{ member.linkedin }}" target="_blank" aria-label="LinkedIn profile of {{ member.name }}">
+                            <i class="fab fa-linkedin"></i>
+                          </a>
+                        {% endif %}
+                        {% if member.instagram %}
+                          <a href="{{ member.instagram }}" target="_blank" aria-label="Instagram profile of {{ member.name }}">
+                            <i class="fab fa-instagram"></i>
+                          </a>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             {% endfor %}
           </div>
-        </section>
-      {% endunless %}
-    {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
   </div>
-</section>
+</div>
+
+<div class="note" style="text-align: center; font-size: 1.2em; color: #333; margin-top: 30px;">
+  <strong>Note:</strong> More team members will be added soon as the network grows.
+</div>
