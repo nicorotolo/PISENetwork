@@ -3,7 +3,7 @@
     <script src="{{ script | relative_url }}"></script>
   {% endfor %}
 {% else %}
-  <script src="{{ '/assets/js/main.min.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/main.min.js?v=2026-10-20-headings' | relative_url }}"></script>
 {% endif %}
 
 {% if site.search == true or page.layout == "search" %}
@@ -27,5 +27,5 @@
   {% endfor %}
 {% endif %}
 
-<script src="{{ '/assets/js/_main.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/_main.js?v=2026-10-20-headings' | relative_url }}"></script>
 <script src="{{ '/assets/js/carousel.js?v=2026-03-30-arrows-fix' | relative_url }}"></script>
