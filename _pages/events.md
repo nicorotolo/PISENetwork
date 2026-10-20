@@ -8,7 +8,8 @@ header:
   caption: "Stay updated with the latest events organized by the PISE Network"
 ---
 
-{% assign now = "now" | date: "%s" %}
+{% assign now = "now" | date: "%s" | plus: 0 %}
+{% assign events_by_date = site.events | sort: "date" %}
 
 <div style="margin-top: 20px;"></div>
 
@@ -43,15 +44,15 @@ Stay informed about our latest events, including workshops, networking sessions,
       <div class="accordion-body">
         <h2>Next Events</h2>
         <div class="event-list">
-          {% for event in site.events %}
-            {% assign event_timestamp = event.date | date: "%s" %}
+          {% for event in events_by_date %}
+            {% assign event_timestamp = event.date | date: "%s" | plus: 0 %}
             {% if event_timestamp > now %}
               <div class="card mb-3">
                 <div class="card-body">
                   <h5 class="card-title">{{ event.title }}</h5>
                   <p class="card-text">
-                    <i class="bi bi-calendar-event"></i> <strong>Date:</strong> {{ event.date | date: "%B %d, %Y" }}<br>
-                    <i class="bi bi-clock"></i> <strong>Time:</strong> {{ event.time }}<br>
+                    <i class="bi bi-calendar-event"></i> <strong>Date:</strong> {% if event.date_label %}{{ event.date_label }}{% else %}{{ event.date | date: "%B %d, %Y" }}{% endif %}<br>
+                    {% if event.time %}<i class="bi bi-clock"></i> <strong>Time:</strong> {{ event.time }}<br>{% endif %}
                     <i class="bi bi-geo-alt"></i> <strong>Location:</strong> {{ event.location }}
                   </p>
                   <p>{{ event.description }}</p>
@@ -78,20 +79,20 @@ Stay informed about our latest events, including workshops, networking sessions,
       <div class="accordion-body">
         <h2>Past Events</h2>
         <div class="event-list">
-          {% for event in site.events %}
-            {% assign event_timestamp = event.date | date: "%s" %}
+          {% for event in events_by_date reversed %}
+            {% assign event_timestamp = event.date | date: "%s" | plus: 0 %}
             {% if event_timestamp <= now %}
               <div class="card mb-3">
                 <div class="card-body">
                   <h5 class="card-title">{{ event.title }}</h5>
                   <p class="card-text">
-                    <i class="bi bi-calendar-event"></i> <strong>Date:</strong> {{ event.date | date: "%B %d, %Y" }}<br>
-                    <i class="bi bi-clock"></i> <strong>Time:</strong> {{ event.time }}<br>
+                    <i class="bi bi-calendar-event"></i> <strong>Date:</strong> {% if event.date_label %}{{ event.date_label }}{% else %}{{ event.date | date: "%B %d, %Y" }}{% endif %}<br>
+                    {% if event.time %}<i class="bi bi-clock"></i> <strong>Time:</strong> {{ event.time }}<br>{% endif %}
                     <i class="bi bi-geo-alt"></i> <strong>Location:</strong> {{ event.location }}
                   </p>
                   <p>{{ event.description }}</p>
-                  {% if event.link %}
-                    <a href="{{ event.link }}" class="btn meet-events-button" target="_blank">Join Google Meet</a>
+                  {% if event.archive_url %}
+                    <a href="{{ event.archive_url | relative_url }}" class="btn meet-events-button">View the archived programme</a>
                   {% endif %}
                 </div>
               </div>
@@ -106,12 +107,6 @@ Stay informed about our latest events, including workshops, networking sessions,
 
 <div class="team-section past-events-section">
   <h2>Our Past Events</h2>
-
-  <p class="past-event">
-    <strong>PISE Days 2026 — Innovation and Society</strong><br>
-    April 15–17, 2026, Ca’ Foscari University, Venice.<br>
-    This event has ended. <a href="{{ '/pise-days-2026/' | relative_url }}">View the archived programme</a>.
-  </p>
 
   <!-- Primo evento -->
   <p class="past-event">
