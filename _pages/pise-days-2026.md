@@ -1,6 +1,6 @@
 ---
 layout: splash
-title: "PISE Days 2026"
+title: "PISE Days 2026 — Archive"
 permalink: /pise-days-2026/
 header:
   overlay_image: "/assets/images/pise-days-2026/banner.jpg"
@@ -541,71 +541,9 @@ header:
 </style>
 
 <section class="pise-days-page">
-  <section class="pise-days-promo">
-    <div class="pise-days-promo__poster-layout">
-      <h2>3 Days Of Talks<br>To Unlock<br>Innovation.</h2>
-      <p class="pise-days-promo__lead pise-days-promo__lead--poster">
-        With talks and conversations on <strong>Innovation and Society</strong>, the PISE Days bring together students,
-        alumni, researchers and professionals in Venice for three days of exchange.
-      </p>
-
-      <div class="pise-days-promo__poster pise-days-promo__poster--centered">
-        <div class="pise-days-promo__poster-card pise-days-promo__poster-card--poster">
-          <img src="{{ '/assets/images/pise-days-2026/promo-box.jpg' | relative_url }}" alt="Venice view for PISE Days">
-        </div>
-      </div>
-
-      <div class="pise-days-promo__footer">
-        <div class="pise-days-promo__date-box">
-          <span class="pise-days-promo__meta-emoji">&#128197;</span>
-          <span>April 15-16-17, 2026</span>
-        </div>
-        <div class="pise-days-promo__location-box">
-          <span class="pise-days-promo__meta-emoji">&#128205;</span>
-          <span>Ca' Foscari University</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="pise-days-page__jump">
-    <div class="pise-days-page__jump-item">
-      <a class="btn pise-days-page__jump-link" href="#pise-days-programme-title">Read the full 3-day programme</a>
-      <p class="pise-days-page__jump-subnote">or <a href="{{ '/assets/guides/PISE%20days%202026%20-%20full%203-day%20programme.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">Download the full programme as a PDF</a></p>
-    </div>
-    <div class="pise-days-page__jump-item">
-      <a class="btn pise-days-page__jump-link" href="#pise-days-reserve-day-1" data-programme-top-reserve>Reserve your seat for the day</a>
-    </div>
-  </div>
-
-  <section class="pise-days-page__panel" style="padding: 0; border-radius: 0; background: transparent; border: 0; box-shadow: none;">
-    <p>
-      The PISE Days are the <strong>flagship annual event</strong> of the PISE Network: three days of conversations bringing
-      together students, alumni, academics, institutions, and professionals to <strong>reflect on the ideas, challenges, and
-      transformations shaping contemporary society</strong>.
-    </p>
-    <p>
-      This year's theme, <strong>Innovation and Society</strong>, explores a simple but decisive question: how can we
-      turn innovation into a force for broader opportunity, stronger institutions, and lasting social progress?
-    </p>
-
-    <div class="pise-days-page__highlights">
-      <article class="pise-days-page__card">
-        <h3>Three days</h3>
-        <p><strong>April 15, 16 and 17 in Venice</strong>, with a format that supports both focused talks and broader exchanges.</p>
-      </article>
-
-      <article class="pise-days-page__card">
-        <h3>One theme</h3>
-        <p><strong>Innovation and Society</strong> as a common thread across policy, economics, institutions, media and civic life.</p>
-      </article>
-
-      <article class="pise-days-page__card">
-        <h3>Many voices</h3>
-        <p><strong>LSE, King's College, Crédit Agricole Italia, ARTE Generali, KPMG, MAG, Bank of Italy, and many more</strong> will bring the conversation into the room.</p>
-      </article>
-    </div>
-  </section>
+  <h2>Past event — April 15–17, 2026</h2>
+  <p>The 2026 edition of PISE Days, on <strong>Innovation and Society</strong>, has ended. This page preserves its programme for reference. Registration is closed.</p>
+  <p><a href="{{ '/assets/guides/PISE%20days%202026%20-%20full%203-day%20programme.pdf' | relative_url }}">Download the archived programme (PDF)</a> · <a href="{{ '/events/' | relative_url }}">Back to events</a></p>
 
   {% assign programme = site.data.pise_days_2026.days %}
   <section class="pise-days-browser" aria-labelledby="pise-days-programme-title">
@@ -650,9 +588,6 @@ header:
               </a>
               </p>
             </div>
-            {% if day.reserve_link %}
-              <a class="pise-days-browser__reserve" id="pise-days-reserve-day-{{ forloop.index }}" href="{{ day.reserve_link }}" target="_blank" rel="noopener noreferrer">Reserve your seat for the day</a>
-            {% endif %}
           </div>
 
           <div class="pise-days-browser__list">
@@ -696,17 +631,6 @@ header:
   document.addEventListener("DOMContentLoaded", function () {
     var tabs = Array.prototype.slice.call(document.querySelectorAll("[data-programme-tab]"));
     var panels = Array.prototype.slice.call(document.querySelectorAll(".pise-days-browser__panel[role='tabpanel']"));
-    var topReserveLink = document.querySelector("[data-programme-top-reserve]");
-
-    function syncTopReserveLink(index) {
-      if (!topReserveLink) {
-        return;
-      }
-
-      var targetId = "pise-days-reserve-day-" + (index + 1);
-      topReserveLink.setAttribute("href", "#" + targetId);
-    }
-
     function activateTab(index) {
       tabs.forEach(function (tab, tabIndex) {
         var active = tabIndex === index;
@@ -718,7 +642,7 @@ header:
         panel.hidden = panelIndex !== index;
       });
 
-      syncTopReserveLink(index);
+
     }
 
     tabs.forEach(function (tab, index) {
@@ -727,6 +651,6 @@ header:
       });
     });
 
-    syncTopReserveLink(0);
+
   });
 </script>

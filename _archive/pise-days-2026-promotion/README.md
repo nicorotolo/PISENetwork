@@ -1,0 +1,1 @@
+Archived on 2026-10-20 at Nicola’s request. Exact copies of the former PISE Days 2026 promotional pages, popup, script and programme data. This underscore-prefixed directory is excluded from Jekyll publication. The public programme remains at /pise-days-2026/ as a past-event archive without registration links.

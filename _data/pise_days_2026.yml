@@ -4,7 +4,6 @@ days:
     venue: "Sala Morelli"
     venue_detail: "Malcanton Marcora, Dorsoduro 3484/D, Venice"
     maps_query: "Sala Morelli Malcanton Marcora Dorsoduro 3484/D Venice"
-    reserve_link: "https://forms.gle/CjNDp486iMtG99118"
     sessions:
       - time: "11:30-13:00"
         title: "Productivity, Innovation and Growth: Where does Italy stand?"
@@ -41,7 +40,6 @@ days:
     venue: "Aula Silvio Trentin"
     venue_detail: "Ca' Dolfin, Dorsoduro 3859/A, Venice"
     maps_query: "Aula Silvio Trentin Ca' Dolfin Dorsoduro 3859/A Venice"
-    reserve_link: "https://forms.gle/3yepTSNnZgB4y7nG6"
     sessions:
       - time: "11:30-13:00"
         title: "Crime, Punishment and Forgiveness: What should citizens think about criminal offenders?"
@@ -78,7 +76,6 @@ days:
     venue: "Sala Morelli"
     venue_detail: "Malcanton Marcora, Dorsoduro 3484/D, Venice"
     maps_query: "Sala Morelli Malcanton Marcora Dorsoduro 3484/D Venice"
-    reserve_link: "https://forms.gle/iBaV76UU3VkjYXzL9"
     sessions:
       - time: "11:30-13:00"
         title: "AI in Action: The Future of Work and Digital Humanities"
