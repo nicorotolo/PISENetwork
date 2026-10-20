@@ -9,7 +9,6 @@ header:
 ---
 
 {% include open_contributions_teaser.html %}
-<p><a href="{{ '/editorial/open-contributions/' | relative_url }}">Past editorial calls — archive</a></p>
 {%- assign editorial_articles = site.editorial | where_exp: "p", "p.content_type != 'open_contribution'" -%}
 
 <div class="container mx-auto px-4 py-8">
@@ -152,3 +151,7 @@ header:
 
 <p id="no-results" class="hidden text-gray-500 mt-4">No article found.</p>
 <script src="{{ '/assets/js/editorial-filters.js' | relative_url }}"></script>
+
+<div class="cta-container">
+  <a class="pise-btn pise-btn--secondary" href="{{ '/editorial/open-contributions/' | relative_url }}">Past editorial calls — archive</a>
+</div>
