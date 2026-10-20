@@ -3,7 +3,7 @@
 content_type: open_contribution
 title: "Open Contributions - May 2026"
 theme: "Exclusions at the Venice Biennale"
-is_current: true
+is_current: false
 
 deadline_iso: 2026-05-22T23:59:00+02:00
 deadline_label: "22 May 2026, 23:59 (Rome)"

@@ -4,10 +4,11 @@ layout: default
 
 {% assign call = page %}
 {% assign call_is_closed = false %}
+{% if call.is_current == false %}{% assign call_is_closed = true %}{% endif %}
 {% if call.deadline_iso %}
-  {% assign deadline_ts = call.deadline_iso | date: "%s" %}
-  {% assign now_ts = site.time | date: "%s" %}
-  {% if deadline_ts < now_ts %}
+  {% assign deadline_ts = call.deadline_iso | date: "%s" | plus: 0 %}
+  {% assign now_ts = site.time | date: "%s" | plus: 0 %}
+  {% if deadline_ts <= now_ts %}
     {% assign call_is_closed = true %}
   {% endif %}
 {% endif %}

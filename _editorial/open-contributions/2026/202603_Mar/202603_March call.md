@@ -3,7 +3,7 @@
 content_type: open_contribution
 title: "Open Contributions - March 2026"
 theme: "Can a machine control who lives and who dies?"
-is_current: true
+is_current: false
 
 deadline_iso: 2026-03-20T23:59:00+01:00
 deadline_label: "20 March 2026, 23:59 (Rome)"

@@ -3,7 +3,7 @@
 content_type: open_contribution
 title: "Open Contributions - April 2026"
 theme: "Unlocking the potential of the Single Market for Europe's entrepreneurs"
-is_current: true
+is_current: false
 
 deadline_iso: 2026-04-12T23:59:00+02:00
 deadline_label: "12 April 2026, 23:59 (Rome)"

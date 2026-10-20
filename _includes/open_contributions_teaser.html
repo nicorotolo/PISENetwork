@@ -1,7 +1,9 @@
 {% assign calls = site.editorial | where: "content_type", "open_contribution" %}
 {% assign current_call = calls | where: "is_current", true | sort: "deadline_iso" | last %}
 
-{% if current_call %}
+{% assign current_deadline_ts = current_call.deadline_iso | date: "%s" | plus: 0 %}
+{% assign now_ts = site.time | date: "%s" | plus: 0 %}
+{% if current_call and current_deadline_ts > now_ts %}
 <section class="open-contributions-teaser">
   <div class="open-contributions-teaser__inner">
 

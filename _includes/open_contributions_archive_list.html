@@ -8,7 +8,7 @@
       <div class="open-contributions-archive__item">
         <h3><a href="{{ call.url | relative_url }}">{{ call.theme }}</a></h3>
         <div class="open-contributions-archive__meta">
-          Deadline: {{ call.deadline_label }}{% if call.is_current %} — <strong>Current</strong>{% endif %}
+          Deadline: {{ call.deadline_label }}{% assign deadline_ts = call.deadline_iso | date: "%s" | plus: 0 %}{% assign now_ts = site.time | date: "%s" | plus: 0 %}{% if call.is_current and deadline_ts > now_ts %} — <strong>Current</strong>{% else %} — Closed{% endif %}
         </div>
       </div>
     {% endfor %}

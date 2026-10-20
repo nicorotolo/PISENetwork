@@ -9,6 +9,7 @@ header:
 ---
 
 {% include open_contributions_teaser.html %}
+<p><a href="{{ '/editorial/open-contributions/' | relative_url }}">Past editorial calls — archive</a></p>
 {%- assign editorial_articles = site.editorial | where_exp: "p", "p.content_type != 'open_contribution'" -%}
 
 <div class="container mx-auto px-4 py-8">
