@@ -80,7 +80,7 @@ header:
                 <div class="business-card-inner">
                   <div class="business-card-front">
                     {% if member.image %}
-                      <img src="{{ site.baseurl }}{{ member.image }}" alt="{{ member.name }}">
+                      <img src="{{ site.baseurl }}{{ member.image }}" alt="{{ member.name }}"{% if member.image_position %} style="object-fit: cover; object-position: {{ member.image_position }}; flex-shrink: 0;"{% endif %}>
                     {% else %}
                       <div class="placeholder-circle"></div>
                     {% endif %}
